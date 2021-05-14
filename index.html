@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>컨버스 모작</title>
+
+    <!--제이쿼리 소스-->
+    <!--    <script src="https://code.jquery.com/jquery-3.5.1.slim.js"></script>-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!--폰트어썸 소스-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+
+
+    <!--구글 폰트 소스-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@600&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+
+
+
+    <div class="top-bar-warp">
+        <div class="top-bar row con">
+            <div class="logo-wrap cell">
+                <div class="logo-box">
+                    <svg id="store-logo" viewBox="0 0 805.4 94">
+                        <path d="M724.9 40.6V20.2l-11.6 16.5-19.3-6.3L706.1 47l-11.9 16.5 19.1-6.3 11.6 16.6V53.3l19.5-6.3-19.5-6.4z"></path>
+                        <path d="M762.6 0h-36.7l42.8 47-42.8 47h36.7l42.8-47-42.8-47zm-721 27.5c5.8 0 11.5 2.8 15.3 7.5l1.4 1.7 17.9-12.3-1.6-2c-7.9-9.9-20-15.6-33-15.6C18.7 6.8 0 24.7 0 46.6s18.7 39.8 41.6 39.8c12.9 0 24.9-5.6 32.8-15.3l1.6-2-17.9-12.3-1.4 1.7c-3.9 4.7-9.4 7.4-15.2 7.4-10.6 0-19.6-8.8-19.6-19.2.1-10.4 9.1-19.2 19.7-19.2zm192.3 23.9L201.5 9h-20.6v75h20V42l30.2 42h22.8V9h-20v42.4zm77 11c0 .6-.8.7-1.2.7-.3 0-.9-.1-1.2-.8L291.9 9h-23l24.5 75h32.7l24.5-75h-23l-16.7 53.4zm186.2-9c8-4.6 12.6-13 11.9-22.2-.9-12.5-11.8-22.1-24.8-22.1h-38.3v75h20v-27h9c.9 0 1.7.1 2.3.9l12.9 26.1h22.5l-15.5-30.7zM483.6 37H466v-8h17.6c2.4 0 4.4 1.6 4.4 4s-2 4-4.4 4zm124.3 47h60V64h-40v-9h36V37h-36v-8h40V9h-60v75zm-45.2-46.7c-10.7-2.4-13.8-4-13.8-7.5v-.2c0-2.8 2.1-5 7.3-5 6.9 0 12.5 2.2 20 6.7l12-14.2c-8.4-6.7-18.5-10.3-31.6-10.3-18.6 0-29.7 10.4-29.7 24.8v.2c0 15.9 13.1 20.6 29.6 24.3 10.5 2.4 13.4 4.2 13.4 7.4v.2c0 3.3-3.7 5.3-9.5 5.3-9 0-17.8-3.2-25.4-9.3L522.9 74c9.5 8.5 23.3 12.8 37 12.8 18.8 0 32-9.4 32-25.2v-.2c0-14.5-11.4-20.2-29.2-24.1zM124.8 6.9c-22.4 0-40.6 17.9-40.6 39.8 0 22 18.2 39.8 40.6 39.8 22.4 0 40.6-17.9 40.6-39.8 0-22-18.2-39.8-40.6-39.8zm0 58.8c-10.5 0-19-8.5-19-19s8.5-19 19-19 19 8.5 19 19-8.5 19-19 19zM364.9 84h60V64h-40v-9h36V37h-36v-8h40V9h-60v75z"></path>
+                    </svg>
+                </div>
+            </div>
+            <div class="left-nav-wrap cell">
+                <ul class="row btn-line">
+                    <li class="cell"><a href="#">신발</a></li>
+                    <li class="cell"><a href="#">의류</a></li>
+                    <li class="cell"><a href="#">아동</a></li>
+                    <li class="cell"><a href="#">런칭캘린더</a></li>
+                    <li class="cell"><a href="#">회원전용</a></li>
+                </ul>
+            </div>
+            <div class="right-nav cell-right">
+                <div class="right-nav-wrap">
+                    <ul class="row">
+                        <li class="cell">
+                            <a href="#">
+                                   <svg id="nav-profile" viewBox="0 0 32 30">
+      <path d="M16 3.8c3.6 0 6.6 3 6.6 6.6S19.6 17 16 17s-6.6-3-6.6-6.6 3-6.6 6.6-6.6M6 10.4c0 3.7 2.1 6.9 5.1 8.6-4.9 1.6-9 5.4-10.7 10.5h3.7c2.1-4.7 6.7-7.9 11.9-7.9s9.9 3.1 11.9 7.9h3.7c-1.7-5.1-5.7-8.9-10.7-10.5 3-1.7 5.1-4.9 5.1-8.6 0-5.5-4.5-10-10-10S6 4.9 6 10.4"></path>
+    </svg>                               
+                            </a>
+                        </li>
+                        <li class="cell">
+                            <a href="#">                                                     
+                                <svg id="nav-cart" viewBox="0 0 41 35">
+      <g fill-rule="evenodd">
+        <path d="M0 0v3.4h5.836l6.098 23.448H34.94L40.528 5.46H9.866L8.478 0H0zm10.746 8.86h25.382l-3.814 14.588H14.56L10.746 8.86zM12.956 31.449l.79 3.4h6.002v-3.4zM27.124 31.449v3.4h6.002l.776-3.4z"></path>
+      </g>
+    </svg>                              
+                            </a>
+                        </li>
+                        <li class="cell">
+                            <a href="#">                             
+                                <svg id="icon-heart" viewBox="0 0 38 34">
+      <path fill-rule="nonzero" d="M27.57 3.241a6.885 6.885 0 0 1 5.032 2.118l.274.297a7.033 7.033 0 0 1 1.873 4.997 6.966 6.966 0 0 1-2.105 4.934L18.96 29.457 5.19 15.568a6.966 6.966 0 0 1-2.105-4.935 7.033 7.033 0 0 1 1.853-4.87l.294-.318a6.845 6.845 0 0 1 4.957-2.205 6.843 6.843 0 0 1 5.001 2.099l1.516 1.461 2.105 2.118 2.106-2.118 1.515-1.482a6.823 6.823 0 0 1 4.864-2.118l.273.042zM27.297.023a9.95 9.95 0 0 0-7.116 2.964l-1.495 1.461-1.516-1.46A9.991 9.991 0 0 0 9.89 0a9.995 9.995 0 0 0-7.183 3.22l-.274.296a10.245 10.245 0 0 0-2.42 7.136 10.131 10.131 0 0 0 2.947 7.179l16 16.115 16-16.136a10.131 10.131 0 0 0 2.947-7.158 10.24 10.24 0 0 0-2.695-7.03l-.273-.297A10.036 10.036 0 0 0 27.57.065l-.273-.042z"></path>
+    </svg>                             
+                            </a>
+                        </li>
+                        <li class="cell">
+                            <a href="#">                               
+                                <svg id="nav-cs" viewBox="0 0 18.5 18.5">
+      <path d="M9.25,18.5C4.149,18.5,0,14.351,0,9.25S4.149,0,9.25,0s9.25,4.149,9.25,9.25 S14.351,18.5,9.25,18.5z M9.25,1.5C4.977,1.5,1.5,4.977,1.5,9.25S4.977,17,9.25,17S17,13.523,17,9.25S13.523,1.5,9.25,1.5z"></path>
+      <path d="M7.35,5.665c0.512-0.53,1.23-0.811,1.966-0.769 c0.68-0.033,1.344,0.204,1.848,0.66c0.463,0.436,0.717,1.048,0.699,1.683c0.017,0.353-0.069,0.704-0.249,1.01 c-0.305,0.414-0.65,0.797-1.03,1.141c-0.298,0.263-0.547,0.576-0.735,0.925c-0.13,0.358-0.186,0.738-0.166,1.118h-1.03 c-0.014-0.457,0.054-0.912,0.201-1.347C9.059,9.63,9.358,9.221,9.731,8.886l0.474-0.469c0.133-0.124,0.248-0.266,0.343-0.421 c0.153-0.236,0.236-0.512,0.237-0.793c0.008-0.363-0.114-0.717-0.344-0.998c-0.307-0.32-0.745-0.476-1.185-0.42 C8.696,5.731,8.159,6.021,7.895,6.518C7.728,6.896,7.647,7.307,7.657,7.72H6.639C6.599,6.968,6.854,6.23,7.35,5.665 M8.605,12.407 H9.79v1.202H8.605V12.407z"></path>
+    </svg>                                
+                            </a>
+                        </li>
+                        <li class="cell">
+                            <a href="#">
+                                <svg id="nav-search" viewBox="0 0 32 32">
+      <path d="M19 0C11.8 0 6 5.8 6 13c0 3 1 5.7 2.7 7.9L.8 28.8l2.4 2.4 7.9-7.9C13.3 25 16 26 19 26c7.2 0 13-5.8 13-13S26.2 0 19 0zm0 22.5c-5.3 0-9.5-4.3-9.5-9.5s4.3-9.5 9.5-9.5c5.3 0 9.5 4.3 9.5 9.5s-4.2 9.5-9.5 9.5z"></path>
+    </svg>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="search-wrap cell">
+                        <div class="serch-box row">
+                            <p class="cell txt">검색</p>
+                            <div class="serch-icon cell-right">
+                               <svg id="nav-search" viewBox="0 0 32 32">
+      <path d="M19 0C11.8 0 6 5.8 6 13c0 3 1 5.7 2.7 7.9L.8 28.8l2.4 2.4 7.9-7.9C13.3 25 16 26 19 26c7.2 0 13-5.8 13-13S26.2 0 19 0zm0 22.5c-5.3 0-9.5-4.3-9.5-9.5s4.3-9.5 9.5-9.5c5.3 0 9.5 4.3 9.5 9.5s-4.2 9.5-9.5 9.5z"></path>
+    </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="hamburger-wrap">
+                <div class="hamburger">
+                    <svg id="nav-menu" viewBox="0 0 30 25">
+                        <path d="M0 14v-3h30v3H0zm0 11v-3h30v3H0zM0 0h30v3H0z"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="nav-2-depth-wrap">
+        <div class="nav-2-depth con row">
+            <div class="nav-2-depth-left cell">
+                <div class="nav-2-depth-list">
+                    <div class="nav-content">
+                        <ul>
+                            <li><a href="#">전체보기</a></li>
+                            <li><a href="#">베스트셀러</a></li>
+                            <li><a href="#">척테일러 올스타</a></li>
+                            <li><a href="#">척70</a></li>
+                            <li><a href="#">원스타</a></li>
+                            <li><a href="#">잭퍼셀</a></li>
+                            <li><a href="#">프로레터</a></li>
+                            <li><a href="#">회원전용</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-rcom">
+                        <p>추천상품</p>
+                        <ul class="row">
+                            <li class="cell"><a href="#">
+                                    <img src="Converse_files/Flyout_256x300_01-8.jpg" alt="빅사이즈">
+                                    <span>빅사이즈</span>
+                                </a></li>
+                            <li class="cell"><a href="#">
+                                    <img src="Converse_files/Flyout_256x300_03-10.jpg" alt="농구화 컬렉션">
+                                    <span>농구화 컬렉션</span>
+                                </a></li>
+                            <li class="cell"><a href="#">
+                                    <img src="Converse_files/Flyout_256x300_02-8.jpg" alt="서머 데이즈 워시">
+                                    <span>서머 데이즈 워시</span>
+                                </a></li>
+                            <li class="cell"><a href="#">
+                                    <img src="Converse_files/Flyout_256x300_04-8.jpg" alt="온라인 온리">
+                                    <span>온라인 온리</span>
+                                </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="nav-2-depth-list">
+                    <div class="nav-content">
+                        <ul>
+                            <li><a href="#">전체보기</a></li>
+                            <li><a href="#">아우터</a></li>
+                            <li><a href="#">상의</a></li>
+                            <li><a href="#">하의</a></li>
+                            <li><a href="#">용품</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-rcom">
+                        <p>추천상품</p>
+                        <ul class="row">
+                            <li class="cell"><a href="#">
+                                    <img src="Converse_files/Flyout_256x300_05-1.jpg" alt="풀 오버 크루">
+                                    <span>풀 오버 크루</span>
+                                </a></li>
+                            <li class="cell"><a href="#">
+                                    <img src="Converse_files/Flyout_256x300_06-1.jpg" alt="코트 레디 후드">
+                                    <span>코트 레디 후드</span>
+                                </a></li>
+                            <li class="cell"><a href="#">
+                                    <img src="Converse_files/Flyout_256x300_08-2.jpg" alt="패널 조거">
+                                    <span>패널 조거</span>
+                                </a></li>
+                            <li class="cell"><a href="#">
+                                    <img src="Converse_files/Flyout_256x300_07-2.jpg" alt="고 2 백팩">
+                                    <span>고 2 백팩</span>
+                                </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="nav-2-depth-list">
+                    <div class="nav-content">
+                        <ul>
+                            <li><a href="#">전체보기</a></li>
+                            <li><a href="#">유아</a></li>
+                            <li><a href="#">어린이</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-rcom">
+                        <p>추천상품</p>
+                        <ul class="row">
+                            <li class="cell"><a href="#">
+                                    <img src="Converse_files/Flyout_256x300_05.jpg" alt="척 클래식 키즈">
+                                    <span>척 70 클래식 키즈</span>
+                                </a></li>
+                            <li class="cell"><a href="#">
+                                    <img src="Converse_files/Flyout_256x300_10.jpg" alt="잭퍼셀 클래식 인펀트">
+                                    <span>잭퍼셀 클래식 인펀트</span>
+                                </a></li>
+                            <li class="cell"><a href="#">
+                                    <img src="Converse_files/Flyout_256x300_10-1.jpg" alt="척테일러 올스타 키즈">
+                                    <span>척테일러 올스타 키즈</span>
+                                </a></li>
+                            <li class="cell"><a href="#">
+                                    <img src="Converse_files/Flyout_256x300_08.jpg" alt="걸즈 게이머">
+                                    <span>걸즈 게이머</span>
+                                </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-2-depth-right cell">
+                <div class="x-btn-wrap">
+                    <div class="x-btn">
+                        <svg id="icon-close" viewBox="0 0 37 37">
+                            <path fill-rule="nonzero" d="M36.533 3.533L33 0 18.267 14.733 3.533 0 0 3.533l14.733 14.734L0 33l3.533 3.533L18.267 21.8 33 36.533 36.533 33 21.8 18.267z"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-nav-2-depth-wrap">
+        <div class="mobile-nav-2-depth">
+            <div class="head-wrap row">
+                <div class="logo cell">
+                    <svg id="store-logo-simple" viewBox="0 0 111.4 94">
+                        <path d="M30.9 40.6V20.2L19.3 36.7 0 30.4 12.1 47 .2 63.5l19.1-6.3 11.6 16.6V53.3L50.4 47l-19.5-6.4z"></path>
+                        <path d="M68.6 0H31.9l42.8 47-42.8 47h36.7l42.8-47L68.6 0z"></path>
+                    </svg>
+                </div>
+                <div class="X-btn cell-right">
+                    <svg id="icon-close" viewBox="0 0 37 37">
+                        <path fill-rule="nonzero" d="M36.533 3.533L33 0 18.267 14.733 3.533 0 0 3.533l14.733 14.734L0 33l3.533 3.533L18.267 21.8 33 36.533 36.533 33 21.8 18.267z"></path>
+                    </svg>
+                </div>
+                <div class="shopping cell-right">
+                    <svg id="nav-cart" viewBox="0 0 41 35">
+                        <g fill-rule="evenodd">
+                            <path d="M0 0v3.4h5.836l6.098 23.448H34.94L40.528 5.46H9.866L8.478 0H0zm10.746 8.86h25.382l-3.814 14.588H14.56L10.746 8.86zM12.956 31.449l.79 3.4h6.002v-3.4zM27.124 31.449v3.4h6.002l.776-3.4z"></path>
+                        </g>
+                    </svg>
+                </div>
+                <a href="#" class="cell-right">
+                    <svg id="nav-profile" viewBox="0 0 32 30">
+                        <path d="M16 3.8c3.6 0 6.6 3 6.6 6.6S19.6 17 16 17s-6.6-3-6.6-6.6 3-6.6 6.6-6.6M6 10.4c0 3.7 2.1 6.9 5.1 8.6-4.9 1.6-9 5.4-10.7 10.5h3.7c2.1-4.7 6.7-7.9 11.9-7.9s9.9 3.1 11.9 7.9h3.7c-1.7-5.1-5.7-8.9-10.7-10.5 3-1.7 5.1-4.9 5.1-8.6 0-5.5-4.5-10-10-10S6 4.9 6 10.4"></path>
+                    </svg>
+                </a>
+            </div>
+            <div class="body-wrap">
+                <ul>
+                    <li><a href="#">신발</a></li>
+                    <li><a href="#">의류</a></li>
+                    <li><a href="#">아동</a></li>
+                    <li><a href="#">런칭캘린더</a></li>
+                    <li><a href="#">회원전용</a></li>
+                </ul>
+                <div class="section-wrap">
+                    <div class="item">
+                        <a href="#" class="row">
+                            <span class="cell">마이페이지</span>
+                            <div class="icon cell-right">
+                                <svg id="icon-chevron" viewBox="0 0 23 39">
+                                    <path fill-rule="nonzero" d="M19.275 38.55L0 19.275 19.275 0 22.8 3.55 7.075 19.275 22.8 35z"></path>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#" class="row">
+                            <span class="cell">주문/배송 조회</span>
+                            <div class="icon cell-right">
+                                <svg id="icon-chevron" viewBox="0 0 23 39">
+                                    <path fill-rule="nonzero" d="M19.275 38.55L0 19.275 19.275 0 22.8 3.55 7.075 19.275 22.8 35z"></path>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#" class="row">
+                            <span class="cell">고객지원센터</span>
+                            <div class="icon cell-right">
+                                <svg id="icon-chevron" viewBox="0 0 23 39">
+                                    <path fill-rule="nonzero" d="M19.275 38.55L0 19.275 19.275 0 22.8 3.55 7.075 19.275 22.8 35z"></path>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <span>로그인</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="section02-wrap">
+                    <div class="section02 con">
+                        <div class="box5">
+                            <p>FAMILY SITES <span></span></p>
+                            <ul class="hide">
+                                <li>NIKE</li>
+                                <li>Jordan</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section03-wrap">
+                    <div class="section03 con">
+                        <div class="address cell">
+                            <div class="txt">
+                                <span class="first">(유)컨버스코리아</span>
+                                <span>대표 주형준</span>
+                                <span>개인정보책임 주형준</span>
+                                <span>사업자등록번호 220-88-74818</span>
+                                <span class="first">통신판매업 신고번호:제2016-서울강남-00478호</span>
+                                <span>통신판매업자 신원정보 확인</span>
+                                <span class="first">주소:서울시 강남구 테헤란로 152 강남파이낸스센터 32F</span>
+                                <span class="first">고객상담팀:080-987-0182<br class="mm">(상담시간 월-금 : AM 09:00-PM 05.30, 주말/공휴일 휴무)</span>
+                                <br class="m">
+                                <span><a href="#">conversekorea@converse.co.kr</a>(24시간 접수 가능)</span>
+                            </div>
+                            <div class="mobile">
+                                <a href="#">
+                                    <strong>개인정보처리방침</strong>
+                                </a>
+                                |
+                                <a href="#">
+                                    <strong>이용약관</strong>
+                                </a>
+                            </div>
+                            <p>2020 Converse Korea LLC.All Rights Reserved.</p>
+                        </div>
+                        <div class="company cell-right">
+                            <p>소비자피해 보증보험 <br>
+                                고객님은 안전거래를 위해 현금 등으로 결제시 저희 쇼핑몰에서 가입한 구매 <br> 안전서비스 소비자피해보증보험 서비스를 이용하실 수 있습니다. <br> 보증대상: 미배송, 반품/환불거부, 쇼핑몰 부도</p>
+                            <p>보증보험 가입사실 확인하기</p>
+                        </div>
+                        <div class="icon cell">
+                            <div class="left">
+                                <div class="l-inner">
+                                    <a href="#">
+                                        <svg id="icon-facebook" viewBox="0 0 21 40">
+                                            <path fill-rule="evenodd" d="M14.311 13.333v-4c0-1.733.4-2.666 3.2-2.666h3.467V0h-5.333C8.978 0 6.31 4.4 6.31 9.333v4H.978V20h5.333v20h8V20h5.867l.8-6.667h-6.667z"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="r-inner">
+                                    <a href="#">
+                                        <svg id="icon-instagram" viewBox="0 0 40 40">
+                                            <g fill-rule="evenodd">
+                                                <path d="M19.968.063c-5.423 0-6.103.023-8.232.12-2.126.097-3.577.435-4.848.928a9.787 9.787 0 0 0-3.536 2.304A9.787 9.787 0 0 0 1.048 6.95C.555 8.221.218 9.673.12 11.8.023 13.929 0 14.609 0 20.03c0 5.424.023 6.104.12 8.233.097 2.126.435 3.577.928 4.848a9.787 9.787 0 0 0 2.304 3.536 9.787 9.787 0 0 0 3.536 2.304c1.27.493 2.722.83 4.848.928 2.13.097 2.81.12 8.232.12 5.424 0 6.104-.023 8.233-.12 2.126-.097 3.577-.435 4.848-.928a9.787 9.787 0 0 0 3.536-2.304 9.788 9.788 0 0 0 2.304-3.536c.493-1.27.83-2.722.928-4.848.097-2.13.12-2.81.12-8.233s-.023-6.103-.12-8.232c-.097-2.126-.435-3.577-.928-4.848a9.788 9.788 0 0 0-2.304-3.536A9.787 9.787 0 0 0 33.05 1.11C31.779.618 30.327.281 28.2.183c-2.13-.097-2.81-.12-8.233-.12m0 3.598c5.332 0 5.964.02 8.07.116 1.946.09 3.004.415 3.707.688.932.362 1.598.795 2.296 1.494.7.698 1.132 1.364 1.494 2.296.273.703.599 1.76.688 3.707.096 2.106.116 2.738.116 8.07 0 5.331-.02 5.963-.116 8.068-.09 1.947-.415 3.005-.688 3.708-.362.932-.795 1.598-1.494 2.296-.698.7-1.364 1.132-2.296 1.494-.703.274-1.76.599-3.708.688-2.105.096-2.736.116-8.069.116-5.332 0-5.963-.02-8.068-.116-1.947-.09-3.005-.414-3.708-.688-.932-.362-1.598-.795-2.296-1.494-.699-.698-1.132-1.364-1.494-2.296-.273-.703-.599-1.76-.688-3.708-.096-2.105-.116-2.737-.116-8.069 0-5.331.02-5.963.116-8.069.09-1.946.415-3.004.688-3.707.362-.932.795-1.598 1.494-2.296.698-.7 1.364-1.132 2.296-1.494.703-.273 1.76-.599 3.708-.688 2.105-.096 2.737-.116 8.068-.116"></path>
+                                                <path d="M19.968 26.688a6.656 6.656 0 1 1 0-13.313 6.656 6.656 0 0 1 0 13.313m0-16.91c-5.663 0-10.254 4.59-10.254 10.253 0 5.664 4.591 10.255 10.254 10.255 5.664 0 10.254-4.591 10.254-10.255 0-5.663-4.59-10.254-10.254-10.254M33.024 9.372a2.396 2.396 0 1 1-4.793 0 2.396 2.396 0 0 1 4.793 0"></path>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="kr-box cell">
+                            <div class="kr">
+                                <div class="flag-icon"></div>
+                                <div class="lang">
+                                    <p>KR | 한국어</p>
+                                </div>
+                            </div>
+                            <p>2020 Converse</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="summer-wrap con row">
+        <div class="left-wrap cell">
+            <div class="txt-box-wrap">
+                <div class="txt-box">
+                    <p>summer denim</p>
+                    <p>여름을 맞이하는 빈티지 워시드 데님 어퍼로<br>
+                        아이코닉 실루엣에 모던한 감각을 더합니다. </p>
+                </div>
+                <div class="btn-box">
+                    <p>구매하기</p>
+                </div>
+            </div>
+        </div>
+        <div class="m-btm">
+            <div class="btm">
+                <p>구매하기</p>
+            </div>
+        </div>
+        <div class="right-wrap cell">
+            <div class="right-top-img row">
+                <div class="right-top-img-left cell">
+                    <div class="img-wrap">
+                        <div class="right-top-img-left-normal"></div>
+                        <div class="right-top-img-left-hover"></div>
+                    </div>
+                    <div class="icon-txt-wrap">
+                        <div class="icon">
+                            <p><i class="far fa-heart"></i></p>
+                        </div>
+                        <div class="best-seller">
+                            <p>best seller <br> new arrival<br> online only</p>
+                        </div>
+                        <div class="price">
+                            <ul>
+                                <li><a href="#">
+                                        <p>척테일러 올스타 데인티 뮬 서머 데님</p>
+                                    </a></li>
+                            </ul>
+                            <p>69,000 원</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-top-img-right cell">
+                    <div class="img-wrap">
+                        <div class="right-top-img-right-normal"></div>
+                        <div class="right-top-img-right-hover"></div>
+                    </div>
+                    <div class="icon-txt-wrap">
+                        <div class="icon">
+                            <p><i class="far fa-heart"></i></p>
+                        </div>
+                        <div class="best-seller">
+                            <p>new arrival <br> online only</p>
+                        </div>
+                        <div class="price">
+                            <ul>
+                                <li><a href="#">
+                                        <p>척 70 서머 데님</p>
+                                    </a></li>
+                            </ul>
+                            <p>105,000 원</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-btm-img row">
+                <div class="right-btm-img-left cell">
+                    <div class="img-wrap">
+                        <div class="right-btm-img-left-normal"></div>
+                        <div class="right-btm-img-left-hover"></div>
+                    </div>
+                    <div class="icon-txt-wrap">
+                        <div class="icon">
+                            <p><i class="far fa-heart"></i></p>
+                        </div>
+                        <div class="best-seller">
+                            <p>new arrival <br> online only</p>
+                        </div>
+                        <div class="price">
+                            <ul>
+                                <li><a href="#">
+                                        <p>척테일러 올스타 서머 데님</p>
+                                    </a></li>
+                            </ul>
+                            <p>85,000 원</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-btm-img-right cell">
+                    <div class="img-wrap">
+                        <div class="right-btm-img-right-normal"></div>
+                        <div class="right-btm-img-right-hover"></div>
+                    </div>
+                    <div class="icon-txt-wrap">
+                        <div class="icon">
+                            <p><i class="far fa-heart"></i></p>
+                        </div>
+                        <div class="best-seller">
+                            <p>best seller <br> new arrival</p>
+                        </div>
+                        <div class="price">
+                            <ul>
+                                <li><a href="#">
+                                        <p>런스타 하이크 서머 데님</p>
+                                    </a></li>
+                            </ul>
+                            <p>109,000 원</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="choose-wrap con">
+        <div class="txt-wrap">
+            <p>choose your icon</p>
+            <p><i class="fas fa-arrow-right"></i>
+                신발 전체 보기
+            </p>
+        </div>
+        <div class="shose-icon-wrap">
+            <ul class="row">
+                <li class="cell">
+                    <a href="">
+                        <img src="Converse_files/척테일러올스타2.jpg" alt="척 테일러 올스타">
+                        <span>척 테일러 올스타</span>
+                    </a>
+                </li>
+                <li class="cell">
+                    <a href="">
+                        <img src="Converse_files/척70_2.jpg" alt="척 70">
+                        <span>척 70</span>
+                    </a>
+                </li>
+                <li class="cell">
+                    <a href="">
+                        <img src="Converse_files/원스타2.jpg" alt="원스타">
+                        <span>원스타</span>
+                    </a>
+                </li>
+                <li class="cell">
+                    <a href="">
+                        <img src="Converse_files/잭퍼셀.jpg" alt="젝퍼셀">
+                        <span>잭퍼셀</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="m-btm">
+            <div class="btm">
+                <p>신발 전체 보기</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="summer-02-wrap con row">
+        <div class="left-wrap cell">
+            <div class="txt-box-wrap">
+                <div class="txt-box">
+                    <p>summer slippers</p>
+                    <p>잠깐을 나가더라도 멋스럽게,<br>
+                        오픈 토 스타일 슬라이드 컬렉션을 만나보세요. </p>
+                </div>
+                <div class="btn-box">
+                    <p>구매하기</p>
+                </div>
+            </div>
+        </div>
+        <div class="m-btm">
+            <div class="btm">
+                <p>구매하기</p>
+            </div>
+        </div>
+        <div class="right-wrap cell">
+            <div class="right-top-img row">
+                <div class="right-top-img-left cell">
+                    <div class="img-wrap">
+                        <div class="right-top-img-left-normal"></div>
+                        <div class="right-top-img-left-hover"></div>
+                    </div>
+                    <div class="icon-txt-wrap">
+                        <div class="icon">
+                            <p><i class="far fa-heart"></i></p>
+                        </div>
+                        <div class="price">
+                            <ul>
+                                <li><a href="#">
+                                        <p>올스타 슬라이드</p>
+                                    </a></li>
+                            </ul>
+                            <p>35,000 원</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-top-img-right cell">
+                    <div class="img-wrap">
+                        <div class="right-top-img-right-normal"></div>
+                        <div class="right-top-img-right-hover"></div>
+                    </div>
+                    <div class="icon-txt-wrap">
+                        <div class="icon">
+                            <p><i class="far fa-heart"></i></p>
+                        </div>
+                        <div class="price">
+                            <ul>
+                                <li><a href="#">
+                                        <p>올스타 슬라이드</p>
+                                    </a></li>
+                            </ul>
+                            <p>35,000 원</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-btm-img row">
+                <div class="right-btm-img-left cell">
+                    <div class="img-wrap">
+                        <div class="right-btm-img-left-normal"></div>
+                        <div class="right-btm-img-left-hover"></div>
+                    </div>
+                    <div class="icon-txt-wrap">
+                        <div class="icon">
+                            <p><i class="far fa-heart"></i></p>
+                        </div>
+                        <div class="best-seller">
+                            <p>best seller</p>
+                        </div>
+                        <div class="price">
+                            <ul>
+                                <li><a href="#">
+                                        <p>척테일러 올스타 컷어웨이</p>
+                                    </a></li>
+                            </ul>
+                            <p>45,000 원</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-btm-img-right cell">
+                    <div class="img-wrap">
+                        <div class="right-btm-img-right-normal"></div>
+                        <div class="right-btm-img-right-hover"></div>
+                    </div>
+                    <div class="icon-txt-wrap">
+                        <div class="icon">
+                            <p><i class="far fa-heart"></i></p>
+                        </div>
+                        <div class="best-seller">
+                            <p>best seller</p>
+                        </div>
+                        <div class="price">
+                            <ul>
+                                <li><a href="#">
+                                        <p>척테일러 올스타 컷어웨이</p>
+                                    </a></li>
+                            </ul>
+                            <p>45,000 원</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="floral-wrap con">
+        <div class="floral">
+            <div class="txt-box-wrap">
+                <div class="txt-box">
+                    <p> floral print <br>
+                        collection
+                    </p>
+                    <p>화사하고 밝은 꽃 패턴으로 완성된 플로럴 프린트 컬렉션, <br>
+                        따뜻해진 계절 신선한 룩을 연출하세요.
+                    </p>
+                </div>
+                <div class="btn-box">
+                    <p>구매하기</p>
+                </div>
+            </div>
+        </div>
+        <div class="m-btm">
+            <div class="btm">
+                <p>구매하기</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="skid-wrap con">
+        <div class="skid">
+            <div class="txt-box-wrap">
+                <div class="txt-box">
+                    <p>skidgrip</p>
+                    <p>편안한 착화감과 클래식한 디자인, <br>
+                        새롭게 태어난 레트로 스타일 스키드그립을 선보입니다.
+                    </p>
+                </div>
+                <div class="btn-box">
+                    <p>구매하기</p>
+                </div>
+            </div>
+        </div>
+        <div class="m-btm">
+            <div class="btm">
+                <p>구매하기</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="jack-wrap con">
+        <div class="jack">
+            <div class="txt-box-wrap">
+                <div class="txt-box">
+                    <p>jack purcell</p>
+                    <p>깔끔한 디자인과 편안한 착화감을 선사하는 잭퍼셀, <br>
+                        캐주얼룩부터 비즈니스룩까지 다양한 스타일에 매치해보세요.
+                    </p>
+                </div>
+                <div class="btn-box">
+                    <p>더 알아보기</p>
+                </div>
+            </div>
+        </div>
+        <div class="m-btm">
+            <div class="btm">
+                <p>구매하기</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="satin-wrap con row">
+        <div class="right-cozy-wrap cell">
+            <div class="txt-box-wrap">
+                <div class="txt-box">
+                    <p>chuck taylor<br class="o"> all srar <br>
+                        big eyelets satin
+                    </p>
+                    <p>우아한 새틴 소재 슈 레이스를 만나 <br>
+                        더욱 세련된 모습으로 탄생한 척테일러 올스타를 선보입니다.
+                    </p>
+                </div>
+                <div class="btn-box">
+                    <p>구매하기</p>
+                </div>
+            </div>
+        </div>
+        <div class="m-btm">
+            <div class="btm">
+                <p>구매하기</p>
+            </div>
+        </div>
+        <div class="left-cozy-wrap cell">
+            <div class="top-left-cozy">
+                <div class="txt-box">
+                    <p>big eyelets<br>
+                        &<br>
+                        satin shoe laces</p>
+                </div>
+            </div>
+            <div class="btm-left-cozy row">
+                <div class="left-btm-left-cozy cell">
+                    <div class="img-box">
+                        <div class="left-btm-left-cozy-nomal"></div>
+                        <div class="left-btm-left-cozy-hover"></div>
+                    </div>
+                    <div class="txt-box"></div>
+                    <div class="icon-txt-wrap">
+                        <div class="icon">
+                            <p><i class="far fa-heart"></i></p>
+                        </div>
+                        <div class="best-seller">
+                            <p>best seller <br> new arrival <br> online only</p>
+                        </div>
+                        <div class="price">
+                            <ul>
+                                <li><a href="#">
+                                        <p>척테일러 올스타 빅 아일렛 새틴</p>
+                                    </a></li>
+                            </ul>
+                            <p>79,000 원</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-btm-left-cozy cell">
+                    <div class="img-box">
+                        <div class="right-btm-left-cozy-nomal"></div>
+                    </div>
+                    <div class="txt-box"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="color-wrap con row">
+        <div class="right-wrap cell">
+            <div class="right-top-img row">
+                <div class="right-top-img-left cell">
+                    <div class="img-wrap">
+                        <div class="right-top-img-left-normal"></div>
+                    </div>
+                </div>
+                <div class="right-top-img-right cell">
+                    <div class="img-wrap">
+                        <div class="right-top-img-right-normal"></div>
+                        <div class="right-top-img-right-hover"></div>
+                    </div>
+                    <div class="icon-txt-wrap">
+                        <div class="icon">
+                            <p><i class="far fa-heart"></i></p>
+                        </div>
+                        <div class="price">
+                            <ul>
+                                <li><a href="#">
+                                        <p>척 70 컬러 블록</p>
+                                    </a></li>
+                            </ul>
+                            <p>95,000 원</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-btm-img row">
+                <div class="right-btm-img-left cell">
+                    <div class="img-wrap">
+                        <div class="right-btm-img-left-normal"></div>
+                        <div class="right-btm-img-left-hover"></div>
+                    </div>
+                    <div class="icon-txt-wrap">
+                        <div class="icon">
+                            <p><i class="far fa-heart"></i></p>
+                        </div>
+                        <div class="best-seller">
+                            <p>new arrival</p>
+                        </div>
+                        <div class="price">
+                            <ul>
+                                <li><a href="#">
+                                        <p>척 70 컬러 블록</p>
+                                    </a></li>
+                            </ul>
+                            <p>99,000 원</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-btm-img-right cell">
+                    <div class="img-wrap">
+                        <div class="right-btm-img-right-normal"></div>
+                        <div class="right-btm-img-right-hover"></div>
+                    </div>
+                    <div class="icon-txt-wrap">
+                        <div class="icon">
+                            <p><i class="far fa-heart"></i></p>
+                        </div>
+                        <div class="best-seller">
+                            <p>best seller <br> new arrival</p>
+                        </div>
+                        <div class="price">
+                            <ul>
+                                <li><a href="#">
+                                        <p>척 70 컬러 블록</p>
+                                    </a></li>
+                            </ul>
+                            <p>95,000 원</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="left-wrap cell">
+            <div class="txt-box-wrap">
+                <div class="txt-box">
+                    <p>chuck 70 <br>
+                        color block</p>
+                    <p>화사한 컬러의 어퍼, 스택 러버 미드솔과 함께하는<br>
+                        새로운 컬러 블록 트렌드를 선보입니다. </p>
+                </div>
+                <div class="btn-box">
+                    <p>구매하기</p>
+                </div>
+            </div>
+        </div>
+        <div class="m-btm">
+            <div class="btm">
+                <p>구매하기</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="miffy-wrap con row">
+        <div class="left-cozy-wrap cell">
+            <div class="top-left-cozy">
+            </div>
+            <div class="btm-left-cozy row">
+                <div class="left-btm-left-cozy cell">
+                    <div class="img-box">
+                        <div class="left-btm-left-cozy-nomal"></div>
+                        <div class="left-btm-left-cozy-hover"></div>
+                    </div>
+                    <div class="txt-box"></div>
+                    <div class="icon-txt-wrap">
+                        <div class="icon">
+                            <p><i class="far fa-heart"></i></p>
+                        </div>
+                        <div class="best-seller">
+                            <p>new arrival</p>
+                        </div>
+                        <div class="price">
+                            <ul>
+                                <li><a href="#">
+                                        <p>컨버스 X 팝 트레이딩 코 X 미피 잭퍼셀 프로</p>
+                                    </a></li>
+                            </ul>
+                            <p>99,000 원</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-btm-left-cozy cell">
+                    <div class="img-box">
+                        <div class="right-btm-left-cozy-nomal"></div>
+                        <div class="right-btm-left-cozy-hover"></div>
+                    </div>
+                    <div class="txt-box"></div>
+                    <div class="icon-txt-wrap">
+                        <div class="icon">
+                            <p><i class="far fa-heart"></i></p>
+                        </div>
+                        <div class="best-seller">
+                            <p>new arrival</p>
+                        </div>
+                        <div class="price">
+                            <ul>
+                                <li><a href="#">
+                                        <p>컨버스 X 팝 트레이딩 코 X 미피 잭퍼셀 프로</p>
+                                    </a></li>
+                            </ul>
+                            <p>99,000 원</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-cozy-wrap cell">
+            <div class="txt-box-wrap">
+                <div class="txt-box">
+                    <p>converse X <br>
+                        pop trading co X miffy
+                    </p>
+                    <p>암스테르담 기반의 팝 트레이딩 컴퍼니와의 협업을 통해 <br>
+                        세계적으로 사랑받는 캐릭터 미피를 더한 잭퍼셀을 선보입니다.
+                    </p>
+                </div>
+                <div class="btn-box">
+                    <p>2021. 05. 04 10AM 출시 예정</p>
+                </div>
+            </div>
+        </div>
+        <div class="m-btm">
+            <div class="btm">
+                <p>2021.05.04 10AM 출시 예정</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="seasonal-wrap con">
+        <div class="seasonal">
+            <div class="txt-box-wrap">
+                <div class="txt-box">
+                    <p>chuck 70<br>
+                        seasonal
+                    </p>
+                    <p>아이코닉한 디자인과 빈티지한 매력, <br>
+                        편안한 착화감을 동시에 선사하는 척 70 컬렉션과 함께 <br>
+                        더욱 활기찬 일상을 맞이하세요.
+                    </p>
+                </div>
+                <div class="btn-box">
+                    <p>더 알아보기</p>
+                </div>
+            </div>
+        </div>
+        <div class="m-btm">
+            <div class="btm">
+                <p>구매하기</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="community-wrap con">
+        <div class="community">
+            <p>converse community</p>
+            <div class="content">
+                <div class="photo-wrap row">
+                    <div class="photo box1 cell">
+                        <div class="icon-txt">
+                            <div class="icon"></div>
+                            <div class="txt">
+                                <p>ssom-k2</p>
+                                <p>a months ago</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo box2 cell">
+                        <div class="icon-txt">
+                            <div class="icon"></div>
+                            <div class="txt">
+                                <p>indgmily</p>
+                                <p>3 months ago</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo box3 cell">
+                        <div class="icon-txt">
+                            <div class="icon"></div>
+                            <div class="txt">
+                                <p>ingo-us</p>
+                                <p>2 months ago</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo box4 cell">
+                        <div class="icon-txt">
+                            <div class="icon"></div>
+                            <div class="txt">
+                                <p>S2bdty</p>
+                                <p>2 months ago</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo box5 mobile-x cell">
+                        <div class="icon-txt">
+                            <div class="icon"></div>
+                            <div class="txt">
+                                <p>lovely1234</p>
+                                <p>a months ago</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo box6 mobile-x cell">
+                        <div class="icon-txt">
+                            <div class="icon"></div>
+                            <div class="txt">
+                                <p>bafdhr364</p>
+                                <p>3 months ago</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo box7 mobile-x cell">
+                        <div class="icon-txt">
+                            <div class="icon"></div>
+                            <div class="txt">
+                                <p>minz-fe</p>
+                                <p>3 months ago</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo box8 mobile-x cell">
+                        <div class="icon-txt">
+                            <div class="icon"></div>
+                            <div class="txt">
+                                <p>Odndk-ran</p>
+                                <p>2 months ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn">더보기</div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="floting-bar">
+        <a href="#">
+            <div class="logo">
+                <svg id="store-logo-simple" viewBox="0 0 111.4 94">
+                    <path d="M30.9 40.6V20.2L19.3 36.7 0 30.4 12.1 47 .2 63.5l19.1-6.3 11.6 16.6V53.3L50.4 47l-19.5-6.4z"></path>
+                    <path d="M68.6 0H31.9l42.8 47-42.8 47h36.7l42.8-47L68.6 0z"></path>
+                </svg>
+            </div>
+            <p>척 70 시즈널</p>
+        </a>
+    </div>
+
+    <footer>
+
+        <div class="section01-wrap">
+            <div class="section01 con row">
+                <div class="box1 cell">
+                    <div class="icon">
+                        <svg id="icon-shipping" viewBox="0 0 54 36">
+                            <rect x="21.706" y="8.378" fill="none" width="9.794" height="2.162"></rect>
+                            <path fill="none" d="M39.221,8.378h-2.427v2.162h2.98C39.484,9.852,39.298,9.124,39.221,8.378z"></path>
+                            <path fill="none" d="M40.712,12.163h-3.918v3.243h-0.02l-2.627-2.8l-2.626,2.8H31.5v-3.243h-9.794v16.215h24.882V15.136 C44.194,15.136,42.068,13.965,40.712,12.163z"></path>
+                            <path fill="none" d="M46.588,1.622c-3.211,0-5.823,2.668-5.823,5.946s2.612,5.946,5.823,5.946s5.824-2.667,5.824-5.946 C52.412,4.29,49.799,1.622,46.588,1.622z M48.177,8.839h-5.029V7.232h3.44V3.75h1.589V8.839z"></path>
+                            <rect y="10.541" width="16.941" height="1.622"></rect>
+                            <rect x="8.471" y="24.595" width="8.471" height="1.621"></rect>
+                            <rect x="4.235" y="17.567" width="12.706" height="1.622"></rect>
+                            <path d="M46.588,0c-3.818,0-6.97,2.963-7.367,6.756H20.118V30h28.059V14.956C51.502,14.211,54,11.184,54,7.567 C54,3.395,50.676,0,46.588,0z M36.794,8.378h2.427c0.077,0.745,0.264,1.473,0.554,2.162h-2.98V8.378z M21.706,8.378H31.5v2.162 h-9.794V8.378z M46.588,28.378H21.706V12.163H31.5v3.243h0.021l2.626-2.8l2.627,2.8h0.02v-3.243h3.918 c1.356,1.803,3.482,2.973,5.876,2.973V28.378z M46.588,13.513c-3.211,0-5.823-2.668-5.823-5.946s2.612-5.946,5.823-5.946 s5.824,2.668,5.824,5.946C52.412,10.846,49.799,13.513,46.588,13.513z"></path>
+                            <polygon points="46.588,7.232 43.147,7.232 43.147,8.839 48.177,8.839 48.177,3.75 46.588,3.75"></polygon>
+                        </svg>
+
+                    </div>
+                    <p class="title">무료배송</p>
+                    <p class="txt">5만원 이상 구매 시 무료배송</p>
+                </div>
+                <div class="box2 cell">
+                    <div class="icon">
+                        <div class="icon-inner"><svg id="icon-exchange" viewBox="0 0 36 36">
+                                <path d="M31.645,24.617l0.705,0.767l3.5-3.81c0.194-0.211,0.194-0.554,0-0.767L32.35,17l-0.705,0.773 l2.65,2.878H20v1.088h14.295L31.645,24.617z"></path>
+                                <path d="M36,28.268H21.706l2.649-2.879l-0.709-0.771l-3.5,3.808c-0.194,0.212-0.194,0.555,0,0.768 l3.5,3.808l0.703-0.767l-2.644-2.878H36V28.268z"></path>
+                                <path d="M1.545,25.333V10.111h9.485v3.556h0.022L14,10.707l2.948,2.96h0.022v-3.556h9.485v5.923H28V3H0 v24h16.957v-1.667H1.545z M16.97,4.667h9.485v3.778H16.97V4.667z M1.545,4.667h9.485v3.778H1.545V4.667z"></path>
+                            </svg></div>
+                    </div>
+                    <p class="title">교환/반품 서비스</p>
+                    <p class="txt">사이즈를 잘못 선택하셨나요? <br>
+                        교환/반품 서비스에 대해 <br>
+                        더 알아보세요.</p>
+                    <a href="#">자세히 보기</a>
+                </div>
+                <div class="box3 cell">
+                    <div class="icon">
+                        <svg id="store-logo-vertical" viewBox="0 0 86 58">
+                            <path d="M32.021,17.975V8.943l-5.139,7.304l-8.541-2.788l5.355,7.348l-5.268,7.304l8.453-2.79l5.139,7.349v-9.074 l8.63-2.79L32.021,17.975z"></path>
+                            <path d="M48.711,0H32.463l18.946,20.808L32.463,41.615h16.248l18.947-20.807L48.711,0z"></path>
+                            <path d="M5.458,50.385c0.744,0,1.477,0.36,1.964,0.963l0.181,0.218l2.299-1.58l-0.206-0.256 c-1.015-1.271-2.568-2.004-4.237-2.004c-2.942,0-5.343,2.299-5.343,5.111s2.4,5.11,5.343,5.11c1.655,0,3.197-0.718,4.212-1.965 l0.205-0.256l-2.299-1.58l-0.18,0.218c-0.501,0.605-1.207,0.95-1.952,0.95c-1.36,0-2.517-1.129-2.517-2.464 C2.94,51.516,4.096,50.385,5.458,50.385z"></path>
+                            <polygon points="30.152,53.453 25.991,48.009 23.347,48.009 23.347,57.64 25.915,57.64 25.915,52.245 29.794,57.64 32.721,57.64 32.721,48.009 30.152,48.009 "></polygon>
+                            <path d="M40.041,54.867c0,0.075-0.103,0.089-0.154,0.089c-0.038,0-0.114-0.014-0.154-0.104l-2.132-6.843h-2.953 l3.146,9.631h4.199l3.145-9.631h-2.952L40.041,54.867z"></path>
+                            <path d="M63.951,53.71c1.027-0.59,1.618-1.669,1.527-2.85c-0.115-1.606-1.514-2.84-3.185-2.84h-4.919v9.633h2.57 v-3.468H61.1c0.117,0,0.219,0.014,0.295,0.115l1.658,3.353h2.889L63.951,53.71z M62.217,51.604h-2.259v-1.026h2.259 c0.309,0,0.566,0.204,0.566,0.513C62.783,51.399,62.525,51.604,62.217,51.604z"></path>
+                            <polygon points="78.181,57.64 85.885,57.64 85.885,55.071 80.749,55.071 80.749,53.916 85.371,53.916 85.371,51.604 80.749,51.604 80.749,50.577 85.885,50.577 85.885,48.009 78.181,48.009 "></polygon>
+                            <path d="M72.375,51.643c-1.374-0.309-1.771-0.513-1.771-0.963v-0.025c0-0.36,0.269-0.642,0.936-0.642 c0.887,0,1.605,0.281,2.57,0.859l1.54-1.822c-1.079-0.861-2.376-1.324-4.057-1.324c-2.391,0-3.815,1.336-3.815,3.185v0.027 c0,2.04,1.682,2.645,3.801,3.119c1.35,0.308,1.72,0.539,1.72,0.951v0.025c0,0.424-0.473,0.682-1.218,0.682 c-1.157,0-2.286-0.412-3.263-1.196l-1.554,1.836C68.484,57.447,70.256,58,72.016,58c2.414,0,4.109-1.208,4.109-3.236v-0.025 C76.125,52.875,74.661,52.144,72.375,51.643z"></path>
+                            <path d="M16.142,47.739c-2.876,0-5.213,2.299-5.213,5.111c0,2.824,2.337,5.11,5.213,5.11 c2.877,0,5.215-2.3,5.215-5.11C21.356,50.024,19.019,47.739,16.142,47.739z M16.142,55.289c-1.348,0-2.439-1.09-2.439-2.438 s1.092-2.441,2.439-2.441c1.349,0,2.44,1.093,2.44,2.441S17.49,55.289,16.142,55.289z"></path>
+                            <polygon points="46.975,57.64 54.68,57.64 54.68,55.071 49.542,55.071 49.542,53.916 54.166,53.916 54.166,51.604 49.542,51.604 49.542,50.577 54.68,50.577 54.68,48.009 46.975,48.009 "></polygon>
+                        </svg>
+
+                    </div>
+                    <p class="title">회원 전용 혜택</p>
+                    <p class="txt">신규 가입 축하 쿠폰, 드로우 응모 등 <br>
+                        지금 회원 가입 하시고 <br>
+                        더욱 특별한 혜택을 누려보세요. </p>
+                    <a href="#">회원 가입 하기</a>
+                </div>
+                <div class="box4 cell">
+                    <div class="icon">
+                        <div class="icon-box01">
+                            <div class="icon-inner"> <svg id="icon-facebook" viewBox="0 0 21 40">
+                                    <path fill-rule="evenodd" d="M14.311 13.333v-4c0-1.733.4-2.666 3.2-2.666h3.467V0h-5.333C8.978 0 6.31 4.4 6.31 9.333v4H.978V20h5.333v20h8V20h5.867l.8-6.667h-6.667z"></path>
+                                </svg></div>
+                        </div>
+                        <div class="icon-box02">
+                            <div class="icon-inner"><svg id="icon-instagram" viewBox="0 0 40 40">
+                                    <g fill-rule="evenodd">
+                                        <path d="M19.968.063c-5.423 0-6.103.023-8.232.12-2.126.097-3.577.435-4.848.928a9.787 9.787 0 0 0-3.536 2.304A9.787 9.787 0 0 0 1.048 6.95C.555 8.221.218 9.673.12 11.8.023 13.929 0 14.609 0 20.03c0 5.424.023 6.104.12 8.233.097 2.126.435 3.577.928 4.848a9.787 9.787 0 0 0 2.304 3.536 9.787 9.787 0 0 0 3.536 2.304c1.27.493 2.722.83 4.848.928 2.13.097 2.81.12 8.232.12 5.424 0 6.104-.023 8.233-.12 2.126-.097 3.577-.435 4.848-.928a9.787 9.787 0 0 0 3.536-2.304 9.788 9.788 0 0 0 2.304-3.536c.493-1.27.83-2.722.928-4.848.097-2.13.12-2.81.12-8.233s-.023-6.103-.12-8.232c-.097-2.126-.435-3.577-.928-4.848a9.788 9.788 0 0 0-2.304-3.536A9.787 9.787 0 0 0 33.05 1.11C31.779.618 30.327.281 28.2.183c-2.13-.097-2.81-.12-8.233-.12m0 3.598c5.332 0 5.964.02 8.07.116 1.946.09 3.004.415 3.707.688.932.362 1.598.795 2.296 1.494.7.698 1.132 1.364 1.494 2.296.273.703.599 1.76.688 3.707.096 2.106.116 2.738.116 8.07 0 5.331-.02 5.963-.116 8.068-.09 1.947-.415 3.005-.688 3.708-.362.932-.795 1.598-1.494 2.296-.698.7-1.364 1.132-2.296 1.494-.703.274-1.76.599-3.708.688-2.105.096-2.736.116-8.069.116-5.332 0-5.963-.02-8.068-.116-1.947-.09-3.005-.414-3.708-.688-.932-.362-1.598-.795-2.296-1.494-.699-.698-1.132-1.364-1.494-2.296-.273-.703-.599-1.76-.688-3.708-.096-2.105-.116-2.737-.116-8.069 0-5.331.02-5.963.116-8.069.09-1.946.415-3.004.688-3.707.362-.932.795-1.598 1.494-2.296.698-.7 1.364-1.132 2.296-1.494.703-.273 1.76-.599 3.708-.688 2.105-.096 2.737-.116 8.068-.116"></path>
+                                        <path d="M19.968 26.688a6.656 6.656 0 1 1 0-13.313 6.656 6.656 0 0 1 0 13.313m0-16.91c-5.663 0-10.254 4.59-10.254 10.253 0 5.664 4.591 10.255 10.254 10.255 5.664 0 10.254-4.591 10.254-10.255 0-5.663-4.59-10.254-10.254-10.254M33.024 9.372a2.396 2.396 0 1 1-4.793 0 2.396 2.396 0 0 1 4.793 0"></path>
+                                    </g>
+                                </svg></div>
+                        </div>
+                    </div>
+                    <p class="title">Follow Us</p>
+                    <p class="txt">컨버스의 SNS 채널을 통해 <br>
+                        신상품 정보 및 이벤트 등 새로운 <br>
+                        소식을 확인하세요. </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="section02-wrap">
+            <div class="section02 con">
+                <div class="box1">
+                    <p>FOLLOW US</p>
+                    <div class="icon">
+                        <div class="left-icon">
+                            <div class="icon-box">
+                                <svg id="icon-facebook" viewBox="0 0 21 40">
+                                    <path fill-rule="evenodd" d="M14.311 13.333v-4c0-1.733.4-2.666 3.2-2.666h3.467V0h-5.333C8.978 0 6.31 4.4 6.31 9.333v4H.978V20h5.333v20h8V20h5.867l.8-6.667h-6.667z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="right-icon">
+                            <div class="icon-box">
+                                <svg id="icon-instagram" viewBox="0 0 40 40">
+                                    <g fill-rule="evenodd">
+                                        <path d="M19.968.063c-5.423 0-6.103.023-8.232.12-2.126.097-3.577.435-4.848.928a9.787 9.787 0 0 0-3.536 2.304A9.787 9.787 0 0 0 1.048 6.95C.555 8.221.218 9.673.12 11.8.023 13.929 0 14.609 0 20.03c0 5.424.023 6.104.12 8.233.097 2.126.435 3.577.928 4.848a9.787 9.787 0 0 0 2.304 3.536 9.787 9.787 0 0 0 3.536 2.304c1.27.493 2.722.83 4.848.928 2.13.097 2.81.12 8.232.12 5.424 0 6.104-.023 8.233-.12 2.126-.097 3.577-.435 4.848-.928a9.787 9.787 0 0 0 3.536-2.304 9.788 9.788 0 0 0 2.304-3.536c.493-1.27.83-2.722.928-4.848.097-2.13.12-2.81.12-8.233s-.023-6.103-.12-8.232c-.097-2.126-.435-3.577-.928-4.848a9.788 9.788 0 0 0-2.304-3.536A9.787 9.787 0 0 0 33.05 1.11C31.779.618 30.327.281 28.2.183c-2.13-.097-2.81-.12-8.233-.12m0 3.598c5.332 0 5.964.02 8.07.116 1.946.09 3.004.415 3.707.688.932.362 1.598.795 2.296 1.494.7.698 1.132 1.364 1.494 2.296.273.703.599 1.76.688 3.707.096 2.106.116 2.738.116 8.07 0 5.331-.02 5.963-.116 8.068-.09 1.947-.415 3.005-.688 3.708-.362.932-.795 1.598-1.494 2.296-.698.7-1.364 1.132-2.296 1.494-.703.274-1.76.599-3.708.688-2.105.096-2.736.116-8.069.116-5.332 0-5.963-.02-8.068-.116-1.947-.09-3.005-.414-3.708-.688-.932-.362-1.598-.795-2.296-1.494-.699-.698-1.132-1.364-1.494-2.296-.273-.703-.599-1.76-.688-3.708-.096-2.105-.116-2.737-.116-8.069 0-5.331.02-5.963.116-8.069.09-1.946.415-3.004.688-3.707.362-.932.795-1.598 1.494-2.296.698-.7 1.364-1.132 2.296-1.494.703-.273 1.76-.599 3.708-.688 2.105-.096 2.737-.116 8.068-.116"></path>
+                                        <path d="M19.968 26.688a6.656 6.656 0 1 1 0-13.313 6.656 6.656 0 0 1 0 13.313m0-16.91c-5.663 0-10.254 4.59-10.254 10.253 0 5.664 4.591 10.255 10.254 10.255 5.664 0 10.254-4.591 10.254-10.255 0-5.663-4.59-10.254-10.254-10.254M33.024 9.372a2.396 2.396 0 1 1-4.793 0 2.396 2.396 0 0 1 4.793 0"></path>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box2">
+                    <p>SUPPORT</p>
+                    <ul>
+                        <li>고객지원센터</li>
+                        <li>1:1문의</li>
+                        <li>주문/배송 조회</li>
+                    </ul>
+                </div>
+                <div class="box3">
+                    <p>INFORMATION</p>
+                    <ul>
+                        <li>컨버스에 대하여</li>
+                        <li>회원가입</li>
+                        <li>매장안내</li>
+                        <li>공지사항</li>
+                    </ul>
+                </div>
+                <div class="box4">
+                    <p>POLICY</p>
+                    <ul>
+                        <li>이용약관</li>
+                        <li>개인정보처리방침</li>
+                    </ul>
+                </div>
+                <div class="box5">
+                    <p>FAMILY SITES <span></span></p>
+                    <ul class="hide">
+                        <li>NIKE</li>
+                        <li>Jordan</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section03-wrap">
+            <div class="section03 con">
+                <div class="address cell">
+                    <div class="txt">
+                        <span class="first">(유)컨버스코리아</span>
+                        <span>대표 주형준</span>
+                        <span>개인정보책임 주형준</span>
+                        <span>사업자등록번호 220-88-74818</span>
+                        <span class="first">통신판매업 신고번호:제2016-서울강남-00478호</span>
+                        <span>통신판매업자 신원정보 확인</span>
+                        <span class="first">주소:서울시 강남구 테헤란로 152 강남파이낸스센터 32F</span>
+                        <span class="first">고객상담팀:080-987-0182<br class="mm">(상담시간 월-금 : AM 09:00-PM 05.30, 주말/공휴일 휴무)</span>
+                        <br class="m">
+                        <span><a href="#">conversekorea@converse.co.kr</a>(24시간 접수 가능)</span>
+                    </div>
+                    <div class="mobile">
+                        <a href="#">
+                            <strong>개인정보처리방침</strong>
+                        </a>
+                        |
+                        <a href="#">
+                            <strong>이용약관</strong>
+                        </a>
+                    </div>
+                    <p>2020 Converse Korea LLC.All Rights Reserved.</p>
+                </div>
+                <div class="company cell-right">
+                    <p>소비자피해 보증보험 <br>
+                        고객님은 안전거래를 위해 현금 등으로 결제시 저희 쇼핑몰에서 가입한 구매 <br> 안전서비스 소비자피해보증보험 서비스를 이용하실 수 있습니다. <br> 보증대상: 미배송, 반품/환불거부, 쇼핑몰 부도</p>
+                    <p>보증보험 가입사실 확인하기</p>
+                </div>
+                <div class="icon cell">
+                    <div class="left">
+                        <div class="l-inner">
+                            <a href="#">
+                                <svg id="icon-facebook" viewBox="0 0 21 40">
+                                    <path fill-rule="evenodd" d="M14.311 13.333v-4c0-1.733.4-2.666 3.2-2.666h3.467V0h-5.333C8.978 0 6.31 4.4 6.31 9.333v4H.978V20h5.333v20h8V20h5.867l.8-6.667h-6.667z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="r-inner">
+                            <a href="#">
+                                <svg id="icon-instagram" viewBox="0 0 40 40">
+                                    <g fill-rule="evenodd">
+                                        <path d="M19.968.063c-5.423 0-6.103.023-8.232.12-2.126.097-3.577.435-4.848.928a9.787 9.787 0 0 0-3.536 2.304A9.787 9.787 0 0 0 1.048 6.95C.555 8.221.218 9.673.12 11.8.023 13.929 0 14.609 0 20.03c0 5.424.023 6.104.12 8.233.097 2.126.435 3.577.928 4.848a9.787 9.787 0 0 0 2.304 3.536 9.787 9.787 0 0 0 3.536 2.304c1.27.493 2.722.83 4.848.928 2.13.097 2.81.12 8.232.12 5.424 0 6.104-.023 8.233-.12 2.126-.097 3.577-.435 4.848-.928a9.787 9.787 0 0 0 3.536-2.304 9.788 9.788 0 0 0 2.304-3.536c.493-1.27.83-2.722.928-4.848.097-2.13.12-2.81.12-8.233s-.023-6.103-.12-8.232c-.097-2.126-.435-3.577-.928-4.848a9.788 9.788 0 0 0-2.304-3.536A9.787 9.787 0 0 0 33.05 1.11C31.779.618 30.327.281 28.2.183c-2.13-.097-2.81-.12-8.233-.12m0 3.598c5.332 0 5.964.02 8.07.116 1.946.09 3.004.415 3.707.688.932.362 1.598.795 2.296 1.494.7.698 1.132 1.364 1.494 2.296.273.703.599 1.76.688 3.707.096 2.106.116 2.738.116 8.07 0 5.331-.02 5.963-.116 8.068-.09 1.947-.415 3.005-.688 3.708-.362.932-.795 1.598-1.494 2.296-.698.7-1.364 1.132-2.296 1.494-.703.274-1.76.599-3.708.688-2.105.096-2.736.116-8.069.116-5.332 0-5.963-.02-8.068-.116-1.947-.09-3.005-.414-3.708-.688-.932-.362-1.598-.795-2.296-1.494-.699-.698-1.132-1.364-1.494-2.296-.273-.703-.599-1.76-.688-3.708-.096-2.105-.116-2.737-.116-8.069 0-5.331.02-5.963.116-8.069.09-1.946.415-3.004.688-3.707.362-.932.795-1.598 1.494-2.296.698-.7 1.364-1.132 2.296-1.494.703-.273 1.76-.599 3.708-.688 2.105-.096 2.737-.116 8.068-.116"></path>
+                                        <path d="M19.968 26.688a6.656 6.656 0 1 1 0-13.313 6.656 6.656 0 0 1 0 13.313m0-16.91c-5.663 0-10.254 4.59-10.254 10.253 0 5.664 4.591 10.255 10.254 10.255 5.664 0 10.254-4.591 10.254-10.255 0-5.663-4.59-10.254-10.254-10.254M33.024 9.372a2.396 2.396 0 1 1-4.793 0 2.396 2.396 0 0 1 4.793 0"></path>
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="kr-box cell">
+                    <div class="kr">
+                        <div class="flag-icon"></div>
+                        <div class="lang">
+                            <p>KR | 한국어</p>
+                        </div>
+                    </div>
+                    <p>2020 Converse</p>
+                </div>
+            </div>
+        </div>
+
+
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body></html>
