@@ -54,6 +54,10 @@ a {
     cursor: default;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* 스타일 */
 
 /*
@@ -4576,6 +4580,7 @@ footer > .section02-wrap > .section02 > .box4 > ul > li:last-child {
         position: fixed;
         right: 0;
         bottom: 16px;
+        transition: 1s;
     }
 
     .floting-bar > a {

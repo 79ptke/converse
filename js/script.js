@@ -127,6 +127,32 @@ $(window).on('scroll', function () {
 
 
 
+$('.floting-bar').click(function () {
+    $('html, body').animate({
+        scrollTop: 0
+    }, 500);
+    return false;
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
