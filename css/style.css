@@ -2,6 +2,7 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 ul,
@@ -35,7 +36,119 @@ a {
     margin: 0 auto;
 }
 
+/*모바일*/
+.mobile-mode {
+    display: none;
+}
+
+/*박스 공통 padding-bottom*/
+.pad-btm {
+    padding-bottom: 62.5%;
+}
+
+/*박스 크기*/
+.main-area {
+    position: relative;
+    width: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sub-4-area {
+    position: relative;
+    width: 50%;
+    padding-bottom: 62.5%;
+}
+
+.sub-2-area {
+    position: relative;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.full-area {
+    position: relative;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.top,
+.btm {
+    display: flex;
+}
+
+/*박스 안 텍스트*/
+.txt-box-wrap {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+.main-title {
+    margin-bottom: 5px;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Prompt', sans-serif;
+    color: white;
+    text-transform: uppercase;
+}
+
+.sub-title {
+    font-size: 15px;
+    color: white;
+}
+
+.btn-box {
+    display: block;
+    width: 180px;
+    height: 45px;
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 45px;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.btn-box:hover {
+    opacity: 0.5;
+}
+
+/*4등분 박스 안 공통*/
+.normal-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 1;
+}
+
+.hover-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0;
+}
+
+.img-wrap:hover > .hover-img {
+    opacity: 1;
+}
+
 .icon-txt-wrap > .icon {
+    position: absolute;
+    top: 30px;
+    left: 30px;
     transform: scale(1);
     transition: 0.5s;
     cursor: pointer;
@@ -46,187 +159,198 @@ a {
     transition: 0.5s;
 }
 
-.img-wrap,.img-box,.btn-box,.best-seller,.btn,.logo-box {
-    cursor: pointer;
+.product-badges {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: right;
+    text-transform: uppercase;
 }
 
 .price {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    font-size: 15px;
     cursor: default;
 }
 
-html {
-    scroll-behavior: smooth;
+/*모바일 버튼*/
+.m-btm {
+    display: none;
 }
+
+/*커서*/
+.img-wrap,
+.img-box,
+.btn-box,
+.product-badges,
+.btn,
+.logo {
+    cursor: pointer;
+}
+
+/*모바일 시 띄어쓰기*/
+.m {
+    display: none;
+}
+
+.mm {
+    display: none;
+}
+
 
 /* 스타일 */
 
-/*
-.top-bar-wrap {
-    width: 100%;
-    height: 60px;
-    border: 1px solid red;
+/*======================header========================*/
+
+header {
     position: fixed;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 9;
-}
-*/
-
-.top-bar-warp {
     width: 100%;
     height: auto;
-    position: fixed;
-    top: 0;
-    z-index: 9;
     transition: 1s;
+    z-index: 9;
 }
 
-.top-bar {
+header #header {
+    display: flex;
+    align-items: center;
     width: 100%;
     height: 60px;
     background-color: white;
     overflow: hidden;
 }
 
-.logo-wrap {
-    line-height: 60px;
+.logo {
+    width: 140px;
     padding-left: 20px;
 }
 
-.logo-wrap .logo-box {
-    width: 120px;
+.nav-list {
+    display: flex;
 }
 
-.left-nav-wrap {
-    line-height: 60px;
+.nav-list:hover {
+    color: #777;
 }
 
-.left-nav-wrap > ul > li {
+.nav-list > li {
     margin-left: 20px;
     font-weight: 600;
     transition: 0.5s;
 }
 
-.left-nav-wrap > ul:hover {
-    color: #ddd;
+.nav-list > li:hover {
+    color: #000;
 }
 
-.left-nav-wrap > ul > li:hover {
-    color: black;
-}
-
-.right-nav > .right-nav-wrap {
-    line-height: 60px;
+.icon-list {
     display: flex;
+    margin-left: auto;
+    line-height: 60px;
 }
 
-.right-nav > .right-nav-wrap > ul > li {
+.icon-list > li {
     padding-right: 20px;
 }
 
-.top-bar > .right-nav > .right-nav-wrap > ul > li:nth-child(5) {
-    display: none;
-}
-
-.right-nav > .right-nav-wrap > ul > li > a {
+.icon-list > li > a {
     display: block;
     width: 20px;
 }
 
-.right-nav > .right-nav-wrap > ul:hover > li > a > svg {
-    fill: #ddd;
+.icon-list:hover > li > a > svg {
+    fill: #777;
 }
 
-.right-nav > .right-nav-wrap > ul > li:hover > a > svg {
+.icon-list > li:hover > a > svg {
     fill: #000;
 }
 
-
-.right-nav > .right-nav-wrap > .search-wrap {
-    background-color: black;
-    color: white;
+.icon-list .search-wrap {
     width: 268px;
+    background-color: black;
+    color: #fff;
     transition: 0.3s;
 }
 
-.right-nav > .right-nav-wrap > .search-wrap > .serch-box {
-    line-height: 60px;
+.icon-list .search-wrap .serch-box {
+    display: flex;
+    align-items: center;
     padding-left: 20px;
     padding-right: 20px;
     font-size: 14px;
+    line-height: 60px;
     cursor: pointer;
 }
 
-.right-nav > .right-nav-wrap > .search-wrap > .serch-box > .txt {
+.icon-list .search-wrap .serch-box .txt {
     visibility: visible;
     opacity: 1;
     transition: 0.5s;
 }
 
-.right-nav > .right-nav-wrap > .search-wrap > .serch-box > .txt > p {
+.icon-list .search-wrap .serch-box .txt p {
     visibility: visible;
     opacity: 1;
     transition: 0.5s;
 }
 
-.right-nav > .right-nav-wrap > .search-wrap > .serch-box > .serch-icon {
+.icon-list .search-wrap .serch-box .serch-icon {
     width: 17px;
     height: 60px;
+    margin-left: auto;
 }
 
-.right-nav > .right-nav-wrap > .search-wrap > .serch-box > .serch-icon > svg {
+.icon-list .search-wrap .serch-box .serch-icon svg {
     fill: #fff;
 }
 
-.hamburger-wrap {
-    display: none;
-}
+/*header.down*/
 
-/*top-bar.down*/
-
-.top-bar-warp.down {
+header.down {
     border-bottom: 1px solid #e5e5e5;
 }
 
-.top-bar-warp.down > .top-bar > .right-nav > .right-nav-wrap > .search-wrap {
-    width: 60px;
-    height: 60px;
-    transition: 1s;
+header.down #header .icon-list .search-wrap {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 60px;
+    height: 60px;
+    transition: 1s;
 }
 
-.top-bar-warp.down > .top-bar > .right-nav > .right-nav-wrap > .search-wrap > .serch-box {
+header.down #header .icon-list .search-wrap .serch-box {
     width: 100%;
     height: 100%;
     background-color: black;
 }
 
-.top-bar-warp.down > .top-bar > .right-nav > .right-nav-wrap > .search-wrap > .serch-box > .txt {
-   visibility: hidden;
-    opacity: 0;
+header.down #header .icon-list .search-wrap .serch-box .txt {
+    display: none;
     height: 0;
 }
 
-.top-bar-warp.down > .top-bar > .right-nav > .right-nav-wrap > .search-wrap > .serch-box > .txt > p {
+header.down #header .icon-list .search-wrap .serch-box .txt p {
+    height: 0;
     visibility: hidden;
     opacity: 0;
-    height: 0;
 }
 
-
-/*.nav-2-depth-wrap*/
+/*======================nav-2-depth-wrap========================*/
 
 .nav-2-depth-wrap {
+    position: fixed;
+    top: 60px;
     width: 100%;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    top: 60px;
-    opacity: 0;
     visibility: hidden;
+    opacity: 0;
     transition: 1s;
     z-index: 9;
 }
@@ -236,2130 +360,614 @@ html {
     visibility: visible;
 }
 
-
-.nav-2-depth-wrap > .nav-2-depth {
+.nav-2-depth-wrap .nav-2-depth {
+    display: flex;
     width: 100%;
     height: 100%;
     margin: 0 auto;
 }
 
-.nav-2-depth-wrap > .nav-2-depth > .nav-2-depth-left {
+.nav-2-depth-wrap .nav-2-depth .left-con {
+    position: relative;
     width: 50%;
     height: 100%;
-    position: relative;
 }
 
-.nav-2-depth-wrap > .nav-2-depth > .nav-2-depth-left > .nav-2-depth-list {
-    padding-left: 100px;
-    padding-top: 50px;
-    background-color: white;
+.nav-2-depth-wrap .nav-2-depth .left-con .list {
+    position: absolute;
     height: 100%;
+    padding: 50px 0 0 100px;
+    background-color: white;
     transform: translatex(-150%);
     visibility: hidden;
     transition: 1s;
-    position: absolute;
 }
 
-.nav-2-depth-wrap > .nav-2-depth > .nav-2-depth-left > .nav-2-depth-list:before {
-    content: "";
+.nav-2-depth-wrap .nav-2-depth .left-con .list:before {
     display: block;
-    width: 90%;
-    height: 100%;
-    background-color: white;
+    content: "";
     position: absolute;
     left: -90%;
     top: 0;
+    width: 90%;
+    height: 100%;
+    background-color: white;
 }
 
-.nav-2-depth-wrap > .nav-2-depth > .nav-2-depth-left > .nav-2-depth-list.active {
+.nav-2-depth-wrap .nav-2-depth .left-con .list.active {
     visibility: visible;
     transform: translateX(0);
 }
 
-.nav-2-depth-wrap > .nav-2-depth > .nav-2-depth-left > .nav-2-depth-list > .nav-content > ul > li {
+.nav-2-depth-wrap .nav-2-depth .left-con .nav-content ul li {
+    padding-bottom: 20px;
     font-size: 30px;
     font-weight: bold;
-    padding-bottom: 20px;
 }
 
-.nav-2-depth-wrap > .nav-2-depth > .nav-2-depth-left > .nav-2-depth-list > .nav-rcom {
+.nav-2-depth-wrap .nav-2-depth .left-con .nav-rcom {
     margin-top: 30px;
 }
 
-.nav-2-depth-wrap > .nav-2-depth > .nav-2-depth-left > .nav-2-depth-list > .nav-rcom > ul {
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 20px;
+.nav-2-depth-wrap .nav-2-depth .left-con .nav-rcom ul {
+    display: flex;
     height: 100%;
+    padding: 20px 30px 0 30px;
 }
 
-.nav-2-depth-wrap > .nav-2-depth > .nav-2-depth-left > .nav-2-depth-list > .nav-rcom > ul > li {
+.nav-2-depth-wrap .nav-2-depth .left-con .nav-rcom ul li {
     width: 25%;
     padding-right: 10px;
-    box-sizing: border-box;
     font-size: 14px;
 }
 
-.nav-2-depth-wrap > .nav-2-depth > .nav-2-depth-left > .nav-2-depth-list > .nav-rcom > ul > li > a > img {
+.nav-2-depth-wrap .nav-2-depth .left-con .nav-rcom ul li img {
     width: 100%;
     margin-bottom: 10px;
 }
 
-.nav-2-depth-wrap > .nav-2-depth > .nav-2-depth-right {
+.nav-2-depth-wrap .nav-2-depth .right-con {
+    position: relative;
     width: 50%;
     height: 100%;
-    position: relative;
 }
 
-.nav-2-depth-wrap > .nav-2-depth > .nav-2-depth-right > .x-btn-wrap {
-    width: 60px;
-    height: 60px;
-    position: absolute;
-    right: 0;
+.nav-2-depth-wrap .nav-2-depth .right-con .x-btn-wrap {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    right: 0;
+    width: 60px;
+    height: 60px;
 }
 
-.nav-2-depth-wrap > .nav-2-depth > .nav-2-depth-right > .x-btn-wrap > .x-btn {
+.nav-2-depth-wrap .nav-2-depth .right-con .x-btn-wrap .x-btn {
     width: 20px;
     height: 20px;
     cursor: pointer;
 }
 
-.nav-2-depth-wrap > .nav-2-depth > .nav-2-depth-right > .x-btn-wrap > .x-btn > svg {
+.nav-2-depth-wrap .nav-2-depth .right-con .x-btn-wrap .x-btn svg {
     fill: white;
 }
 
-/*mobile-nav-2-depth-wrap*/
+/*======================mobile-nav-2-depth-wrap========================*/
 
 .mobile-nav-2-depth-wrap {
     display: none;
 }
 
-/*컨트롤 F 누르면 검색기능이 나옴*/
+/*======================sec-summer========================*/
 
-/*summer-wrap*/
-
-.summer-wrap {
+.sec-summer {
+    display: flex;
     width: 100%;
-    background-color: #ddd;
     margin-top: 60px;
 }
 
-.summer-wrap > .left-wrap {
-    width: 50%;
-    padding-bottom: 62.5%;
-    background-color: red;
+.sec-summer > .left {
     background-image: url(../Converse_files/03_Home_01_Template_1440x1800.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
 }
 
-.summer-wrap > .m-btm {
-    display: none;
-}
-
-.summer-wrap > .left-wrap > .txt-box-wrap {
-    padding: 30px;
-    box-sizing: border-box;
-    position: absolute;
-    right: 0;
+.sec-summer > .left > .txt-box-wrap > .txt-box {
     text-align: right;
 }
 
-.summer-wrap > .left-wrap > .txt-box-wrap > .txt-box > p:nth-child(1) {
-    color: white;
-    text-transform: uppercase;
-    font-size: 50px;
-    font-weight: bold;
-    font-family: 'Prompt', sans-serif;
-    margin-bottom: 5px;
-}
-
-.summer-wrap > .left-wrap > .txt-box-wrap > .txt-box > p:nth-child(2) {
-    color: white;
-    font-size: 15px;
-}
-
-.summer-wrap > .left-wrap > .txt-box-wrap > .btn-box {
-    width: 180px;
-    height: 45px;
-    margin-top: 20px;
-    background-color: white;
-    font-size: 15px;
-    text-align: center;
-    line-height: 45px;
-    font-weight: bold;
-    opacity: 1;
-    transition: 0.5s;
+.sec-summer > .left > .txt-box-wrap > a {
     float: right;
+    background: #fff;
     border: 1px solid #000;
 }
 
-.summer-wrap > .left-wrap > .txt-box-wrap > .btn-box:hover {
-    opacity: 0.5;
-}
-
-.summer-wrap > .right-wrap {
-    width: 50%;
-    background-color: blue;
-}
-
-.summer-wrap > .right-wrap > .right-top-img {
-    width: 100%;
-    background-color: pink;
-}
-
-.summer-wrap > .right-wrap > .right-top-img > .right-top-img-left {
-    width: 50%;
-    padding-bottom: 62.5%;
-    background-color: #d4d;
-    position: relative;
-}
-
-.summer-wrap > .right-wrap > .right-top-img > .right-top-img-left > .img-wrap > .right-top-img-left-normal {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+.sec-summer > .right > .top > .left > .img-wrap > .normal-img {
     background-image: url(../Converse_files/571891C_571891C_primary.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 1;
 }
 
-.summer-wrap > .right-wrap > .right-top-img > .right-top-img-left > .img-wrap > .right-top-img-left-hover {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+.sec-summer > .right > .top > .left > .img-wrap > .hover-img {
     background-image: url(../Converse_files/571891C_571891C_hover.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 0;
 }
 
-.summer-wrap > .right-wrap > .right-top-img > .right-top-img-left:hover > .img-wrap > .right-top-img-left-normal {
-    opacity: 0;
-}
-
-.summer-wrap > .right-wrap > .right-top-img > .right-top-img-left:hover > .img-wrap > .right-top-img-left-hover {
-    opacity: 1;
-}
-
-.summer-wrap > .right-wrap > .right-top-img > .right-top-img-left > .icon-txt-wrap > .icon {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-}
-
-.summer-wrap > .right-wrap > .right-top-img > .right-top-img-left > .icon-txt-wrap > .best-seller {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-align: right;
-    font-size: 15px;
-}
-
-.summer-wrap > .right-wrap > .right-top-img > .right-top-img-left > .icon-txt-wrap > .price {
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
-    font-size: 15px;
-}
-
-.summer-wrap > .right-wrap > .right-top-img > .right-top-img-left > .icon-txt-wrap > .price > ul > li:hover {
-    color: black;
-}
-
-.summer-wrap > .right-wrap > .right-top-img > .right-top-img-left > .icon-txt-wrap > .price > ul > li::after {
-    content: "";
-    margin-top: 0.5px;
-    height: 1px;
-    width: 0%;
-    background-color: black;
-    display: block;
-}
-
-.summer-wrap > .right-wrap > .right-top-img > .right-top-img-left > .icon-txt-wrap > .price > ul > li:hover::after {
-    content: "";
-    margin-top: 0.5px;
-    height: 1px;
-    width: 100%;
-    background-color: black;
-    display: block;
-}
-
-.summer-wrap > .right-wrap > .right-top-img > .right-top-img-right {
-    width: 50%;
-    padding-bottom: 62.5%;
-    background-color: gold;
-    position: relative;
-}
-
-.summer-wrap > .right-wrap > .right-top-img > .right-top-img-right > .img-wrap > .right-top-img-right-normal {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+.sec-summer > .right > .top > .right > .img-wrap > .normal-img {
     background-image: url(../Converse_files/571919C_571919C_primary.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 1;
 }
 
-.summer-wrap > .right-wrap > .right-top-img > .right-top-img-right > .img-wrap > .right-top-img-right-hover {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+.sec-summer > .right > .top > .right > .img-wrap > .hover-img {
     background-image: url(../Converse_files/571919C_571919C_hover.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 0;
 }
 
-.summer-wrap > .right-wrap > .right-top-img > .right-top-img-right:hover > .img-wrap > .right-top-img-right-normal {
-    opacity: 0;
-}
-
-.summer-wrap > .right-wrap > .right-top-img > .right-top-img-right:hover > .img-wrap > .right-top-img-right-hover {
-    opacity: 1;
-}
-
-.summer-wrap > .right-wrap > .right-top-img > .right-top-img-right > .icon-txt-wrap > .icon {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-}
-
-.summer-wrap > .right-wrap > .right-top-img > .right-top-img-right > .icon-txt-wrap > .best-seller {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-align: right;
-    font-size: 15px;
-}
-
-.summer-wrap > .right-wrap > .right-top-img > .right-top-img-right > .icon-txt-wrap > .price {
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
-    font-size: 15px;
-}
-
-.summer-wrap > .right-wrap > .right-top-img > .right-top-img-right > .icon-txt-wrap > .price > ul > li:hover {
-    color: black;
-}
-
-.summer-wrap > .right-wrap > .right-top-img > .right-top-img-right > .icon-txt-wrap > .price > ul > li::after {
-    content: "";
-    margin-top: 0.5px;
-    height: 1px;
-    width: 0%;
-    background-color: black;
-    display: block;
-}
-
-.summer-wrap > .right-wrap > .right-top-img > .right-top-img-right > .icon-txt-wrap > .price > ul > li:hover::after {
-    content: "";
-    margin-top: 0.5px;
-    height: 1px;
-    width: 100%;
-    background-color: black;
-    display: block;
-}
-
-.summer-wrap > .right-wrap > .right-btm-img {
-    width: 100%;
-    background-color: orange;
-}
-
-.summer-wrap > .right-wrap > .right-btm-img > .right-btm-img-left {
-    width: 50%;
-    padding-bottom: 62.5%;
-    background-color: skyblue;
-    position: relative;
-}
-
-.summer-wrap > .right-wrap > .right-btm-img > .right-btm-img-left > .img-wrap > .right-btm-img-left-normal {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+.sec-summer > .right > .btm > .left > .img-wrap > .normal-img {
     background-image: url(../Converse_files/571890C_571890C_primary.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 1;
 }
 
-.summer-wrap > .right-wrap > .right-btm-img > .right-btm-img-left > .img-wrap > .right-btm-img-left-hover {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+.sec-summer > .right > .btm > .left > .img-wrap > .hover-img {
     background-image: url(../Converse_files/571890C_571890C_hover.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 0;
 }
 
-.summer-wrap > .right-wrap > .right-btm-img > .right-btm-img-left:hover > .img-wrap > .right-btm-img-left-normal {
-    opacity: 0;
-}
-
-.summer-wrap > .right-wrap > .right-btm-img > .right-btm-img-left:hover > .img-wrap > .right-btm-img-left-hover {
-    opacity: 1;
-}
-
-.summer-wrap > .right-wrap > .right-btm-img > .right-btm-img-left > .icon-txt-wrap > .icon {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-}
-
-.summer-wrap > .right-wrap > .right-btm-img > .right-btm-img-left > .icon-txt-wrap > .best-seller {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-align: right;
-    font-size: 15px;
-}
-
-.summer-wrap > .right-wrap > .right-btm-img > .right-btm-img-left > .icon-txt-wrap > .price {
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
-    font-size: 15px;
-}
-
-.summer-wrap > .right-wrap > .right-btm-img > .right-btm-img-left > .icon-txt-wrap > .price > ul > li:hover {
-    color: black;
-}
-
-.summer-wrap > .right-wrap > .right-btm-img > .right-btm-img-left > .icon-txt-wrap > .price > ul > li::after {
-    content: "";
-    margin-top: 0.5px;
-    height: 1px;
-    width: 0%;
-    background-color: black;
-    display: block;
-}
-
-.summer-wrap > .right-wrap > .right-btm-img > .right-btm-img-left > .icon-txt-wrap > .price > ul > li:hover::after {
-    content: "";
-    margin-top: 0.5px;
-    height: 1px;
-    width: 100%;
-    background-color: black;
-    display: block;
-}
-
-.summer-wrap > .right-wrap > .right-btm-img > .right-btm-img-right {
-    width: 50%;
-    padding-bottom: 62.5%;
-    background-color: black;
-    position: relative;
-}
-
-.summer-wrap > .right-wrap > .right-btm-img > .right-btm-img-right > .img-wrap > .right-btm-img-right-normal {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+.sec-summer > .right > .btm > .right > .img-wrap > .normal-img {
     background-image: url(../Converse_files/171894C_171894C_primary.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 1;
 }
 
-.summer-wrap > .right-wrap > .right-btm-img > .right-btm-img-right > .img-wrap > .right-btm-img-right-hover {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+.sec-summer > .right > .btm > .right > .img-wrap > .hover-img {
     background-image: url(../Converse_files/171894C_171894C_hover.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 0;
 }
 
-.summer-wrap > .right-wrap > .right-btm-img > .right-btm-img-right:hover > .img-wrap > .right-btm-img-right-normal {
-    opacity: 0;
-}
+/*======================sec-choose========================*/
 
-.summer-wrap > .right-wrap > .right-btm-img > .right-btm-img-right:hover > .img-wrap > .right-btm-img-right-hover {
-    opacity: 1;
-}
-
-.summer-wrap > .right-wrap > .right-btm-img > .right-btm-img-right > .icon-txt-wrap > .icon {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-}
-
-.summer-wrap > .right-wrap > .right-btm-img > .right-btm-img-right > .icon-txt-wrap > .best-seller {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-align: right;
-    font-size: 15px;
-}
-
-.summer-wrap > .right-wrap > .right-btm-img > .right-btm-img-right > .icon-txt-wrap > .price {
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
-    font-size: 15px;
-}
-
-.summer-wrap > .right-wrap > .right-btm-img > .right-btm-img-right > .icon-txt-wrap > .price > ul > li:hover {
-    color: black;
-}
-
-.summer-wrap > .right-wrap > .right-btm-img > .right-btm-img-right > .icon-txt-wrap > .price > ul > li::after {
-    content: "";
-    margin-top: 0.5px;
-    height: 1px;
-    width: 0%;
-    background-color: black;
-    display: block;
-}
-
-.summer-wrap > .right-wrap > .right-btm-img > .right-btm-img-right > .icon-txt-wrap > .price > ul > li:hover::after {
-    content: "";
-    margin-top: 0.5px;
-    height: 1px;
-    width: 100%;
-    background-color: black;
-    display: block;
-}
-
-/*choose*/
-
-.choose-wrap {
+.sec-choose {
     padding: 60px 0;
 }
 
-.choose-wrap > .m-btm {
-    display: none;
-}
-
-
-.choose-wrap > .txt-wrap {
+.sec-choose > .txt-wrap {
     width: 100%;
     height: 100px;
     text-align: center;
 }
 
-.choose-wrap > .txt-wrap > p:first-child {
+.sec-choose > .txt-wrap > p:first-child {
     font-size: 40px;
     font-weight: bold;
     text-transform: uppercase;
     cursor: default;
 }
 
-.choose-wrap > .txt-wrap > p:last-child {
+.sec-choose > .txt-wrap > p:last-child {
+    margin-top: 15px;
     font-size: 16px;
     font-weight: bold;
-    margin-top: 15px;
     cursor: pointer;
 }
 
-.choose-wrap > .txt-wrap > p:last-child:hover {
+.sec-choose > .txt-wrap > p:last-child:hover {
     color: #aaa;
 }
 
-.choose-wrap > .shose-icon-wrap > ul {
+.sec-choose > .shose-icon-wrap > ul {
+    display: flex;
     max-width: 900px;
     margin: 0 auto;
     font-size: 16px;
     font-weight: bold;
 }
 
-.choose-wrap > .shose-icon-wrap > ul > li {
+.sec-choose > .shose-icon-wrap > ul > li {
     width: 25%;
 }
 
-.choose-wrap > .shose-icon-wrap > ul > li > a {
+.sec-choose > .shose-icon-wrap > ul > li > a {
     display: block;
     width: 100%;
 }
 
-.choose-wrap > .shose-icon-wrap > ul > li > a > img {
+.sec-choose > .shose-icon-wrap > ul > li > a > img {
     width: 100%;
 }
 
-.choose-wrap > .shose-icon-wrap > ul > li > a > span {
+.sec-choose > .shose-icon-wrap > ul > li > a > span {
     display: block;
     text-align: center;
 }
 
-/*summer-02-wrap*/
+/*======================sec-summer-02========================*/
 
-.summer-02-wrap {
+.sec-summer-02 {
+    display: flex;
     width: 100%;
-    background-color: #ddd;
 }
 
-.summer-02-wrap > .m-btm {
-    display: none;
-}
-
-.summer-02-wrap > .left-wrap {
-    width: 50%;
-    padding-bottom: 62.5%;
-    background-color: red;
+.sec-summer-02 > .left {
     background-image: url(../Converse_files/02_Home_01_Template_1440x1800.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
 }
 
-.summer-02-wrap > .left-wrap > .txt-box-wrap {
-    padding: 30px;
-    box-sizing: border-box;
+.sec-summer-02 > .left > .txt-box-wrap {
     position: absolute;
-    left: 0;
-    bottom: 0;
+    top: auto;
+    left: 30px;
+    bottom: 30px;
+    right: auto;
 }
 
-.summer-02-wrap > .left-wrap > .txt-box-wrap > .txt-box > p:nth-child(1) {
-    text-transform: uppercase;
-    font-size: 50px;
-    font-weight: bold;
-    font-family: 'Prompt', sans-serif;
-    margin-bottom: 5px;
+.sec-summer-02 > .left > .txt-box-wrap p {
+    color: #000;
 }
 
-.summer-02-wrap > .left-wrap > .txt-box-wrap > .txt-box > p:nth-child(2) {
-    font-size: 15px;
+.sec-summer-02 > .left > .txt-box-wrap > a {
+    background: #000;
+    color: #fff;
+    border: 1px solid #000;
 }
 
-.summer-02-wrap > .left-wrap > .txt-box-wrap > .btn-box {
-    width: 180px;
-    height: 45px;
-    margin-top: 20px;
+.sec-summer-02 > .right > .top > .left > .img-wrap > .normal-img {
+    background-image: url(../Converse_files/171215C_171215C_primary.jpg);
+}
+
+.sec-summer-02 > .right > .top > .left > .img-wrap > .hover-img {
+    background-image: url(../Converse_files/171215C_171215C_hover.jpg);
+}
+
+.sec-summer-02 > .right > .top > .right > .img-wrap > .normal-img {
+    background-image: url(../Converse_files/171214C_171214C_primary.jpg);
+}
+
+.sec-summer-02 > .right > .top > .right > .img-wrap > .hover-img {
+    background-image: url(../Converse_files/171214C_171214C_hover.jpg);
+}
+
+.sec-summer-02 > .right > .btm > .left > .img-wrap > .normal-img {
+    background-image: url(../Converse_files/150247C_150247C_primary.jpg);
+}
+
+.sec-summer-02 > .right > .btm > .left > .img-wrap > .hover-img {
+    background-image: url(../Converse_files/150247C_150247C_hover.jpg);
+}
+
+.sec-summer-02 > .right > .btm > .right > .img-wrap > .normal-img {
+    background-image: url(../Converse_files/150249C_150249C_primary.jpg);
+}
+
+.sec-summer-02 > .right > .btm > .right > .img-wrap > .hover-img {
+    background-image: url(../Converse_files/150249C_150249C_hover.jpg);
+}
+
+/*======================sec-floral========================*/
+
+.sec-floral {
+    width: 100%;
+}
+
+.sec-floral > .full-area {
+    background-image: url(../Converse_files/01_Home_04_Template_1440x900_Big.jpg);
+}
+
+.sec-floral > .full-area > .txt-box-wrap {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+
+.sec-floral > .full-area > .txt-box-wrap > .txt-box {
+    color: white;
+}
+
+.sec-floral > .full-area > .txt-box-wrap > .btn-box {
+    background-color: #fff;
+    border: 1px solid #000;
+}
+
+/*======================sec-skid========================*/
+
+.sec-skid {
+    width: 100%;
+}
+
+.sec-skid > .full-area {
+    background-image: url(../Converse_files/01_Home_01_Template_1440x900.jpg);
+}
+
+.sec-skid > .full-area > .txt-box-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: absolute;
+    top: auto;
+    right: auto;
+    width: 100%;
+    height: 100%;
+    padding-left: 30px;
+}
+
+.sec-skid > .full-area > .txt-box-wrap > .txt-box > .main-title {
+    color: #000;
+}
+
+.sec-skid > .full-area > .txt-box-wrap > .txt-box > .sub-title {
+    color: #000;
+}
+
+.sec-skid > .full-area > .txt-box-wrap > .btn-box {
     background-color: #000;
     color: #fff;
-    font-size: 15px;
-    text-align: center;
-    line-height: 45px;
-    font-weight: bold;
-    opacity: 1;
-    transition: 0.5s;
 }
 
-.summer-02-wrap > .left-wrap > .txt-box-wrap > .btn-box:hover {
-    opacity: 0.5;
-}
+/*======================sec-jack========================*/
 
-.summer-02-wrap > .right-wrap {
-    width: 50%;
-    background-color: blue;
-}
-
-.summer-02-wrap > .right-wrap > .right-top-img {
+.sec-jack {
     width: 100%;
-    background-color: pink;
 }
 
-.summer-02-wrap > .right-wrap > .right-top-img > .right-top-img-left {
-    width: 50%;
-    padding-bottom: 62.5%;
-    background-color: #d4d;
-    position: relative;
-}
-
-.summer-02-wrap > .right-wrap > .right-top-img > .right-top-img-left > .img-wrap > .right-top-img-left-normal {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: url(../Converse_files/171215C_171215C_primary.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 1;
-}
-
-.summer-02-wrap > .right-wrap > .right-top-img > .right-top-img-left > .img-wrap > .right-top-img-left-hover {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: url(../Converse_files/171215C_171215C_hover.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 0;
-}
-
-.summer-02-wrap > .right-wrap > .right-top-img > .right-top-img-left:hover > .img-wrap > .right-top-img-left-normal {
-    opacity: 0;
-}
-
-.summer-02-wrap > .right-wrap > .right-top-img > .right-top-img-left:hover > .img-wrap > .right-top-img-left-hover {
-    opacity: 1;
-}
-
-.summer-02-wrap > .right-wrap > .right-top-img > .right-top-img-left > .icon-txt-wrap > .icon {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-}
-
-.summer-02-wrap > .right-wrap > .right-top-img > .right-top-img-left > .icon-txt-wrap > .best-seller {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-align: right;
-    font-size: 15px;
-}
-
-.summer-02-wrap > .right-wrap > .right-top-img > .right-top-img-left > .icon-txt-wrap > .price {
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
-    font-size: 15px;
-}
-
-.summer-02-wrap > .right-wrap > .right-top-img > .right-top-img-left > .icon-txt-wrap > .price > ul > li:hover {
-    color: black;
-}
-
-.summer-02-wrap > .right-wrap > .right-top-img > .right-top-img-left > .icon-txt-wrap > .price > ul > li::after {
-    content: "";
-    margin-top: 0.5px;
-    height: 1px;
-    width: 0%;
-    background-color: black;
-    display: block;
-}
-
-.summer-02-wrap > .right-wrap > .right-top-img > .right-top-img-left > .icon-txt-wrap > .price > ul > li:hover::after {
-    content: "";
-    margin-top: 0.5px;
-    height: 1px;
-    width: 100%;
-    background-color: black;
-    display: block;
-}
-
-.summer-02-wrap > .right-wrap > .right-top-img > .right-top-img-right {
-    width: 50%;
-    padding-bottom: 62.5%;
-    background-color: gold;
-    position: relative;
-}
-
-.summer-02-wrap > .right-wrap > .right-top-img > .right-top-img-right > .img-wrap > .right-top-img-right-normal {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: url(../Converse_files/171214C_171214C_primary.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 1;
-}
-
-.summer-02-wrap > .right-wrap > .right-top-img > .right-top-img-right > .img-wrap > .right-top-img-right-hover {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: url(../Converse_files/171214C_171214C_hover.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 0;
-}
-
-.summer-02-wrap > .right-wrap > .right-top-img > .right-top-img-right:hover > .img-wrap > .right-top-img-right-normal {
-    opacity: 0;
-}
-
-.summer-02-wrap > .right-wrap > .right-top-img > .right-top-img-right:hover > .img-wrap > .right-top-img-right-hover {
-    opacity: 1;
-}
-
-.summer-02-wrap > .right-wrap > .right-top-img > .right-top-img-right > .icon-txt-wrap > .icon {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-}
-
-.summer-02-wrap > .right-wrap > .right-top-img > .right-top-img-right > .icon-txt-wrap > .best-seller {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-align: right;
-    font-size: 15px;
-}
-
-.summer-02-wrap > .right-wrap > .right-top-img > .right-top-img-right > .icon-txt-wrap > .price {
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
-    font-size: 15px;
-}
-
-.summer-02-wrap > .right-wrap > .right-top-img > .right-top-img-right > .icon-txt-wrap > .price > ul > li:hover {
-    color: black;
-}
-
-.summer-02-wrap > .right-wrap > .right-top-img > .right-top-img-right > .icon-txt-wrap > .price > ul > li::after {
-    content: "";
-    margin-top: 0.5px;
-    height: 1px;
-    width: 0%;
-    background-color: black;
-    display: block;
-}
-
-.summer-02-wrap > .right-wrap > .right-top-img > .right-top-img-right > .icon-txt-wrap > .price > ul > li:hover::after {
-    content: "";
-    margin-top: 0.5px;
-    height: 1px;
-    width: 100%;
-    background-color: black;
-    display: block;
-}
-
-.summer-02-wrap > .right-wrap > .right-btm-img {
-    width: 100%;
-    background-color: orange;
-}
-
-.summer-02-wrap > .right-wrap > .right-btm-img > .right-btm-img-left {
-    width: 50%;
-    padding-bottom: 62.5%;
-    background-color: skyblue;
-    position: relative;
-}
-
-.summer-02-wrap > .right-wrap > .right-btm-img > .right-btm-img-left > .img-wrap > .right-btm-img-left-normal {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: url(../Converse_files/150247C_150247C_primary.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 1;
-}
-
-.summer-02-wrap > .right-wrap > .right-btm-img > .right-btm-img-left > .img-wrap > .right-btm-img-left-hover {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: url(../Converse_files/150247C_150247C_hover.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 0;
-}
-
-.summer-02-wrap > .right-wrap > .right-btm-img > .right-btm-img-left:hover > .img-wrap > .right-btm-img-left-normal {
-    opacity: 0;
-}
-
-.summer-02-wrap > .right-wrap > .right-btm-img > .right-btm-img-left:hover > .img-wrap > .right-btm-img-left-hover {
-    opacity: 1;
-}
-
-.summer-02-wrap > .right-wrap > .right-btm-img > .right-btm-img-left > .icon-txt-wrap > .icon {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-}
-
-.summer-02-wrap > .right-wrap > .right-btm-img > .right-btm-img-left > .icon-txt-wrap > .best-seller {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-align: right;
-    font-size: 15px;
-}
-
-.summer-02-wrap > .right-wrap > .right-btm-img > .right-btm-img-left > .icon-txt-wrap > .price {
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
-    font-size: 15px;
-}
-
-.summer-02-wrap > .right-wrap > .right-btm-img > .right-btm-img-left > .icon-txt-wrap > .price > ul > li:hover {
-    color: black;
-}
-
-.summer-02-wrap > .right-wrap > .right-btm-img > .right-btm-img-left > .icon-txt-wrap > .price > ul > li::after {
-    content: "";
-    margin-top: 0.5px;
-    height: 1px;
-    width: 0%;
-    background-color: black;
-    display: block;
-}
-
-.summer-02-wrap > .right-wrap > .right-btm-img > .right-btm-img-left > .icon-txt-wrap > .price > ul > li:hover::after {
-    content: "";
-    margin-top: 0.5px;
-    height: 1px;
-    width: 100%;
-    background-color: black;
-    display: block;
-}
-
-.summer-02-wrap > .right-wrap > .right-btm-img > .right-btm-img-right {
-    width: 50%;
-    padding-bottom: 62.5%;
-    background-color: black;
-    position: relative;
-}
-
-.summer-02-wrap > .right-wrap > .right-btm-img > .right-btm-img-right > .img-wrap > .right-btm-img-right-normal {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: url(../Converse_files/150249C_150249C_primary.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 1;
-}
-
-.summer-02-wrap > .right-wrap > .right-btm-img > .right-btm-img-right > .img-wrap > .right-btm-img-right-hover {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: url(../Converse_files/150249C_150249C_hover.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 0;
-}
-
-.summer-02-wrap > .right-wrap > .right-btm-img > .right-btm-img-right:hover > .img-wrap > .right-btm-img-right-normal {
-    opacity: 0;
-}
-
-.summer-02-wrap > .right-wrap > .right-btm-img > .right-btm-img-right:hover > .img-wrap > .right-btm-img-right-hover {
-    opacity: 1;
-}
-
-.summer-02-wrap > .right-wrap > .right-btm-img > .right-btm-img-right > .icon-txt-wrap > .icon {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-}
-
-.summer-02-wrap > .right-wrap > .right-btm-img > .right-btm-img-right > .icon-txt-wrap > .best-seller {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-align: right;
-    font-size: 15px;
-}
-
-.summer-02-wrap > .right-wrap > .right-btm-img > .right-btm-img-right > .icon-txt-wrap > .price {
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
-    font-size: 15px;
-}
-
-.summer-02-wrap > .right-wrap > .right-btm-img > .right-btm-img-right > .icon-txt-wrap > .price > ul > li:hover {
-    color: black;
-}
-
-.summer-02-wrap > .right-wrap > .right-btm-img > .right-btm-img-right > .icon-txt-wrap > .price > ul > li::after {
-    content: "";
-    margin-top: 0.5px;
-    height: 1px;
-    width: 0%;
-    background-color: black;
-    display: block;
-}
-
-.summer-02-wrap > .right-wrap > .right-btm-img > .right-btm-img-right > .icon-txt-wrap > .price > ul > li:hover::after {
-    content: "";
-    margin-top: 0.5px;
-    height: 1px;
-    width: 100%;
-    background-color: black;
-    display: block;
-}
-
-/*floral-wrap*/
-
-.floral-wrap {
-    width: 100%;
-    background-color: #ddd;
-}
-
-.floral-wrap > .m-btm {
-    display: none;
-}
-
-
-.floral-wrap > .floral {
-    width: 100%;
-    padding-bottom: 62.5%;
-    background-color: blue;
-    background-image: url(../Converse_files/01_Home_04_Template_1440x900_Big.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
-}
-
-.floral-wrap > .floral > .txt-box-wrap {
-    box-sizing: border-box;
-    position: absolute;
-    top: 30px;
-    left: 30px;
-}
-
-.floral-wrap > .floral > .txt-box-wrap > .txt-box {
-    color: white;
-}
-
-.floral-wrap > .floral > .txt-box-wrap > .txt-box > p:first-child {
-    text-transform: uppercase;
-    font-size: 50px;
-    font-weight: bold;
-}
-
-.floral-wrap > .floral > .txt-box-wrap > .txt-box > p:last-child {
-    font-size: 15px;
-    margin-top: 20px;
-}
-
-.floral-wrap > .floral > .txt-box-wrap > .btn-box {
-    width: 180px;
-    height: 45px;
-    margin-top: 10px;
-    background-color: white;
-    border: 1px solid black;
-    text-align: center;
-    line-height: 45px;
-    font-weight: bold;
-    opacity: 1;
-    transition: 0.5s;
-    font-size: 15px;
-}
-
-.floral-wrap > .floral > .txt-box-wrap > .btn-box:hover {
-    opacity: 0.5;
-}
-
-
-/*skid-wrap*/
-
-.skid-wrap {
-    width: 100%;
-    background-color: #ddd;
-
-}
-
-.skid-wrap > .m-btm {
-    display: none;
-}
-
-.skid-wrap > .skid {
-    width: 100%;
-    padding-bottom: 62.5%;
-    background-color: blue;
-    background-image: url(../Converse_files/01_Home_01_Template_1440x900.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
-}
-
-.skid-wrap > .skid > .txt-box-wrap {
-    box-sizing: border-box;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-}
-
-
-.skid-wrap > .skid > .txt-box-wrap > .txt-box {
-    color: #000;
-}
-
-.skid-wrap > .skid > .txt-box-wrap > .txt-box > p:first-child {
-    text-transform: uppercase;
-    font-size: 50px;
-    font-weight: bold;
-}
-
-.skid-wrap > .skid > .txt-box-wrap > .txt-box > p:last-child {
-    font-size: 15px;
-    margin-top: 20px;
-}
-
-.skid-wrap > .skid > .txt-box-wrap > .btn-box {
-    width: 180px;
-    height: 45px;
-    margin-top: 10px;
-    background-color: black;
-    color: white;
-    text-align: center;
-    line-height: 45px;
-    font-weight: bold;
-    opacity: 1;
-    transition: 0.5s;
-    font-size: 15px;
-}
-
-.skid-wrap > .skid > .txt-box-wrap > .btn-box:hover {
-    opacity: 0.5;
-}
-
-
-/*jack-wrap*/
-
-.jack-wrap {
-    width: 100%;
-    background-color: #ddd;
-}
-
-.jack-wrap > .m-btm {
-    display: none;
-}
-
-.jack-wrap > .jack {
-    width: 100%;
-    padding-bottom: 62.5%;
-    background-color: blue;
+.sec-jack > .full-area {
     background-image: url(../Converse_files/jack.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
 }
 
-.jack-wrap > .jack > .txt-box-wrap {
-    box-sizing: border-box;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    padding: 30px;
+.sec-jack > .full-area > .txt-box-wrap {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+    position: absolute;
+    top: auto;
+    right: auto;
+    width: 100%;
+    height: 100%;
+    padding-left: 30px;
 }
 
-.jack-wrap > .jack > .txt-box-wrap > .txt-box {
+.sec-jack > .full-area > .txt-box-wrap > .txt-box > .main-title {
     color: #000;
 }
 
-.jack-wrap > .jack > .txt-box-wrap > .txt-box > p:first-child {
-    text-transform: uppercase;
-    font-size: 50px;
-    font-weight: bold;
+.sec-jack > .full-area > .txt-box-wrap > .txt-box > .sub-title {
+    color: #000;
 }
 
-.jack-wrap > .jack > .txt-box-wrap > .txt-box > p:last-child {
-    font-size: 15px;
-    margin-top: 20px;
-}
-
-.jack-wrap > .jack > .txt-box-wrap > .btn-box {
-    width: 180px;
-    height: 45px;
-    margin-top: 10px;
+.sec-jack > .full-area > .txt-box-wrap > .btn-box {
     background-color: #000;
-    color: white;
-    text-align: center;
-    line-height: 45px;
-    font-weight: bold;
-    opacity: 1;
-    transition: 0.5s;
-    font-size: 15px;
+    color: #fff;
 }
 
-.jack-wrap > .jackl > .txt-box-wrap > .btn-box:hover {
-    opacity: 0.5;
-}
+/*======================sec-satin========================*/
 
-/*satin-wrap*/
-
-.satin-wrap {
+.sec-satin {
+    display: flex;
     width: 100%;
-    background-color: #ddd;
 }
 
-.satin-wrap > .m-btm {
-    display: none;
+.sec-satin > .left {
+    background-image: url(../Converse_files/03_Home_01_Template_1440x18002.jpg);
 }
 
-.satin-wrap > .left-cozy-wrap {
-    width: 50%;
-    height: 100%;
-    background-color: orange;
+.sec-satin > .left > .txt-box-wrap {
+    position: absolute;
+    top: auto;
+    left: 30px;
+    bottom: 30px;
+    right: auto;
 }
 
-.satin-wrap > .left-cozy-wrap > .top-left-cozy {
-    width: 100%;
-    padding-bottom: 62.5%;
-    background-color: #d4d;
+.sec-satin > .left > .txt-box-wrap > .btn-box {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+
+.sec-satin > .right > .top {
     background-image: url(../Converse_files/KakaoTalk_20210427_175728510.jpg);
-    background-size: cover;
-    background-position: center;
-    position: relative;
 }
 
-.satin-wrap > .left-cozy-wrap > .top-left-cozy > .txt-box {
+.sec-satin > .right > .top > .txt-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    visibility: hidden;
-    transition: 0.5s;
     text-transform: uppercase;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
 }
 
-.satin-wrap > .left-cozy-wrap > .top-left-cozy:hover > .txt-box {
-    opacity: 1;
+.sec-satin > .right > .top:hover > .txt-box {
     visibility: visible;
+    opacity: 1;
 }
 
-.satin-wrap > .left-cozy-wrap > .top-left-cozy > .txt-box > p {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.sec-satin > .right > .top > .txt-box > p {
     font-size: 30px;
     font-weight: bold;
     color: white;
     text-align: center;
 }
 
-.satin-wrap > .left-cozy-wrap > .btm-left-cozy > .left-btm-left-cozy {
-    width: 50%;
-    padding-bottom: 62.5%;
-    background-color: gold;
-    position: relative;
-}
-
-.satin-wrap > .left-cozy-wrap > .btm-left-cozy > .left-btm-left-cozy > .img-box > .left-btm-left-cozy-nomal {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+.sec-satin > .right > .btm > .left > .img-wrap > .normal-img {
     background-image: url(../Converse_files/560659C_560659C_primary.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 1;
 }
 
-.satin-wrap > .left-cozy-wrap > .btm-left-cozy > .left-btm-left-cozy > .img-box > .left-btm-left-cozy-hover {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+.sec-satin > .right > .btm > .left > .img-wrap > .hover-img {
     background-image: url(../Converse_files/560659C_560659C_hover.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 0;
 }
 
-.satin-wrap > .left-cozy-wrap > .btm-left-cozy > .left-btm-left-cozy > .icon-txt-wrap > .icon {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-}
-
-.satin-wrap > .left-cozy-wrap > .btm-left-cozy > .left-btm-left-cozy > .icon-txt-wrap > .best-seller {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-align: right;
-    font-size: 15px;
-}
-
-.satin-wrap > .left-cozy-wrap > .btm-left-cozy > .left-btm-left-cozy > .icon-txt-wrap > .price {
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
-    font-size: 15px;
-}
-
-.satin-wrap > .left-cozy-wrap > .btm-left-cozy > .left-btm-left-cozy > .icon-txt-wrap > .price > ul > li:hover {
-    color: black;
-}
-
-.satin-wrap > .left-cozy-wrap > .btm-left-cozy > .left-btm-left-cozy > .icon-txt-wrap > .price > ul > li::after {
-    content: "";
-    margin-top: 0.5px;
-    height: 1px;
-    width: 0%;
-    background-color: black;
-    display: block;
-}
-
-.satin-wrap > .left-cozy-wrap > .btm-left-cozy > .left-btm-left-cozy > .icon-txt-wrap > .price > ul > li:hover::after {
-    content: "";
-    margin-top: 0.5px;
-    height: 1px;
-    width: 100%;
-    background-color: black;
-    display: block;
-}
-
-.satin-wrap > .left-cozy-wrap > .btm-left-cozy > .right-btm-left-cozy {
-    width: 50%;
-    padding-bottom: 62.5%;
-    background-color: pink;
-    position: relative;
-}
-
-.satin-wrap > .left-cozy-wrap > .btm-left-cozy > .right-btm-left-cozy > .img-box > .right-btm-left-cozy-nomal {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+.sec-satin > .right > .btm > .right > .img-wrap > .normal-img {
     background-image: url(../Converse_files/03_Home_03_Template_720x900.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 1;
 }
 
+/*======================sec-color========================*/
 
-.satin-wrap > .left-cozy-wrap > .btm-left-cozy > .right-btm-left-cozy > .icon-txt-wrap > .icon {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-}
-
-.satin-wrap > .left-cozy-wrap > .btm-left-cozy > .right-btm-left-cozy > .icon-txt-wrap > .best-seller {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-align: right;
-    font-size: 15px;
-}
-
-.satin-wrap > .left-cozy-wrap > .btm-left-cozy > .right-btm-left-cozy > .icon-txt-wrap > .price {
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
-    font-size: 15px;
-}
-
-.satin-wrap > .left-cozy-wrap > .btm-left-cozy > .right-btm-left-cozy > .icon-txt-wrap > .price > ul > li:hover {
-    color: black;
-}
-
-.satin-wrap > .left-cozy-wrap > .btm-left-cozy > .right-btm-left-cozy > .icon-txt-wrap > .price > ul > li::after {
-    content: "";
-    margin-top: 0.5px;
-    height: 1px;
-    width: 0%;
-    background-color: black;
-    display: block;
-}
-
-.satin-wrap > .left-cozy-wrap > .btm-left-cozy > .right-btm-left-cozy > .icon-txt-wrap > .price > ul > li:hover::after {
-    content: "";
-    margin-top: 0.5px;
-    height: 1px;
+.sec-color {
+    display: flex;
     width: 100%;
-    background-color: black;
-    display: block;
 }
 
-.satin-wrap > .right-cozy-wrap {
-    width: 50%;
-    padding-bottom: 62.5%;
-    background-color: red;
-    background-image: url(../Converse_files/03_Home_01_Template_1440x18002.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
+.sec-color > .left > .top > .left > .img-wrap > .normal-img {
+    background-image: url(../Converse_files/01_Home_03_Template_720x900.jpg);
 }
 
-.satin-wrap > .right-cozy-wrap > .txt-box-wrap {
-    box-sizing: border-box;
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
+.sec-color > .left > .top > .right > .img-wrap > .normal-img {
+    background-image: url(../Converse_files/570788C_570788C_primary.jpg);
 }
 
-.satin-wrap > .right-cozy-wrap > .txt-box-wrap > .txt-box {
-    color: white;
+.sec-color > .left > .top > .right > .img-wrap > .hover-img {
+    background-image: url(../Converse_files/01_Home_03_Template_720x900.jpg);
 }
 
-.o {
-    display: none;
+.sec-color > .left > .btm > .left > .img-wrap > .normal-img {
+    background-image: url(../Converse_files/570787C_570787C_primary.jpg);
 }
 
-.satin-wrap > .right-cozy-wrap > .txt-box-wrap > .txt-box > p:first-child {
-    text-transform: uppercase;
-    font-size: 50px;
-    font-weight: bold;
+.sec-color > .left > .btm > .left > .img-wrap > .hover-img {
+    background-image: url(../Converse_files/570787C_570787C_hover.jpg);
 }
 
-.satin-wrap > .right-cozy-wrap > .txt-box-wrap > .txt-box > p:last-child {
-    font-size: 15px;
-    margin-top: 20px;
+.sec-color > .left > .btm > .right > .img-wrap > .normal-img {
+    background-image: url(../Converse_files/570789C_570789C_primary.jpg);
 }
 
-.satin-wrap > .right-cozy-wrap > .txt-box-wrap > .btn-box {
-    width: 180px;
-    height: 45px;
-    margin-top: 10px;
-    background-color: white;
-    border: 1px solid black;
-    text-align: center;
-    line-height: 45px;
-    font-weight: bold;
-    opacity: 1;
-    transition: 0.5s;
-    font-size: 15px;
+.sec-color > .left > .btm > .right > .img-wrap > .hover-img {
+    background-image: url(../Converse_files/570789C_570789C_hover.jpg);
 }
 
-.satin-wrap > .right-cozy-wrap > .txt-box-wrap > .btn-box:hover {
-    opacity: 0.5;
-}
-
-
-/*color-wrap*/
-
-.color-wrap {
-    width: 100%;
-    background-color: #ddd;
-}
-
-.color-wrap > .m-btm {
-    display: none;
-}
-
-.color-wrap > .left-wrap {
-    width: 50%;
-    padding-bottom: 62.5%;
-    background-color: red;
+.sec-color > .right {
     background-image: url(../Converse_files/01_Home_01_Template_1440x1800.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
 }
 
-.color-wrap > .left-wrap > .txt-box-wrap {
-    padding: 30px;
-    box-sizing: border-box;
+.sec-color > .right > .txt-box-wrap {
     position: absolute;
+    top: 30px;
+    left: 30px;
+    right: auto;
 }
 
-.color-wrap > .left-wrap > .txt-box-wrap > .txt-box {
+.sec-color > .right > .txt-box-wrap > .txt-box > .main-title {
     color: #000;
 }
 
-.color-wrap > .left-wrap > .txt-box-wrap > .txt-box > p:nth-child(1) {
-    text-transform: uppercase;
-    font-size: 50px;
-    font-weight: bold;
-    font-family: 'Prompt', sans-serif;
-    margin-bottom: 5px;
+.sec-color > .right > .txt-box-wrap > .txt-box > .sub-title {
+    color: #000;
 }
 
-.color-wrap > .left-wrap > .txt-box-wrap > .txt-box > p:nth-child(2) {
-    font-size: 15px;
-}
-
-.color-wrap > .left-wrap > .txt-box-wrap > .btn-box {
-    width: 180px;
-    height: 45px;
-    margin-top: 20px;
+.sec-color > .right > .txt-box-wrap > .btn-box {
     background-color: #000;
-    color: white;
-    font-size: 0.75vw;
-    text-align: center;
-    line-height: 45px;
-    font-weight: bold;
-    opacity: 1;
-    transition: 0.5s;
-    font-size: 15px;
+    color: #fff;
 }
 
-.color-wrap > .left-wrap > .txt-box-wrap > .btn-box:hover {
-    opacity: 0.5;
-}
+/*======================sec-miffy========================*/
 
-.color-wrap > .right-wrap {
-    width: 50%;
-    background-color: blue;
-}
-
-.color-wrap > .right-wrap > .right-top-img {
+.sec-miffy {
+    display: flex;
     width: 100%;
-    background-color: pink;
 }
 
-.color-wrap > .right-wrap > .right-top-img > .right-top-img-left {
-    width: 50%;
-    padding-bottom: 62.5%;
-    background-color: #d4d;
-    position: relative;
-}
-
-.color-wrap > .right-wrap > .right-top-img > .right-top-img-left > .img-wrap > .right-top-img-left-normal {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: url(../Converse_files/01_Home_03_Template_720x900.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 1;
-}
-
-.color-wrap > .right-wrap > .right-top-img > .right-top-img-right {
-    width: 50%;
-    padding-bottom: 62.5%;
-    background-color: gold;
-    position: relative;
-}
-
-.color-wrap > .right-wrap > .right-top-img > .right-top-img-right > .img-wrap > .right-top-img-right-normal {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: url(../Converse_files/570788C_570788C_primary.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 1;
-}
-
-.color-wrap > .right-wrap > .right-top-img > .right-top-img-right > .img-wrap > .right-top-img-right-hover {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: url(../Converse_files/570788C_570788C_hover.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 0;
-}
-
-.color-wrap > .right-wrap > .right-top-img > .right-top-img-right:hover > .img-wrap > .right-top-img-right-normal {
-    opacity: 0;
-}
-
-.color-wrap > .right-wrap > .right-top-img > .right-top-img-right:hover > .img-wrap > .right-top-img-right-hover {
-    opacity: 1;
-}
-
-.color-wrap > .right-wrap > .right-top-img > .right-top-img-right > .icon-txt-wrap > .icon {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-}
-
-.color-wrap > .right-wrap > .right-top-img > .right-top-img-right > .icon-txt-wrap > .best-seller {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-align: right;
-    font-size: 15px;
-}
-
-.color-wrap > .right-wrap > .right-top-img > .right-top-img-right > .icon-txt-wrap > .price {
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
-    font-size: 15px;
-}
-
-.color-wrap > .right-wrap > .right-top-img > .right-top-img-right > .icon-txt-wrap > .price > ul > li:hover {
-    color: black;
-}
-
-.color-wrap > .right-wrap > .right-top-img > .right-top-img-right > .icon-txt-wrap > .price > ul > li::after {
-    content: "";
-    margin-top: 0.5px;
-    height: 1px;
-    width: 0%;
-    background-color: black;
-    display: block;
-}
-
-.color-wrap > .right-wrap > .right-top-img > .right-top-img-right > .icon-txt-wrap > .price > ul > li:hover::after {
-    content: "";
-    margin-top: 0.5px;
-    height: 1px;
-    width: 100%;
-    background-color: black;
-    display: block;
-}
-
-.color-wrap > .right-wrap > .right-btm-img {
-    width: 100%;
-    background-color: orange;
-}
-
-.color-wrap > .right-wrap > .right-btm-img > .right-btm-img-left {
-    width: 50%;
-    padding-bottom: 62.5%;
-    background-color: skyblue;
-    position: relative;
-}
-
-.color-wrap > .right-wrap > .right-btm-img > .right-btm-img-left > .img-wrap > .right-btm-img-left-normal {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: url(../Converse_files/570787C_570787C_primary.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 1;
-}
-
-.color-wrap > .right-wrap > .right-btm-img > .right-btm-img-left > .img-wrap > .right-btm-img-left-hover {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: url(../Converse_files/570787C_570787C_hover.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 0;
-}
-
-.color-wrap > .right-wrap > .right-btm-img > .right-btm-img-left:hover > .img-wrap > .right-btm-img-left-normal {
-    opacity: 0;
-}
-
-.color-wrap > .right-wrap > .right-btm-img > .right-btm-img-left:hover > .img-wrap > .right-btm-img-left-hover {
-    opacity: 1;
-}
-
-.color-wrap > .right-wrap > .right-btm-img > .right-btm-img-left > .icon-txt-wrap > .icon {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-}
-
-.color-wrap > .right-wrap > .right-btm-img > .right-btm-img-left > .icon-txt-wrap > .best-seller {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-align: right;
-    font-size: 15px;
-}
-
-.color-wrap > .right-wrap > .right-btm-img > .right-btm-img-left > .icon-txt-wrap > .price {
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
-    font-size: 15px;
-}
-
-.color-wrap > .right-wrap > .right-btm-img > .right-btm-img-left > .icon-txt-wrap > .price > ul > li:hover {
-    color: black;
-}
-
-.color-wrap > .right-wrap > .right-btm-img > .right-btm-img-left > .icon-txt-wrap > .price > ul > li::after {
-    content: "";
-    margin-top: 0.5px;
-    height: 1px;
-    width: 0%;
-    background-color: black;
-    display: block;
-}
-
-.color-wrap > .right-wrap > .right-btm-img > .right-btm-img-left > .icon-txt-wrap > .price > ul > li:hover::after {
-    content: "";
-    margin-top: 0.5px;
-    height: 1px;
-    width: 100%;
-    background-color: black;
-    display: block;
-}
-
-.color-wrap > .right-wrap > .right-btm-img > .right-btm-img-right {
-    width: 50%;
-    padding-bottom: 62.5%;
-    background-color: black;
-    position: relative;
-}
-
-.color-wrap > .right-wrap > .right-btm-img > .right-btm-img-right > .img-wrap > .right-btm-img-right-normal {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: url(../Converse_files/570789C_570789C_primary.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 1;
-}
-
-.color-wrap > .right-wrap > .right-btm-img > .right-btm-img-right > .img-wrap > .right-btm-img-right-hover {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: url(../Converse_files/570789C_570789C_hover.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 0;
-}
-
-.color-wrap > .right-wrap > .right-btm-img > .right-btm-img-right:hover > .img-wrap > .right-btm-img-right-normal {
-    opacity: 0;
-}
-
-.color-wrap > .right-wrap > .right-btm-img > .right-btm-img-right:hover > .img-wrap > .right-btm-img-right-hover {
-    opacity: 1;
-}
-
-.color-wrap > .right-wrap > .right-btm-img > .right-btm-img-right > .icon-txt-wrap > .icon {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-}
-
-.color-wrap > .right-wrap > .right-btm-img > .right-btm-img-right > .icon-txt-wrap > .best-seller {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-align: right;
-    font-size: 15px;
-}
-
-.color-wrap > .right-wrap > .right-btm-img > .right-btm-img-right > .icon-txt-wrap > .price {
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
-    font-size: 15px;
-}
-
-.color-wrap > .right-wrap > .right-btm-img > .right-btm-img-right > .icon-txt-wrap > .price > ul > li:hover {
-    color: black;
-}
-
-.color-wrap > .right-wrap > .right-btm-img > .right-btm-img-right > .icon-txt-wrap > .price > ul > li::after {
-    content: "";
-    margin-top: 0.5px;
-    height: 1px;
-    width: 0%;
-    background-color: black;
-    display: block;
-}
-
-.color-wrap > .right-wrap > .right-btm-img > .right-btm-img-right > .icon-txt-wrap > .price > ul > li:hover::after {
-    content: "";
-    margin-top: 0.5px;
-    height: 1px;
-    width: 100%;
-    background-color: black;
-    display: block;
-}
-
-/*miffy-wrap*/
-
-.miffy-wrap {
-    width: 100%;
-    background-color: #ddd;
-}
-
-.miffy-wrap > .m-btm {
-    display: none;
-}
-
-.miffy-wrap > .left-cozy-wrap {
-    width: 50%;
-    height: 100%;
-    background-color: orange;
-}
-
-.miffy-wrap > .left-cozy-wrap > .top-left-cozy {
-    width: 100%;
-    padding-bottom: 62.5%;
-    padding-top: 0;
-    background-color: #d4d;
-    position: relative;
+.sec-miffy > .left > .top > .img-wrap > .normal-img {
     background-image: url(../gif/ezgif.com-gif-maker.gif);
-    background-size: cover;
 }
 
-.miffy-wrap > .left-cozy-wrap > .btm-left-cozy > .left-btm-left-cozy {
-    width: 50%;
-    padding-bottom: 62.5%;
-    background-color: gold;
-    position: relative;
-}
-
-.miffy-wrap > .left-cozy-wrap > .btm-left-cozy > .left-btm-left-cozy > .img-box > .left-btm-left-cozy-nomal {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+.sec-miffy > .left > .btm > .left > .img-wrap > .normal-img {
     background-image: url(../Converse_files/171951C_171951C_primary.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 1;
 }
 
-.miffy-wrap > .left-cozy-wrap > .btm-left-cozy > .left-btm-left-cozy > .img-box > .left-btm-left-cozy-hover {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+.sec-miffy > .left > .btm > .left > .img-wrap > .hover-img {
     background-image: url(../Converse_files/171951C_171951C_hover.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 0;
 }
 
-.miffy-wrap > .left-cozy-wrap > .btm-left-cozy > .left-btm-left-cozy:hover > .img-box > .left-btm-left-cozy-nomal {
-    opacity: 0;
-}
-
-.miffy-wrap > .left-cozy-wrap > .btm-left-cozy > .left-btm-left-cozy:hover > .img-box > .left-btm-left-cozy-hover {
-    opacity: 1;
-}
-
-.miffy-wrap > .left-cozy-wrap > .btm-left-cozy > .left-btm-left-cozy > .icon-txt-wrap > .icon {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-}
-
-.miffy-wrap > .left-cozy-wrap > .btm-left-cozy > .left-btm-left-cozy > .icon-txt-wrap > .best-seller {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-align: right;
-    font-size: 15px;
-}
-
-.miffy-wrap > .left-cozy-wrap > .btm-left-cozy > .left-btm-left-cozy > .icon-txt-wrap > .price {
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
-    font-size: 15px;
-}
-
-.miffy-wrap > .left-cozy-wrap > .btm-left-cozy > .left-btm-left-cozy > .icon-txt-wrap > .price > ul > li:hover {
-    color: black;
-}
-
-.miffy-wrap > .left-cozy-wrap > .btm-left-cozy > .left-btm-left-cozy > .icon-txt-wrap > .price > ul > li::after {
-    content: "";
-    margin-top: 0.5px;
-    height: 1px;
-    width: 0%;
-    background-color: black;
-    display: block;
-}
-
-.miffy-wrap > .left-cozy-wrap > .btm-left-cozy > .left-btm-left-cozy > .icon-txt-wrap > .price > ul > li:hover::after {
-    content: "";
-    margin-top: 0.5px;
-    height: 1px;
-    width: 100%;
-    background-color: black;
-    display: block;
-}
-
-.miffy-wrap > .left-cozy-wrap > .btm-left-cozy > .right-btm-left-cozy {
-    width: 50%;
-    padding-bottom: 62.5%;
-    background-color: pink;
-    position: relative;
-}
-
-.miffy-wrap > .left-cozy-wrap > .btm-left-cozy > .right-btm-left-cozy > .img-box > .right-btm-left-cozy-nomal {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+.sec-miffy > .left > .btm > .right > .img-wrap > .normal-img {
     background-image: url(../Converse_files/171851C_171851C_primary.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 1;
 }
 
-.miffy-wrap > .left-cozy-wrap > .btm-left-cozy > .right-btm-left-cozy > .img-box > .right-btm-left-cozy-hover {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+.sec-miffy > .left > .btm > .right > .img-wrap > .hover-img {
     background-image: url(../Converse_files/171851C_171851C_hover.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 0;
 }
 
-.miffy-wrap > .left-cozy-wrap > .btm-left-cozy > .right-btm-left-cozy:hover > .img-box > .right-btm-left-cozy-nomal {
-    opacity: 0;
-}
-
-.miffy-wrap > .left-cozy-wrap > .btm-left-cozy > .right-btm-left-cozy:hover > .img-box > .right-btm-left-cozy-hover {
-    opacity: 1;
-}
-
-.miffy-wrap > .left-cozy-wrap > .btm-left-cozy > .right-btm-left-cozy > .icon-txt-wrap > .icon {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-}
-
-.miffy-wrap > .left-cozy-wrap > .btm-left-cozy > .right-btm-left-cozy > .icon-txt-wrap > .best-seller {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-align: right;
-    font-size: 15px;
-}
-
-.miffy-wrap > .left-cozy-wrap > .btm-left-cozy > .right-btm-left-cozy > .icon-txt-wrap > .price {
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
-    font-size: 15px;
-}
-
-.miffy-wrap > .left-cozy-wrap > .btm-left-cozy > .right-btm-left-cozy > .icon-txt-wrap > .price > ul > li:hover {
-    color: black;
-}
-
-.miffy-wrap > .left-cozy-wrap > .btm-left-cozy > .right-btm-left-cozy > .icon-txt-wrap > .price > ul > li::after {
-    content: "";
-    margin-top: 0.5px;
-    height: 1px;
-    width: 0%;
-    background-color: black;
-    display: block;
-}
-
-.miffy-wrap > .left-cozy-wrap > .btm-left-cozy > .right-btm-left-cozy > .icon-txt-wrap > .price > ul > li:hover::after {
-    content: "";
-    margin-top: 0.5px;
-    height: 1px;
-    width: 100%;
-    background-color: black;
-    display: block;
-}
-
-.miffy-wrap > .right-cozy-wrap {
-    width: 50%;
-    padding-bottom: 62.5%;
-    background-color: red;
+.sec-miffy > .right {
     background-image: url(../Converse_files/01_Home_01_Template_1440x18001.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
 }
 
-.miffy-wrap > .right-cozy-wrap > .txt-box-wrap {
-    box-sizing: border-box;
-    position: absolute;
-    top: 20px;
-    right: 30px;
+.sec-miffy > .right > .txt-box-wrap {
     text-align: right;
 }
 
-.miffy-wrap > .right-cozy-wrap > .txt-box-wrap > .txt-box {
-    color: white;
-}
-
-.miffy-wrap > .right-cozy-wrap > .txt-box-wrap > .txt-box > p:first-child {
-    text-transform: uppercase;
-    font-size: 50px;
-    font-weight: bold;
-}
-
-.miffy-wrap > .right-cozy-wrap > .txt-box-wrap > .txt-box > p:last-child {
-    font-size: 15px;
-    margin-top: 20px;
-}
-
-.miffy-wrap > .right-cozy-wrap > .txt-box-wrap > .btn-box {
-    position: absolute;
-    right: 0;
+.sec-miffy > .right > .txt-box-wrap > .btn-box {
     width: 220px;
-    height: 45px;
-    margin-top: 10px;
-    font-size: 14px;
-    background-color: white;
-    text-align: center;
-    line-height: 45px;
-    font-weight: bold;
-    opacity: 1;
-    transition: 0.5s;
+    float: right;
+    background-color: #fff;
+    color: #000;
     border: 1px solid #000;
-    font-size: 15px;
 }
 
-.miffy-wrap > .right-cozy-wrap > .txt-box-wrap > .btn-box:hover {
-    opacity: 0.5;
-}
+/*======================sec-seasonal========================*/
 
-/*.seasonal-wrap*/
-
-.seasonal-wrap {
+.sec-seasonal {
     width: 100%;
-    background-color: #ddd;
 }
 
-.seasonal-wrap > .m-btm {
-    display: none;
-}
-
-.seasonal-wrap > .seasonal {
-    width: 100%;
-    padding-bottom: 62.5%;
-    background-color: blue;
+.sec-seasonal > .full-area {
     background-image: url(../Converse_files/02_Home_04_Template_1440x900_Big1-1.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
 }
 
-.seasonal-wrap > .seasonal > .txt-box-wrap {
-    box-sizing: border-box;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    padding: 30px;
+.sec-seasonal > .full-area > .txt-box-wrap {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+    position: absolute;
+    top: auto;
+    right: auto;
+    width: 100%;
+    height: 100%;
+    padding-left: 30px;
 }
 
-.seasonal-wrap > .seasonal > .txt-box-wrap > .txt-box {
-    color: white;
-}
-
-.seasonal-wrap > .seasonal > .txt-box-wrap > .txt-box > p:first-child {
-    text-transform: uppercase;
-    font-size: 50px;
-    font-weight: bold;
-}
-
-.seasonal-wrap > .seasonal > .txt-box-wrap > .txt-box > p:last-child {
-    font-size: 15px;
-    margin-top: 20px;
-}
-
-.seasonal-wrap > .seasonal > .txt-box-wrap > .btn-box {
-    width: 180px;
-    height: 45px;
-    margin-top: 10px;
+.sec-seasonal > .full-area > .txt-box-wrap > .btn-box {
     background-color: inherit;
-    color: white;
-    text-align: center;
-    line-height: 45px;
-    font-weight: bold;
-    opacity: 1;
-    transition: 0.5s;
+    color: #fff;
     border: 1px solid #fff;
-    font-size: 15px;
 }
 
-.seasonal-wrap > .seasonal > .txt-box-wrap > .btn-box:hover {
-    opacity: 0.5;
-}
+/*======================sec-community========================*/
 
-/*community-wrap*/
-
-.community-wrap > .community {
+.sec-community > .community {
     margin: 60px 0;
 }
 
-.community-wrap > .community > p {
-    text-align: center;
+.sec-community > .community > p {
     font-size: 36px;
     font-weight: 700;
+    text-align: center;
     text-transform: uppercase;
     cursor: default;
 }
 
-.community-wrap > .community > .content {
+.sec-community > .community > .content {
     width: 100%;
     margin: 40px 0 0 0;
 }
 
-.community-wrap > .community > .content > .photo-wrap {
+.sec-community > .community > .content > .photo-wrap {
     width: 100%;
 }
 
-.community-wrap > .community > .content > .photo-wrap > .photo {
+.sec-community > .community > .content > .photo-wrap > .photo {
+    position: relative;
     width: calc((100% - 40px) / 4);
     margin: 5px;
-    background-color: #ddd;
-    position: relative;
     cursor: pointer;
 }
 
-.community-wrap > .community > .content > .photo-wrap > .photo:after {
+.sec-community > .community > .content > .photo-wrap > .photo:after {
     content: "";
     display: block;
     padding-bottom: 100%;
 }
 
-.community-wrap > .community > .content > .photo-wrap > .photo > .icon-txt {
+.sec-community > .community > .content > .photo-wrap > .photo > .icon-txt {
+    display: flex;
+    align-items: center;
     position: absolute;
     bottom: 0;
     width: 100%;
     height: 50px;
     padding: 10px;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
     background: linear-gradient(to bottom,
             rgba(20, 20, 20, 0) 10%,
             rgba(20, 20, 20, 0.25) 25%,
@@ -2368,142 +976,137 @@ html {
             rgba(20, 20, 20, 1) 100%);
 }
 
-.community-wrap > .community > .content > .photo-wrap > .photo > .icon-txt > .icon {
+.sec-community > .community > .content > .photo-wrap > .photo > .icon-txt > .icon {
     width: 30px;
     height: 30px;
-    border-radius: 30px;
     background-color: #d4d;
+    border-radius: 30px;
 }
 
-.community-wrap > .community > .content > .photo-wrap > .box1 > .icon-txt > .icon {
+.sec-community > .community > .content > .photo-wrap > .box1 > .icon-txt > .icon {
     background-image: url(../Converse_files/130196802_1143298939420343_5554564011257711964_n.jpg);
     background-size: cover;
 }
 
-.community-wrap > .community > .content > .photo-wrap > .box2 > .icon-txt > .icon {
+.sec-community > .community > .content > .photo-wrap > .box2 > .icon-txt > .icon {
     background-image: url(../Converse_files/123639079_683150102622108_7101222378830234813_n.jpg);
     background-size: cover;
 }
 
-.community-wrap > .community > .content > .photo-wrap > .box3 > .icon-txt > .icon {
+.sec-community > .community > .content > .photo-wrap > .box3 > .icon-txt > .icon {
     background-image: url(../Converse_files/149605596_273805224162813_7367632835548102151_n.jpg);
     background-size: cover;
 }
 
-.community-wrap > .community > .content > .photo-wrap > .box4 > .icon-txt > .icon {
+.sec-community > .community > .content > .photo-wrap > .box4 > .icon-txt > .icon {
     background-image: url(../Converse_files/161034311_1814717382020992_138372196796474602_n.jpg);
     background-size: cover;
 }
 
-.community-wrap > .community > .content > .photo-wrap > .box5 > .icon-txt > .icon {
+.sec-community > .community > .content > .photo-wrap > .box5 > .icon-txt > .icon {
     background-image: url(../Converse_files/164923913_272464297677995_1327205199054869792_n.jpg);
     background-size: cover;
 }
 
-.community-wrap > .community > .content > .photo-wrap > .box6 > .icon-txt > .icon {
+.sec-community > .community > .content > .photo-wrap > .box6 > .icon-txt > .icon {
     background-image: url(../Converse_files/165604928_273909424229868_6317548692965510491_n.jpg);
     background-size: cover;
 }
 
-.community-wrap > .community > .content > .photo-wrap > .box7 > .icon-txt > .icon {
+.sec-community > .community > .content > .photo-wrap > .box7 > .icon-txt > .icon {
     background-image: url(../Converse_files/119114459_630242547683154_4206053738316174497_n.jpg);
     background-size: cover;
 }
 
-.community-wrap > .community > .content > .photo-wrap > .box8 > .icon-txt > .icon {
+.sec-community > .community > .content > .photo-wrap > .box8 > .icon-txt > .icon {
     background-image: url(../Converse_files/121978018_716283165913291_566922048221444257_n.jpg);
     background-size: cover;
 }
 
-.community-wrap > .community > .content > .photo-wrap > .photo > .icon-txt > .txt {
-    color: #fff;
+.sec-community > .community > .content > .photo-wrap > .photo > .icon-txt > .txt {
     margin-left: 10px;
+    color: #fff;
 }
 
-.community-wrap > .community > .content > .photo-wrap > .photo > .icon-txt > .txt > p:first-child {
+.sec-community > .community > .content > .photo-wrap > .photo > .icon-txt > .txt > p:first-child {
     font-size: 14px;
 }
 
-.community-wrap > .community > .content > .photo-wrap > .photo > .icon-txt > .txt > p:last-child {
+.sec-community > .community > .content > .photo-wrap > .photo > .icon-txt > .txt > p:last-child {
     font-size: 12px;
 }
 
-
-.community-wrap > .community > .content > .photo-wrap > .box1 {
+.sec-community > .community > .content > .photo-wrap > .box1 {
     background-image: url(../Converse_files/17902985623788367_image.jpg);
     background-position: center;
     background-size: cover;
 }
 
-.community-wrap > .community > .content > .photo-wrap > .box2 {
+.sec-community > .community > .content > .photo-wrap > .box2 {
     background-image: url(../Converse_files/17899702060797540_carousel_1.jpg);
     background-position: center;
     background-size: cover;
 }
 
 
-.community-wrap > .community > .content > .photo-wrap > .box3 {
+.sec-community > .community > .content > .photo-wrap > .box3 {
     background-image: url(../Converse_files/164053540_799901347283754_7160863161939278353_n.jpg);
     background-position: center;
     background-size: cover;
 }
 
-
-.community-wrap > .community > .content > .photo-wrap > .box4 {
+.sec-community > .community > .content > .photo-wrap > .box4 {
     background-image: url(../Converse_files/163596181_517389809654895_4411871136574197866_n.jpg);
     background-position: center;
     background-size: cover;
 }
 
 
-.community-wrap > .community > .content > .photo-wrap > .box5 {
+.sec-community > .community > .content > .photo-wrap > .box5 {
     background-image: url(../Converse_files/160575744_448107413170689_4602045960918431299_n.jpg);
     background-position: center;
     background-size: cover;
 }
 
 
-.community-wrap > .community > .content > .photo-wrap > .box6 {
+.sec-community > .community > .content > .photo-wrap > .box6 {
     background-image: url(../Converse_files/160249810_117041540403103_1051395633101376684_n.jpg);
     background-position: center;
     background-size: cover;
 }
 
-
-.community-wrap > .community > .content > .photo-wrap > .box7 {
+.sec-community > .community > .content > .photo-wrap > .box7 {
     background-image: url(../Converse_files/159099417_338407977597778_3541112415564497962_n.jpg);
     background-position: center;
     background-size: cover;
 }
 
 
-.community-wrap > .community > .content > .photo-wrap > .box8 {
+.sec-community > .community > .content > .photo-wrap > .box8 {
     background-image: url(../Converse_files/156368494_2601531170147147_6060726045591500331_n.jpg);
     background-position: center;
     background-size: cover;
 }
 
-
-.community-wrap > .community > .content > .btn {
+.sec-community > .community > .content > .btn {
     width: 100%;
     height: 40px;
+    margin-top: 10px;
     border: 1px solid #bfbfbf;
-    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #bfbfbf;
     text-align: center;
     line-height: 40px;
-    font: 16px;
-    color: #bfbfbf;
-    border-radius: 5px;
-    margin-top: 10px;
 }
 
-.community-wrap > .community > .content > .btn:hover {
+.sec-community > .community > .content > .btn:hover {
     border: 1px solid #bfbfbf;
     background-color: #555;
     color: white;
 }
 
-/*floting-bar*/
+/*======================floting-bar========================*/
 
 .floting-bar {
     z-index: 1;
@@ -2525,10 +1128,13 @@ html {
     border-radius: 40px 0 0 40px;
     padding-left: 20px;
     padding-right: 10px;
-    transition: transform 0.32s cubic-bezier(0.4, 0.9, 0.3, 1), -webkit-transform 0.32s cubic-bezier(0.4, 0.9, 0.3, 1);
+    transition: transform 0.32s cubic-bezier(0.4, 0.9, 0.3, 1),
+        -webkit-transform 0.32s cubic-bezier(0.4, 0.9, 0.3, 1);
 }
 
 .floting-bar > a > .logo {
+    display: flex;
+    align-items: center;
     width: 40px;
     height: 40px;
     padding: 0 10px 0 0;
@@ -2546,17 +1152,7 @@ html {
     line-height: 14px;
 }
 
-/*
-.floting-bar:hover > a > p {
-    width: 100%;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 20px;
-}
-*/
-
-/*footer*/
+/*======================footer========================*/
 
 footer {
     width: 100%;
@@ -2576,11 +1172,10 @@ footer > .section01-wrap > .section01 {
 }
 
 footer > .section01-wrap > .section01 > div {
-    padding: 36px 0 46px;
-    box-sizing: border-box;
     width: 25%;
     height: 100%;
     min-height: 258px;
+    padding: 36px 0 46px;
     text-align: center;
 }
 
@@ -2600,8 +1195,8 @@ footer > .section01-wrap > .section01 > div > .icon {
 }
 
 footer > .section01-wrap > .section01 > div:last-child > .icon {
-    width: 88px;
     display: flex;
+    width: 88px;
 }
 
 footer > .section01-wrap > .section01 > .box4 > .icon > div {
@@ -2644,9 +1239,9 @@ footer > .section01-wrap > .section01 > div > .txt {
 
 footer > .section01-wrap > .section01 > div > a {
     display: inline-block;
-    font-size: 12px;
-    border-bottom: 1px solid black;
     margin-top: 24px;
+    border-bottom: 1px solid black;
+    font-size: 12px;
 }
 
 /*section02-wrap*/
@@ -2657,17 +1252,16 @@ footer > .section02-wrap {
 }
 
 footer > .section02-wrap > .section02 {
+    display: flex;
     width: 100%;
     height: 100%;
-    display: flex;
 }
 
 footer > .section02-wrap > .section02 > div {
     width: 288px;
     height: 100%;
-    border-left: 1px solid #e5e5e5;
     padding: 30px 0 0 20px;
-    box-sizing: border-box;
+    border-left: 1px solid #e5e5e5;
 }
 
 footer > .section02-wrap > .section02 > div:first-child {
@@ -2680,11 +1274,11 @@ footer > .section02-wrap > .section02 > div > p {
 }
 
 footer > .section02-wrap > .section02 > .box1 > .icon {
+    display: flex;
     width: 100px;
     height: 50px;
-    border: 1px solid #e5e5e5;
     margin: 15px 0 15px 0;
-    display: flex;
+    border: 1px solid #e5e5e5;
 }
 
 footer > .section02-wrap > .section02 > .box1 > .icon > div {
@@ -2736,7 +1330,6 @@ footer > .section02-wrap > .section02 > .box4 > ul > li:last-child {
 .section03-wrap > .section03 {
     height: 198px;
     padding: 38px 20px;
-    box-sizing: border-box;
 }
 
 .section03-wrap > .section03 > .address {
@@ -2749,26 +1342,26 @@ footer > .section02-wrap > .section02 > .box4 > ul > li:last-child {
 }
 
 .section03-wrap > .section03 > .address > .txt {
-    color: #9b9b9b;
-    font-size: 12px;
     display: flex;
     flex-wrap: wrap;
+    font-size: 12px;
+    color: #9b9b9b;
     letter-spacing: -.025em;
 }
 
 .section03-wrap > .section03 > .address > .txt > span::before {
-    content: '';
     display: inline-block;
-    margin: 4px 8px;
+    content: '';
     width: 1px;
     height: 12px;
-    vertical-align: middle;
+    margin: 4px 8px;
     background-color: #353535;
+    vertical-align: middle;
 }
 
 .section03-wrap > .section03 > .address > .txt > .first::before {
-    margin: 0 0;
     display: none;
+    margin: 0 0;
 }
 
 .section03-wrap > .section03 > .address > .txt > span:nth-child(6) {
@@ -2780,13 +1373,9 @@ footer > .section02-wrap > .section02 > .box4 > ul > li:last-child {
 }
 
 .section03-wrap > .section03 > .address > p {
+    padding-top: 22px;
     color: #9b9b9b;
     font-size: 12px;
-    padding-top: 22px;
-}
-
-.m {
-    display: none;
 }
 
 .section03-wrap > .section03 > .company {
@@ -2795,17 +1384,13 @@ footer > .section02-wrap > .section02 > .box4 > ul > li:last-child {
 }
 
 .section03-wrap > .section03 > .company > p {
-    color: #9b9b9b;
     font-size: 12px;
+    color: #9b9b9b;
     line-height: 20px;
 }
 
 .section03-wrap > .section03 > .company > p:last-child {
     color: #fff;
-}
-
-.mm {
-    display: none;
 }
 
 .section03-wrap > .section03 > .icon {
@@ -2825,500 +1410,48 @@ footer > .section02-wrap > .section02 > .box4 > ul > li:last-child {
 
 
 
-
-
-
-
-
-
-
-
-
+/*======================================여기부터는 반응형입니다.========================================*/
+/*=======================================반응형 시작==================================================*/
 
 @media screen and (max-width: 1440px) {
 
-    /*summer-wrap*/
-    .summer-wrap > .left-wrap > .txt-box-wrap {
-        padding: 2.0833vw;
+    /*라이브러리*/
+
+    .txt-box-wrap {
+        position: absolute;
+        top: 2.0833vw;
+        right: 2.0833vw;
     }
 
-    .summer-wrap > .left-wrap > .txt-box-wrap > .txt-box > p:nth-child(1) {
+    .main-title {
         font-size: calc(30px + 1.25*(100vw - 767px)/42.0625);
     }
 
-    .summer-wrap > .left-wrap > .txt-box-wrap > .txt-box > p:nth-child(2) {
+    .sub-title {
         font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
     }
 
-    .summer-wrap > .left-wrap > .txt-box-wrap > .btn-box {
+    .btn-box {
         font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
     }
 
-    .summer-wrap > .right-wrap > .right-top-img > .right-top-img-left > .icon-txt-wrap > .icon {
+    .icon-txt-wrap > .icon {
         position: absolute;
         top: 2.0833vw;
         left: 2.0833vw;
     }
 
-    .summer-wrap > .right-wrap > .right-top-img > .right-top-img-left > .icon-txt-wrap > .best-seller {
-        position: absolute;
-        top: 2.0833vw;
-        right: 2.0833vw;
-        text-transform: uppercase;
-        font-weight: bold;
-        text-align: right;
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    .summer-wrap > .right-wrap > .right-top-img > .right-top-img-left > .icon-txt-wrap > .price {
-        position: absolute;
-        bottom: 2.0833vw;
-        left: 2.0833vw;
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    .summer-wrap > .right-wrap > .right-top-img > .right-top-img-right > .icon-txt-wrap > .icon {
-        position: absolute;
-        top: 2.0833vw;
-        left: 2.0833vw;
-    }
-
-    .summer-wrap > .right-wrap > .right-top-img > .right-top-img-right > .icon-txt-wrap > .best-seller {
+    .product-badges {
         position: absolute;
         top: 2.0833vw;
         right: 2.0833vw;
         font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
     }
 
-    .summer-wrap > .right-wrap > .right-top-img > .right-top-img-right > .icon-txt-wrap > .price {
+    .price {
         position: absolute;
         bottom: 2.0833vw;
         left: 2.0833vw;
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    .summer-wrap > .right-wrap > .right-btm-img > .right-btm-img-left > .icon-txt-wrap > .icon {
-        position: absolute;
-        top: 2.0833vw;
-        left: 2.0833vw;
-    }
-
-    .summer-wrap > .right-wrap > .right-btm-img > .right-btm-img-left > .icon-txt-wrap > .best-seller {
-        position: absolute;
-        top: 2.0833vw;
-        right: 2.0833vw;
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    .summer-wrap > .right-wrap > .right-btm-img > .right-btm-img-left > .icon-txt-wrap > .price {
-        position: absolute;
-        bottom: 2.0833vw;
-        left: 2.0833vw;
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    .summer-wrap > .right-wrap > .right-btm-img > .right-btm-img-right > .icon-txt-wrap > .icon {
-        position: absolute;
-        top: 2.0833vw;
-        left: 2.0833vw;
-    }
-
-    .summer-wrap > .right-wrap > .right-btm-img > .right-btm-img-right > .icon-txt-wrap > .best-seller {
-        position: absolute;
-        top: 2.0833vw;
-        right: 2.0833vw;
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    .summer-wrap > .right-wrap > .right-btm-img > .right-btm-img-right > .icon-txt-wrap > .price {
-        position: absolute;
-        bottom: 2.0833vw;
-        left: 2.0833vw;
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    /*choose-wrap*/
-
-    .choose-wrap > .shose-icon-wrap > ul {
-        max-width: 800px;
-        margin: 0 auto;
-        font-size: 16px;
-        font-weight: bold;
-    }
-
-    /*summer-02-wrap*/
-
-
-    .summer-02-wrap > .left-wrap > .txt-box-wrap {
-        padding: 2.0833vw;
-    }
-
-    .summer-02-wrap > .left-wrap > .txt-box-wrap > .txt-box > p:nth-child(1) {
-        font-size: calc(30px + 1.25*(100vw - 767px)/42.0625);
-    }
-
-    .summer-02-wrap > .left-wrap > .txt-box-wrap > .txt-box > p:nth-child(2) {
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    .summer-02-wrap > .left-wrap > .txt-box-wrap > .btn-box {
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    .summer-02-wrap > .right-wrap > .right-top-img > .right-top-img-left > .icon-txt-wrap > .icon {
-        position: absolute;
-        top: 2.0833vw;
-        left: 2.0833vw;
-    }
-
-    .summer-02-wrap > .right-wrap > .right-top-img > .right-top-img-left > .icon-txt-wrap > .best-seller {
-        position: absolute;
-        top: 2.0833vw;
-        right: 2.0833vw;
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    .summer-02-wrap > .right-wrap > .right-top-img > .right-top-img-left > .icon-txt-wrap > .price {
-        position: absolute;
-        bottom: 2.0833vw;
-        left: 2.0833vw;
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    .summer-02-wrap > .right-wrap > .right-top-img > .right-top-img-right > .icon-txt-wrap > .icon {
-        position: absolute;
-        top: 2.0833vw;
-        left: 2.0833vw;
-    }
-
-    .summer-02-wrap > .right-wrap > .right-top-img > .right-top-img-right > .icon-txt-wrap > .best-seller {
-        position: absolute;
-        top: 2.0833vw;
-        right: 2.0833vw;
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    .summer-02-wrap > .right-wrap > .right-top-img > .right-top-img-right > .icon-txt-wrap > .price {
-        position: absolute;
-        bottom: 2.0833vw;
-        left: 2.0833vw;
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    .summer-02-wrap > .right-wrap > .right-btm-img > .right-btm-img-left > .icon-txt-wrap > .icon {
-        position: absolute;
-        top: 2.0833vw;
-        left: 2.0833vw;
-    }
-
-    .summer-02-wrap > .right-wrap > .right-btm-img > .right-btm-img-left > .icon-txt-wrap > .best-seller {
-        position: absolute;
-        top: 2.0833vw;
-        right: 2.0833vw;
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    .summer-02-wrap > .right-wrap > .right-btm-img > .right-btm-img-left > .icon-txt-wrap > .price {
-        position: absolute;
-        bottom: 2.0833vw;
-        left: 2.0833vw;
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    .summer-02-wrap > .right-wrap > .right-btm-img > .right-btm-img-right > .icon-txt-wrap > .icon {
-        position: absolute;
-        top: 2.0833vw;
-        left: 2.0833vw;
-    }
-
-    .summer-02-wrap > .right-wrap > .right-btm-img > .right-btm-img-right > .icon-txt-wrap > .best-seller {
-        position: absolute;
-        top: 2.0833vw;
-        right: 2.0833vw;
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    .summer-02-wrap > .right-wrap > .right-btm-img > .right-btm-img-right > .icon-txt-wrap > .price {
-        position: absolute;
-        bottom: 2.0833vw;
-        left: 2.0833vw;
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    /*floral-wrap*/
-
-    .floral-wrap > .floral > .txt-box-wrap {
-        box-sizing: border-box;
-        position: absolute;
-        top: 2.0833vw;
-        left: 2.0833vw;
-    }
-
-    .floral-wrap > .floral > .txt-box-wrap > .txt-box > p:first-child {
-        font-size: calc(30px + 1.25*(100vw - 767px)/42.0625);
-    }
-
-    .floral-wrap > .floral > .txt-box-wrap > .txt-box > p:last-child {
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    .floral-wrap > .floral > .txt-box-wrap > .btn-box {
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    /*skid-wrap*/
-
-    .skid-wrap > .skid > .txt-box-wrap {
-        padding: 2.0833vw;
-    }
-
-    .skid-wrap > .skid > .txt-box-wrap > .txt-box > p:first-child {
-        font-size: calc(30px + 1.25*(100vw - 767px)/42.0625);
-    }
-
-    .skid-wrap > .skid > .txt-box-wrap > .txt-box > p:last-child {
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    .skid-wrap > .skid > .txt-box-wrap > .btn-box {
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    /*jack-wrap*/
-
-    .jack-wrap > .jack > .txt-box-wrap {
-        padding: 2.0833vw;
-    }
-
-    .jack-wrap > .jack > .txt-box-wrap > .txt-box > p:first-child {
-        font-size: calc(30px + 1.25*(100vw - 767px)/42.0625);
-    }
-
-    .jack-wrap > .jack > .txt-box-wrap > .txt-box > p:last-child {
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    .jack-wrap > .jack > .txt-box-wrap > .btn-box {
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    /*satin-wrap*/
-
-    .satin-wrap > .left-cozy-wrap > .btm-left-cozy > .left-btm-left-cozy > .icon-txt-wrap > .icon {
-        position: absolute;
-        top: 2.0833vw;
-        left: 2.0833vw;
-    }
-
-    .satin-wrap > .left-cozy-wrap > .btm-left-cozy > .left-btm-left-cozy > .icon-txt-wrap > .best-seller {
-        position: absolute;
-        top: 2.0833vw;
-        right: 2.0833vw;
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    .satin-wrap > .left-cozy-wrap > .btm-left-cozy > .left-btm-left-cozy > .icon-txt-wrap > .price {
-        position: absolute;
-        bottom: 2.0833vw;
-        left: 2.0833vw;
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    .satin-wrap > .left-cozy-wrap > .btm-left-cozy > .right-btm-left-cozy > .icon-txt-wrap > .icon {
-        position: absolute;
-        top: 2.0833vw;
-        left: 2.0833vw;
-    }
-
-    .satin-wrap > .left-cozy-wrap > .btm-left-cozy > .right-btm-left-cozy > .icon-txt-wrap > .best-seller {
-        position: absolute;
-        top: 2.0833vw;
-        right: 2.0833vw;
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    .satin-wrap > .left-cozy-wrap > .btm-left-cozy > .right-btm-left-cozy > .icon-txt-wrap > .price {
-        position: absolute;
-        bottom: 2.0833vw;
-        left: 2.0833vw;
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    .satin-wrap > .right-cozy-wrap > .txt-box-wrap {
-        box-sizing: border-box;
-        position: absolute;
-        bottom: 2.0833vw;
-        left: 2.0833vw;
-    }
-
-    .satin-wrap > .right-cozy-wrap > .txt-box-wrap > .txt-box > p:first-child {
-        font-size: calc(30px + 1.25*(100vw - 767px)/42.0625);
-    }
-
-    .satin-wrap > .right-cozy-wrap > .txt-box-wrap > .txt-box > p:last-child {
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    .satin-wrap > .right-cozy-wrap > .txt-box-wrap > .btn-box {
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    /*color-wrap*/
-
-    .color-wrap > .left-wrap > .txt-box-wrap {
-        padding: 2.0833vw;
-        box-sizing: border-box;
-        position: absolute;
-    }
-
-    .color-wrap > .left-wrap > .txt-box-wrap > .txt-box > p:nth-child(1) {
-        font-size: calc(30px + 1.25*(100vw - 767px)/42.0625);
-    }
-
-    .color-wrap > .left-wrap > .txt-box-wrap > .txt-box > p:nth-child(2) {
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    .color-wrap > .left-wrap > .txt-box-wrap > .btn-box {
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    .color-wrap > .right-wrap > .right-top-img > .right-top-img-right > .icon-txt-wrap > .icon {
-        position: absolute;
-        top: 30px;
-        left: 30px;
-    }
-
-    .color-wrap > .right-wrap > .right-top-img > .right-top-img-right > .icon-txt-wrap > .best-seller {
-        position: absolute;
-        top: 2.0833vw;
-        right: 2.0833vw;
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    .color-wrap > .right-wrap > .right-top-img > .right-top-img-right > .icon-txt-wrap > .price {
-        position: absolute;
-        bottom: 2.0833vw;
-        left: 2.0833vw;
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    .color-wrap > .right-wrap > .right-btm-img > .right-btm-img-left > .icon-txt-wrap > .icon {
-        position: absolute;
-        top: 2.0833vw;
-        left: 2.0833vw;
-    }
-
-    .color-wrap > .right-wrap > .right-btm-img > .right-btm-img-left > .icon-txt-wrap > .best-seller {
-        position: absolute;
-        top: 2.0833vw;
-        right: 2.0833vw;
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    .color-wrap > .right-wrap > .right-btm-img > .right-btm-img-left > .icon-txt-wrap > .price {
-        position: absolute;
-        bottom: 2.0833vw;
-        left: 2.0833vw;
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    .color-wrap > .right-wrap > .right-btm-img > .right-btm-img-right > .icon-txt-wrap > .icon {
-        position: absolute;
-        top: 2.0833vw;
-        left: 2.0833vw;
-    }
-
-    .color-wrap > .right-wrap > .right-btm-img > .right-btm-img-right > .icon-txt-wrap > .best-seller {
-        position: absolute;
-        top: 2.0833vw;
-        right: 2.0833vw;
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    .color-wrap > .right-wrap > .right-btm-img > .right-btm-img-right > .icon-txt-wrap > .price {
-        position: absolute;
-        bottom: 2.0833vw;
-        left: 2.0833vw;
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    /*miffy-wrap*/
-
-    .miffy-wrap > .left-cozy-wrap > .btm-left-cozy > .left-btm-left-cozy > .icon-txt-wrap > .icon {
-        position: absolute;
-        top: 2.0833vw;
-        left: 2.0833vw;
-    }
-
-    .miffy-wrap > .left-cozy-wrap > .btm-left-cozy > .left-btm-left-cozy > .icon-txt-wrap > .best-seller {
-        position: absolute;
-        top: 2.0833vw;
-        right: 2.0833vw;
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    .miffy-wrap > .left-cozy-wrap > .btm-left-cozy > .left-btm-left-cozy > .icon-txt-wrap > .price {
-        position: absolute;
-        bottom: 2.0833vw;
-        left: 2.0833vw;
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    .miffy-wrap > .left-cozy-wrap > .btm-left-cozy > .right-btm-left-cozy > .icon-txt-wrap > .icon {
-        position: absolute;
-        top: 2.0833vw;
-        left: 2.0833vw;
-    }
-
-    .miffy-wrap > .left-cozy-wrap > .btm-left-cozy > .right-btm-left-cozy > .icon-txt-wrap > .best-seller {
-        position: absolute;
-        top: 2.0833vw;
-        right: 2.0833vw;
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    .miffy-wrap > .left-cozy-wrap > .btm-left-cozy > .right-btm-left-cozy > .icon-txt-wrap > .price {
-        position: absolute;
-        bottom: 2.0833vw;
-        left: 2.0833vw;
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    .miffy-wrap > .right-cozy-wrap > .txt-box-wrap {
-        box-sizing: border-box;
-        position: absolute;
-        top: 2.0833vw;
-        right: 2.0833vw;
-    }
-
-    .miffy-wrap > .right-cozy-wrap > .txt-box-wrap > .txt-box > p:first-child {
-        font-size: calc(30px + 1.25*(100vw - 767px)/42.0625);
-    }
-
-    .miffy-wrap > .right-cozy-wrap > .txt-box-wrap > .txt-box > p:last-child {
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    .miffy-wrap > .right-cozy-wrap > .txt-box-wrap > .btn-box {
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    /*.seasonal-wrap*/
-
-    .seasonal-wrap > .seasonal > .txt-box-wrap {
-        padding: 2.0833vw;
-    }
-
-    .seasonal-wrap > .seasonal > .txt-box-wrap > .txt-box > p:first-child {
-        font-size: calc(30px + 1.25*(100vw - 767px)/42.0625);
-    }
-
-    .seasonal-wrap > .seasonal > .txt-box-wrap > .txt-box > p:last-child {
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    .seasonal-wrap > .seasonal > .txt-box-wrap > .btn-box {
         font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
     }
 
@@ -3326,78 +1459,150 @@ footer > .section02-wrap > .section02 > .box4 > ul > li:last-child {
         display: block;
     }
 
+    /*======================sec-choose========================*/
+
+    .sec-choose > .shose-icon-wrap > ul {
+        max-width: 800px;
+        margin: 0 auto;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    /*======================sec-summer-02========================*/
+
+    .sec-summer-02 > .left > .txt-box-wrap {
+        position: absolute;
+        top: auto;
+        left: 2.0833vw;
+        bottom: 2.0833vw;
+        right: auto;
+    }
+
+    /*======================sec-floral========================*/
+
+    .sec-floral > .full-area > .txt-box-wrap {
+        position: absolute;
+        top: 2.0833vw;
+        left: 2.0833vw;
+    }
+
+    /*======================sec-skid========================*/
+
+    .sec-skid > .full-area > .txt-box-wrap {
+        padding-left: 2.0833vw;
+    }
+
+    /*======================sec-jack========================*/
+
+    .sec-jack > .full-area > .txt-box-wrap {
+        padding-left: 2.0833vw;
+    }
+
+    /*======================sec-satin========================*/
+
+    .sec-satin > .left > .txt-box-wrap {
+        position: absolute;
+        top: auto;
+        left: 2.0833vw;
+        bottom: 2.0833vw;
+        right: auto;
+    }
+
+    /*======================sec-color========================*/
+
+    .sec-color > .right > .txt-box-wrap {
+        position: absolute;
+        top: 2.0833vw;
+        left: 2.0833vw;
+        right: auto;
+    }
+
+    /*======================sec-seasonal========================*/
+
+    .sec-seasonal > .full-area > .txt-box-wrap {
+        padding-left: 2.0833vw;
+    }
+
+    /*======================footer========================*/
+
     .section03-wrap > .section03 > .address {
         width: 70%;
         height: auto;
     }
 
-
 }
 
 @media screen and (max-width: 1024px) {
 
-    .top-bar > .right-nav > .right-nav-wrap > .search-wrap {
-        width: 60px;
-        height: 60px;
-        transition: 1s;
+    /*======================header========================*/
+
+    .icon-list .search-wrap {
         display: flex;
         align-items: center;
         justify-content: center;
+        width: 60px;
+        height: 60px;
+        transition: 1s;
     }
 
-    .top-bar > .right-nav > .right-nav-wrap > .search-wrap > .serch-box {
+    .icon-list .search-wrap .serch-box {
         width: 100%;
         height: 100%;
         background-color: black;
     }
 
-    .top-bar > .right-nav > .right-nav-wrap > .search-wrap > .serch-box > .txt {
+    .icon-list .search-wrap .serch-box .txt {
         display: none;
     }
 
-    .top-bar > .right-nav > .right-nav-wrap > .search-wrap > .serch-box > .serch-icon > i {
+    .icon-list .search-wrap .serch-box .serch-icon {
         font-size: 18px;
     }
 
-    /*choose-wrap*/
+    .icon-list .search-wrap .serch-box .serch-icon svg {
+        fill: #fff;
+    }
 
-    .choose-wrap > .shose-icon-wrap > ul {
+    /*======================sec-choose========================*/
+
+    .sec-choose > .shose-icon-wrap > ul {
         max-width: 600px;
         margin: 0 auto;
         font-size: 14px;
         font-weight: bold;
     }
 
+    /*======================sec-community========================*/
 
-    /*community-wrap*/
-
-    .community-wrap > .community {
+    .sec-community > .community {
         margin: 30px 0;
     }
 
-    .community-wrap > .community > p {
+    .sec-community > .community > p {
         text-align: center;
         font-size: 24px;
         font-weight: 700;
         text-transform: uppercase;
     }
 
-    .community-wrap > .community > .content {
+    .sec-community > .community > .content {
         width: 100%;
         margin: 30px 0 0 0;
     }
 
-    .community-wrap > .community > .content > .photo-wrap {
+    .sec-community > .community > .content > .photo-wrap {
         width: 100%;
         height: auto;
     }
 
-    .community-wrap > .community > .content > .photo-wrap > .photo {
+    .sec-community > .community > .content > .photo-wrap > .photo {
         width: calc(100% / 4 - 10px);
         margin: 5px 5px;
         background-color: #ddd;
     }
-    
+
+    /*======================footer========================*/
+
     footer > .section01-wrap > .section01 > div > .txt {
         margin: 7px 0 0;
     }
@@ -3413,125 +1618,169 @@ footer > .section02-wrap > .section02 > .box4 > ul > li:last-child {
 
     }
 
-    .m {
-        display: block;
-    }
-
 }
-
-
-
 
 @media screen and (max-width: 768px) {
 
-    .top-bar {
+    /*라이브러리*/
+
+    .mobile-mode {
+        display: block;
+    }
+
+    .main-area {
+        width: 100%;
+    }
+
+    .txt-box-wrap {
+        position: absolute;
+        top: 4.6875vw;
+        right: 4.6875vw;
+    }
+
+    .main-title {
+        font-size: 30px;
+    }
+
+    .sub-title {
+        font-size: 11px;
+    }
+
+    .m-btm {
+        display: block;
+        width: calc(100% - 44px);
+        height: 56px;
+        margin: 22px 18px;
+        background-color: #000;
+        color: #fff;
+        text-align: center;
+        line-height: 56px;
+        transition: 1s;
+    }
+
+    .m-btm :hover {
+        opacity: 0.5;
+    }
+
+
+    .icon-txt-wrap > .icon {
+        position: absolute;
+        top: 4.6875vw;
+        left: 4.6875vw;
+    }
+
+    .product-badges {
+        position: absolute;
+        top: 4.6875vw;
+        right: 4.6875vw;
+    }
+
+    .price {
+        position: absolute;
+        bottom: 4.6875vw;
+        left: 4.6875vw;
+    }
+
+    .o {
+        display: block;
+    }
+
+    .m {
+        display: none;
+    }
+
+    .mm {
+        display: block;
+    }
+
+    /*======================header========================*/
+
+    #header {
         height: 50px;
         position: relative;
     }
 
-    .top-bar > .hamburger-wrap {
-        width: 20%;
-        height: 100%;
+    #header .hamburger-wrap {
         display: flex;
         align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20%;
+        height: 100%;
         padding: 0 20px;
     }
 
-    .top-bar > .hamburger-wrap > .hamburger {
+    #header .hamburger-wrap .hamburger {
         width: 18px;
         height: 18px;
     }
 
-    .top-bar > .logo-wrap {
-        width: 110px;
-        line-height: 50px;
-        padding-left: 0;
-        float: none;
+    #header .logo {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
+        width: 110px;
+        float: none;
+        padding-left: 0;
+        line-height: 50px;
     }
 
-    .top-bar > .left-nav-wrap {
+    .nav-list {
         display: none;
     }
 
-    .top-bar > .right-nav {
-        width: 20%;
-        height: 100%;
+    .icon-list {
         display: flex;
         align-items: center;
         justify-content: flex-end;
+        width: 20%;
+        height: 100%;
         padding: 0 20px;
     }
 
-    .top-bar > .right-nav > .right-nav-wrap {
+    .icon-list {
         line-height: normal;
     }
 
-
-    .top-bar > .right-nav > .right-nav-wrap > ul > li {
+    .icon-list > li {
         display: none;
     }
 
-    .top-bar > .right-nav > .right-nav-wrap > ul > li:nth-child(2) {
+    .icon-list > li:nth-child(2) {
         display: block;
         width: 20px;
         padding: 0 0 0 0;
         margin-right: 15px;
     }
 
-    .top-bar > .right-nav > .right-nav-wrap > ul > li:nth-child(5) {
+    .icon-list > li:nth-child(5) {
         display: block;
         width: 20px;
         padding: 0 0 0 0;
     }
 
-    .top-bar > .right-nav > .right-nav-wrap > .search-wrap {
+    .icon-list > .search-wrap {
         display: none;
     }
 
-    .top-bar-warp.down > .top-bar > .right-nav > .right-nav-wrap > .search-wrap {
+    header.down #header .icon-list .search-wrap {
         display: none;
     }
 
-
-    /*
-    .top-bar > .right-nav > .right-nav-wrap > .search-wrap {
-        width: 20px;
-        height: 50px;
-        background-color: #fff;
-        transition: none;
-    }
-
-    .top-bar > .right-nav > .right-nav-wrap > .search-wrap > .serch-box {
-        width: 20px;
-        height: 50px;
-        background-color: #fff;
-    }
-
-    .top-bar > .right-nav > .right-nav-wrap > .search-wrap > .serch-box > .serch-icon > svg {
-        fill: #000;
-    }
-
-    .top-bar-warp.down > .top-bar > .right-nav > .right-nav-wrap > .search-wrap {
-        display: none;
-    }
-*/
-
-    /*mobile-nav-2-depth-wrap*/
+    /*======================mobile-nav-2-depth-wrap========================*/
 
     .mobile-nav-2-depth-wrap {
         display: block;
-        width: 100%;
-        height: 100vh;
-        background-color: #fff;
         position: fixed;
         top: 0;
         left: -100%;
-        z-index: 99;
-        transition: 1s;
+        width: 100%;
+        height: 100vh;
+        background-color: #fff;
         overflow: auto;
+        transition: 1s;
+        z-index: 99;
     }
 
     .mobile-nav-2-depth-wrap {
@@ -3555,16 +1804,16 @@ footer > .section02-wrap > .section02 > .box4 > ul > li:last-child {
     }
 
     .mobile-nav-2-depth-wrap > .mobile-nav-2-depth > .head-wrap {
+        position: relative;
         width: 100%;
         height: 52px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         padding: 17px 16px;
-        box-sizing: border-box;
         background-color: inherit;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
 
     .mobile-nav-2-depth-wrap > .mobile-nav-2-depth > .head-wrap > .logo {
-        width: 20px;
+        width: 40px;
         height: 20px;
     }
 
@@ -3586,9 +1835,8 @@ footer > .section02-wrap > .section02 > .box4 > ul > li:last-child {
     }
 
     .mobile-nav-2-depth-wrap > .mobile-nav-2-depth > .body-wrap {
-        padding-top: 40px;
         height: calc(100% - 52px);
-        /*            overflow: auto;*/
+        padding-top: 40px;
     }
 
     .mobile-nav-2-depth-wrap > .mobile-nav-2-depth > .body-wrap > ul {
@@ -3626,7 +1874,6 @@ footer > .section02-wrap > .section02 > .box4 > ul > li:last-child {
         line-height: 1;
         display: block;
         position: relative;
-        /*            border: 1px solid blue;*/
     }
 
     .mobile-nav-2-depth-wrap > .mobile-nav-2-depth > .body-wrap > .section-wrap > .item > a > .icon {
@@ -3639,162 +1886,50 @@ footer > .section02-wrap > .section02 > .box4 > ul > li:last-child {
         transform: rotate(180deg);
     }
 
+    /*======================sec-summer========================*/
 
-
-    /*summer-wrap*/
-
-    .summer-wrap {
+    .sec-summer {
+        flex-direction: column;
         width: 100%;
-        background-color: #fff;
-        /*        margin-top: -50px;*/
     }
 
-    .summer-wrap > .left-wrap {
-        margin-top: -10px;
+    .sec-summer > .left {
         width: 100%;
+        margin-top: -10px;
         padding-bottom: 125%;
     }
 
-    .summer-wrap > .left-wrap > .txt-box-wrap {
-        padding: 4.6875vw;
-    }
-
-    .summer-wrap > .left-wrap > .txt-box-wrap > .txt-box > p:first-child {
-        font-size: 30px;
-    }
-
-    .summer-wrap > .left-wrap > .txt-box-wrap > .txt-box > p:last-child {
-        font-size: 11px;
-    }
-
-    .summer-wrap > .left-wrap > .txt-box-wrap > .btn-box {
+    .sec-summer > .left > .txt-box-wrap > .btn-box {
         display: none;
     }
 
-    .summer-wrap > .m-btm {
-        display: block;
-        width: 100%;
-        padding: 22px 18px;
-        box-sizing: border-box;
-        display: flex;
-    }
-
-    .summer-wrap > .m-btm > .btm {
-        width: 100%;
-        height: 56px;
-        background-color: #000;
-        transition: 1s;
-    }
-
-    .summer-wrap > .m-btm > .btm:hover {
-        opacity: 0.5;
-    }
-
-    .summer-wrap > .m-btm > .btm > p {
-        color: #fff;
-        text-align: center;
-        line-height: 56px;
-    }
-
-    .summer-wrap > .right-wrap {
+    .sec-summer > .right {
         width: 100%;
     }
 
-    .summer-wrap > .right-wrap > .right-top-img > .right-top-img-left > .icon-txt-wrap > .icon {
-        position: absolute;
-        top: 4.6875vw;
-        left: 4.6875vw;
-    }
+    /*======================sec-choose========================*/
 
-    .summer-wrap > .right-wrap > .right-top-img > .right-top-img-left > .icon-txt-wrap > .best-seller {
-        position: absolute;
-        top: 4.6875vw;
-        right: 4.6875vw;
-    }
-
-    .summer-wrap > .right-wrap > .right-top-img > .right-top-img-left > .icon-txt-wrap > .price {
-        position: absolute;
-        bottom: 4.6875vw;
-        left: 4.6875vw;
-    }
-
-    .summer-wrap > .right-wrap > .right-top-img > .right-top-img-right > .icon-txt-wrap > .icon {
-        position: absolute;
-        top: 4.6875vw;
-        left: 4.6875vw;
-    }
-
-    .summer-wrap > .right-wrap > .right-top-img > .right-top-img-right > .icon-txt-wrap > .best-seller {
-        position: absolute;
-        top: 4.6875vw;
-        right: 4.6875vw;
-    }
-
-    .summer-wrap > .right-wrap > .right-top-img > .right-top-img-right > .icon-txt-wrap > .price {
-        position: absolute;
-        bottom: 4.6875vw;
-        left: 4.6875vw;
-    }
-
-    .summer-wrap > .right-wrap > .right-btm-img > .right-btm-img-left > .icon-txt-wrap > .icon {
-        position: absolute;
-        top: 4.6875vw;
-        left: 4.6875vw;
-    }
-
-    .summer-wrap > .right-wrap > .right-btm-img > .right-btm-img-left > .icon-txt-wrap > .best-seller {
-        position: absolute;
-        top: 4.6875vw;
-        right: 4.6875vw;
-    }
-
-    .summer-wrap > .right-wrap > .right-btm-img > .right-btm-img-left > .icon-txt-wrap > .price {
-        position: absolute;
-        bottom: 4.6875vw;
-        left: 4.6875vw;
-    }
-
-    .summer-wrap > .right-wrap > .right-btm-img > .right-btm-img-right > .icon-txt-wrap > .icon {
-        position: absolute;
-        top: 4.6875vw;
-        left: 4.6875vw;
-    }
-
-    .summer-wrap > .right-wrap > .right-btm-img > .right-btm-img-right > .icon-txt-wrap > .best-seller {
-        position: absolute;
-        top: 4.6875vw;
-        right: 4.6875vw;
-    }
-
-    .summer-wrap > .right-wrap > .right-btm-img > .right-btm-img-right > .icon-txt-wrap > .price {
-        position: absolute;
-        bottom: 4.6875vw;
-        left: 4.6875vw;
-    }
-
-    /*choose*/
-
-    .choose-wrap {
+    .sec-choose {
         padding: 30px 0;
     }
 
-    .choose-wrap > .txt-wrap {
+    .sec-choose > .txt-wrap {
         width: 100%;
         height: 100px;
         text-align: center;
     }
 
-    .choose-wrap > .txt-wrap > p:first-child {
+    .sec-choose > .txt-wrap > p:first-child {
         font-size: 25px;
         font-weight: bold;
         text-transform: uppercase;
     }
 
-    .choose-wrap > .txt-wrap > p:last-child {
+    .sec-choose > .txt-wrap > p:last-child {
         display: none;
     }
 
-    .choose-wrap > .shose-icon-wrap > ul {
+    .sec-choose > .shose-icon-wrap > ul {
         max-width: 900px;
         margin: 0 auto;
         font-size: 16px;
@@ -3802,508 +1937,135 @@ footer > .section02-wrap > .section02 > .box4 > ul > li:last-child {
         margin-top: -40px;
     }
 
-    .choose-wrap > .shose-icon-wrap > ul > li {
+    .sec-choose > .shose-icon-wrap > ul > li {
         width: 25%;
     }
 
-    .choose-wrap > .shose-icon-wrap > ul > li > a {
+    .sec-choose > .shose-icon-wrap > ul > li > a {
         display: block;
         width: 100%;
     }
 
-    .choose-wrap > .shose-icon-wrap > ul > li > a > img {
+    .sec-choose > .shose-icon-wrap > ul > li > a > img {
         width: 100%;
     }
 
-    .choose-wrap > .shose-icon-wrap > ul > li > a > span {
+    .sec-choose > .shose-icon-wrap > ul > li > a > span {
         display: block;
         text-align: center;
         font-size: 12px;
         font-weight: 100;
     }
 
-    .choose-wrap > .m-btm {
-        display: block;
+    /*======================sec-summer-02========================*/
+
+    .sec-summer-02 {
+        flex-direction: column;
         width: 100%;
-        padding: 32px 18px 0;
-        box-sizing: border-box;
-        display: flex;
     }
 
-    .choose-wrap > .m-btm > .btm {
-        width: 100%;
-        height: 56px;
-        background-color: #000;
-        transition: 1s;
-    }
-
-    .choose-wrap > .m-btm > .btm:hover {
-        opacity: 0.5;
-    }
-
-    .choose-wrap > .m-btm > .btm > p {
-        color: #fff;
-        text-align: center;
-        line-height: 56px;
-    }
-
-    /*summer-02-wrap*/
-
-    .summer-02-wrap {
-        width: 100%;
-        background-color: #fff;
-    }
-
-    .summer-02-wrap > .left-wrap {
+    .sec-summer-02 > .left {
         width: 100%;
         padding-bottom: 125%;
-        background-image: url(../Converse_files/02_Home_01_Template_1440x1800.jpg);
     }
 
-    .summer-02-wrap > .left-wrap > .txt-box-wrap {
-        padding: 4.6875vw;
+    .sec-summer-02 > .left > .txt-box-wrap {
+        position: absolute;
+        top: auto;
+        left: 4.6875vw;
+        bottom: 4.6875vw;
+        right: auto;
     }
 
-    .summer-02-wrap > .left-wrap > .txt-box-wrap > .txt-box > p:nth-child(1) {
-        font-size: 30px;
-        font-weight: bold;
-    }
-
-    .summer-02-wrap > .left-wrap > .txt-box-wrap > .txt-box > p:nth-child(2) {
-        font-size: 11px;
-    }
-
-    .summer-02-wrap > .left-wrap > .txt-box-wrap > .btn-box {
+    .sec-summer-02 > .left > .txt-box-wrap > .btn-box {
         display: none;
-    }
-
-    .summer-02-wrap > .m-btm {
-        display: block;
-        width: 100%;
-        padding: 22px 18px;
-        box-sizing: border-box;
-        display: flex;
-    }
-
-    .summer-02-wrap > .m-btm > .btm {
-        width: 100%;
-        height: 56px;
-        background-color: #000;
-        transition: 1s;
-    }
-
-    .summer-02-wrap > .m-btm > .btm:hover {
-        opacity: 0.5;
-    }
-
-    .summer-02-wrap > .m-btm > .btm > p {
-        color: #fff;
-        text-align: center;
-        line-height: 56px;
     }
 
     .summer-02-wrap > .right-wrap {
         width: 100%;
     }
 
-    .summer-02-wrap > .right-wrap > .right-top-img > .right-top-img-left > .icon-txt-wrap > .icon {
+    /*======================sec-floral========================*/
+
+    .sec-floral > .full-area > .txt-box-wrap {
         position: absolute;
         top: 4.6875vw;
         left: 4.6875vw;
+        right: auto;
     }
 
-    .summer-02-wrap > .right-wrap > .right-top-img > .right-top-img-left > .icon-txt-wrap > .best-seller {
-        position: absolute;
-        top: 4.6875vw;
-        right: 4.6875vw;
-    }
-
-    .summer-02-wrap > .right-wrap > .right-top-img > .right-top-img-left > .icon-txt-wrap > .price {
-        position: absolute;
-        bottom: 4.6875vw;
-        left: 4.6875vw;
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    .summer-02-wrap > .right-wrap > .right-top-img > .right-top-img-right > .icon-txt-wrap > .icon {
-        position: absolute;
-        top: 4.6875vw;
-        left: 4.6875vw;
-    }
-
-    .summer-02-wrap > .right-wrap > .right-top-img > .right-top-img-right > .icon-txt-wrap > .best-seller {
-        position: absolute;
-        top: 4.6875vw;
-        right: 4.6875vw;
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    .summer-02-wrap > .right-wrap > .right-top-img > .right-top-img-right > .icon-txt-wrap > .price {
-        position: absolute;
-        bottom: 4.6875vw;
-        left: 4.6875vw;
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    .summer-02-wrap > .right-wrap > .right-btm-img > .right-btm-img-left > .icon-txt-wrap > .icon {
-        position: absolute;
-        top: 4.6875vw;
-        left: 4.6875vw;
-    }
-
-    .summer-02-wrap > .right-wrap > .right-btm-img > .right-btm-img-left > .icon-txt-wrap > .best-seller {
-        position: absolute;
-        top: 4.6875vw;
-        right: 4.6875vw;
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    .summer-02-wrap > .right-wrap > .right-btm-img > .right-btm-img-left > .icon-txt-wrap > .price {
-        position: absolute;
-        bottom: 4.6875vw;
-        left: 4.6875vw;
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    .summer-02-wrap > .right-wrap > .right-btm-img > .right-btm-img-right > .icon-txt-wrap > .icon {
-        position: absolute;
-        top: 4.6875vw;
-        left: 4.6875vw;
-    }
-
-    .summer-02-wrap > .right-wrap > .right-btm-img > .right-btm-img-right > .icon-txt-wrap > .best-seller {
-        position: absolute;
-        top: 4.6875vw;
-        right: 4.6875vw;
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    .summer-02-wrap > .right-wrap > .right-btm-img > .right-btm-img-right > .icon-txt-wrap > .price {
-        position: absolute;
-        bottom: 4.6875vw;
-        left: 4.6875vw;
-        font-size: calc(12px + 0.25*(100vw - 767px)/42.0625);
-    }
-
-    /*floral-wrap*/
-
-    .floral-wrap > .floral > .txt-box-wrap {
-        box-sizing: border-box;
-        position: absolute;
-        top: 2.0833vw;
-        left: 2.0833vw;
-    }
-
-
-    /*floral-wrap*/
-
-    .floral-wrap {
-        width: 100%;
-        background-color: #fff;
-    }
-
-    .floral-wrap > .floral > .txt-box-wrap {
-        box-sizing: border-box;
-        position: absolute;
-        top: 4.6875vw;
-        left: 4.6875vw;
-    }
-
-    .floral-wrap > .floral > .txt-box-wrap > .txt-box > p:first-child {
-        font-size: 30px;
-    }
-
-    .floral-wrap > .floral > .txt-box-wrap > .txt-box > p:last-child {
-        font-size: 11px;
+    .sec-floral > .floral > .txt-box-wrap > .txt-box > .sub-title {
         margin-top: 15px;
     }
 
-    .floral-wrap > .floral > .txt-box-wrap > .btn-box {
+    .sec-floral > .full-area > .txt-box-wrap > .btn-box {
         display: none;
     }
 
-    .floral-wrap > .m-btm {
-        display: block;
-        width: 100%;
-        padding: 22px 18px;
-        box-sizing: border-box;
-        display: flex;
+    /*======================sec-skid========================*/
+
+    .sec-skid > .full-area > .txt-box-wrap {
+        padding-left: 4.6875vw;
     }
 
-    .floral-wrap > .m-btm > .btm {
-        width: 100%;
-        height: 56px;
-        background-color: #000;
-        transition: 1s;
-    }
-
-    .floral-wrap > .m-btm > .btm:hover {
-        opacity: 0.5;
-    }
-
-    .floral-wrap > .m-btm > .btm > p {
-        color: #fff;
-        text-align: center;
-        line-height: 56px;
-    }
-
-    /*skid-wrap*/
-
-    .skid-wrap {
-        width: 100%;
-        background-color: #fff;
-    }
-
-    .skid-wrap > .skid > .txt-box-wrap {
-        padding: 4.6875vw;
-    }
-
-    .skid-wrap > .skid > .txt-box-wrap > .txt-box > p:first-child {
-        font-size: 30px;
-    }
-
-    .skid-wrap > .skid > .txt-box-wrap > .txt-box > p:last-child {
-        font-size: 11px;
-        margin-top: 10px;
-    }
-
-    .skid-wrap > .skid > .txt-box-wrap > .btn-box {
+    .sec-skid > .full-area > .txt-box-wrap > .btn-box {
         display: none;
     }
 
-    .skid-wrap > .m-btm {
-        display: block;
-        width: 100%;
-        padding: 22px 18px 0;
-        box-sizing: border-box;
-        display: flex;
+    /*======================sec-jack========================*/
+
+    .sec-jack > .full-area > .txt-box-wrap {
+        padding-left: 4.6875vw;
     }
 
-    .skid-wrap > .m-btm > .btm {
-        width: 100%;
-        height: 56px;
-        background-color: #000;
-        transition: 1s;
-    }
-
-    .skid-wrap > .m-btm > .btm:hover {
-        opacity: 0.5;
-    }
-
-    .skid-wrap > .m-btm > .btm > p {
-        color: #fff;
-        text-align: center;
-        line-height: 56px;
-    }
-
-    /*jack-wrap*/
-
-    .jack-wrap {
-        width: 100%;
-        background-color: #fff;
-    }
-
-    .jack-wrap > .jack > .txt-box-wrap {
-        padding: 4.6875vw;
-    }
-
-    .jack-wrap > .jack > .txt-box-wrap > .txt-box > p:first-child {
-        font-size: 30px;
-    }
-
-    .jack-wrap > .jack > .txt-box-wrap > .txt-box > p:last-child {
-        font-size: 11px;
-        margin-top: 10px;
-    }
-
-    .jack-wrap > .jack > .txt-box-wrap > .btn-box {
+    .sec-jack > .full-area > .txt-box-wrap > .btn-box {
         display: none;
     }
 
-    .jack-wrap > .m-btm {
-        display: block;
+    /*======================sec-satin========================*/
+
+    .sec-satin {
+        flex-direction: column;
         width: 100%;
-        padding: 0 18px 22px;
-        box-sizing: border-box;
-        display: flex;
     }
 
-    .jack-wrap > .m-btm > .btm {
-        width: 100%;
-        height: 56px;
-        background-color: #000;
-        transition: 1s;
-    }
-
-    .jack-wrap > .m-btm > .btm:hover {
-        opacity: 0.5;
-    }
-
-    .jack-wrap > .m-btm > .btm > p {
-        color: #fff;
-        text-align: center;
-        line-height: 56px;
-    }
-
-    /*satin-wrap*/
-
-    .satin-wrap {
-        background-color: #fff;
-    }
-
-    .satin-wrap > .right-cozy-wrap {
+    .sec-satin > .left {
         width: 100%;
         padding-bottom: 125%;
     }
 
-    .satin-wrap > .right-cozy-wrap > .txt-box-wrap {
+    .sec-satin > .left > .txt-box-wrap {
         position: absolute;
+        top: auto;
+        left: 4.6875vw;
         bottom: 4.6875vw;
-        left: 4.6875vw;
+        right: auto;
     }
 
-    .satin-wrap > .right-cozy-wrap > .txt-box-wrap > .txt-box > p:first-child {
-        font-size: 30px;
-    }
-
-    .satin-wrap > .right-cozy-wrap > .txt-box-wrap > .txt-box > p:last-child {
-        font-size: 11px;
-        margin-top: 10px;
-    }
-
-    .satin-wrap > .right-cozy-wrap > .txt-box-wrap > .btn-box {
-        display: none;
-    }
-
-    .satin-wrap > .m-btm {
-        display: block;
-        width: 100%;
-        padding: 22px 18px;
-        box-sizing: border-box;
-        display: flex;
-    }
-
-    .satin-wrap > .m-btm > .btm {
-        width: 100%;
-        height: 56px;
-        background-color: #000;
-        transition: 1s;
-    }
-
-    .satin-wrap > .m-btm > .btm:hover {
-        opacity: 0.5;
-    }
-
-    .satin-wrap > .m-btm > .btm > p {
-        color: #fff;
-        text-align: center;
-        line-height: 56px;
-    }
-
-    .satin-wrap > .left-cozy-wrap {
+    .sec-satin > .right {
         width: 100%;
     }
 
-    .satin-wrap > .left-cozy-wrap > .top-left-cozy > .txt-box {
-        position: absolute;
+    /*======================sec-color========================*/
+
+    .sec-color {
+        flex-direction: column;
         width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0);
-        opacity: 1;
-        visibility: visible;
-        text-transform: uppercase;
     }
 
-    .satin-wrap > .left-cozy-wrap > .top-left-cozy > .txt-box > p {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 25px;
-        color: black;
-        font-weight: bold;
-        text-align: center;
-    }
-
-    .satin-wrap > .left-cozy-wrap > .btm-left-cozy > .left-btm-left-cozy > .icon-txt-wrap > .icon {
-        position: absolute;
-        top: 4.6875vw;
-        left: 4.6875vw;
-    }
-
-    .satin-wrap > .left-cozy-wrap > .btm-left-cozy > .left-btm-left-cozy > .icon-txt-wrap > .best-seller {
-        position: absolute;
-        top: 4.6875vw;
-        right: 4.6875vw;
-    }
-
-    .satin-wrap > .left-cozy-wrap > .btm-left-cozy > .left-btm-left-cozy > .icon-txt-wrap > .price {
-        position: absolute;
-        bottom: 4.6875vw;
-        left: 4.6875vw;
-    }
-
-    .satin-wrap > .left-cozy-wrap > .btm-left-cozy > .right-btm-left-cozy > .icon-txt-wrap > .icon {
-        position: absolute;
-        top: 4.6875vw;
-        left: 4.6875vw;
-    }
-
-    .satin-wrap > .left-cozy-wrap > .btm-left-cozy > .right-btm-left-cozy > .icon-txt-wrap > .best-seller {
-        position: absolute;
-        top: 4.6875vw;
-        right: 4.6875vw;
-    }
-
-    .satin-wrap > .left-cozy-wrap > .btm-left-cozy > .right-btm-left-cozy > .icon-txt-wrap > .price {
-        position: absolute;
-        bottom: 4.6875vw;
-        left: 4.6875vw;
-    }
-
-    .satin-wrap > .right-cozy-wrap > .txt-box-wrap {
-        box-sizing: border-box;
-        position: absolute;
-        bottom: 4.6875vw;
-        left: 4.6875vw;
-    }
-    
-    .o {
-        display: block;
-    }
-
-    /*color-wrap*/
-
-    .color-wrap {
-        width: 100%;
-        background-color: #fff;
-    }
-
-    .color-wrap > .left-wrap {
+    .sec-color > .right {
         width: 100%;
         padding-bottom: 125%;
     }
 
-    .color-wrap > .left-wrap > .txt-box-wrap {
-        padding: 4.6875vw;
-        box-sizing: border-box;
+    .sec-color > .right > .txt-box-wrap {
         position: absolute;
+        top: 4.6875vw;
+        left: 4.6875vw;
+        right: auto;
     }
 
-    .color-wrap > .left-wrap > .txt-box-wrap > .txt-box > p:nth-child(1) {
-        text-transform: uppercase;
-        font-size: 30px;
-        line-height: 40px;
-        font-weight: bold;
-        font-family: 'Prompt', sans-serif;
-        margin-bottom: 10px;
-    }
-
-    .color-wrap > .left-wrap > .txt-box-wrap > .txt-box > p:nth-child(2) {
-        font-size: 11px;
-    }
-
-    .color-wrap > .left-wrap > .txt-box-wrap > .btn-box {
+    .sec-color > .right > .txt-box-wrap > .btn-box {
         display: none;
     }
 
@@ -4311,269 +2073,67 @@ footer > .section02-wrap > .section02 > .box4 > ul > li:last-child {
         width: 100%;
     }
 
-    .color-wrap > .m-btm {
-        display: block;
+    /*======================sec-miffy========================*/
+
+    .sec-miffy {
+        flex-direction: column;
         width: 100%;
-        padding: 22px 18px;
-        box-sizing: border-box;
-        display: flex;
     }
 
-    .color-wrap > .m-btm > .btm {
-        width: 100%;
-        height: 56px;
-        background-color: #000;
-        transition: 1s;
-    }
-
-    .color-wrap > .m-btm > .btm:hover {
-        opacity: 0.5;
-    }
-
-    .color-wrap > .m-btm > .btm > p {
-        color: #fff;
-        text-align: center;
-        line-height: 56px;
-    }
-
-    .color-wrap > .right-wrap > .right-top-img > .right-top-img-right > .icon-txt-wrap > .icon {
-        position: absolute;
-        top: 4.6875vw;
-        left: 4.6875vw;
-    }
-
-    .color-wrap > .right-wrap > .right-top-img > .right-top-img-right > .icon-txt-wrap > .best-seller {
-        position: absolute;
-        top: 4.6875vw;
-        right: 4.6875vw;
-    }
-
-    .color-wrap > .right-wrap > .right-top-img > .right-top-img-right > .icon-txt-wrap > .price {
-        position: absolute;
-        bottom: 4.6875vw;
-        left: 4.6875vw;
-    }
-
-    .color-wrap > .right-wrap > .right-btm-img > .right-btm-img-left > .icon-txt-wrap > .icon {
-        position: absolute;
-        top: 4.6875vw;
-        left: 4.6875vw;
-    }
-
-    .color-wrap > .right-wrap > .right-btm-img > .right-btm-img-left > .icon-txt-wrap > .best-seller {
-        position: absolute;
-        top: 4.6875vw;
-        right: 4.6875vw;
-    }
-
-    .color-wrap > .right-wrap > .right-btm-img > .right-btm-img-left > .icon-txt-wrap > .price {
-        position: absolute;
-        bottom: 4.6875vw;
-        left: 4.6875vw;
-    }
-
-
-    .color-wrap > .right-wrap > .right-btm-img > .right-btm-img-right > .icon-txt-wrap > .icon {
-        position: absolute;
-        top: 4.6875vw;
-        left: 4.6875vw;
-    }
-
-    .color-wrap > .right-wrap > .right-btm-img > .right-btm-img-right > .icon-txt-wrap > .best-seller {
-        position: absolute;
-        top: 4.6875vw;
-        right: 4.6875vw;
-    }
-
-    .color-wrap > .right-wrap > .right-btm-img > .right-btm-img-right > .icon-txt-wrap > .price {
-        position: absolute;
-        bottom: 4.6875vw;
-        left: 4.6875vw;
-    }
-
-    /*miffy-wrap*/
-
-    .miffy-wrap {
-        width: 100%;
-        background-color: #fff;
-    }
-
-    .miffy-wrap > .left-cozy-wrap {
-        width: 100%;
-        height: 100%;
-        background-color: orange;
-    }
-
-    .miffy-wrap > .right-cozy-wrap {
+    .sec-miffy > .right {
         width: 100%;
         padding-bottom: 125%;
     }
 
-    .miffy-wrap > .right-cozy-wrap > .txt-box-wrap {
-        padding: 4.6875vw;
-    }
-
-    .miffy-wrap > .right-cozy-wrap > .txt-box-wrap > .txt-box > p:first-child {
-        text-transform: uppercase;
-        font-size: 30px;
-        font-weight: bold;
-    }
-
-    .miffy-wrap > .right-cozy-wrap > .txt-box-wrap > .txt-box > p:last-child {
-        font-size: 11px;
-        margin-top: 10px;
-    }
-
-    .miffy-wrap > .right-cozy-wrap > .txt-box-wrap > .btn-box {
+    .sec-miffy > .right > .txt-box-wrap > .btn-box {
         display: none;
     }
 
-    .miffy-wrap > .m-btm {
-        display: block;
-        width: 100%;
-        padding: 22px 18px 0;
-        box-sizing: border-box;
-        display: flex;
+    /*======================sec-seasonal========================*/
+
+    .sec-seasonal > .full-area > .txt-box-wrap {
+        padding-left: 4.6875vw;
     }
 
-    .miffy-wrap > .m-btm > .btm {
-        width: 100%;
-        height: 56px;
-        background-color: #000;
-        transition: 1s;
-    }
-
-    .miffy-wrap > .m-btm > .btm:hover {
-        opacity: 0.5;
-    }
-
-    .miffy-wrap > .m-btm > .btm > p {
-        color: #fff;
-        text-align: center;
-        line-height: 56px;
-    }
-
-    .miffy-wrap > .left-cozy-wrap > .btm-left-cozy > .left-btm-left-cozy > .icon-txt-wrap > .icon {
-        position: absolute;
-        top: 4.6875vw;
-        left: 4.6875vw;
-    }
-
-    .miffy-wrap > .left-cozy-wrap > .btm-left-cozy > .left-btm-left-cozy > .icon-txt-wrap > .best-seller {
-        position: absolute;
-        top: 4.6875vw;
-        right: 4.6875vw;
-    }
-
-    .miffy-wrap > .left-cozy-wrap > .btm-left-cozy > .left-btm-left-cozy > .icon-txt-wrap > .price {
-        position: absolute;
-        bottom: 4.6875vw;
-        left: 4.6875vw;
-    }
-
-
-    .miffy-wrap > .left-cozy-wrap > .btm-left-cozy > .right-btm-left-cozy > .icon-txt-wrap > .icon {
-        position: absolute;
-        top: 4.6875vw;
-        left: 4.6875vw;
-    }
-
-    .miffy-wrap > .left-cozy-wrap > .btm-left-cozy > .right-btm-left-cozy > .icon-txt-wrap > .best-seller {
-        position: absolute;
-        top: 4.6875vw;
-        right: 4.6875vw;
-    }
-
-    .miffy-wrap > .left-cozy-wrap > .btm-left-cozy > .right-btm-left-cozy > .icon-txt-wrap > .price {
-        position: absolute;
-        bottom: 4.6875vw;
-        left: 4.6875vw;
-    }
-
-    /*.seasonal-wrap*/
-
-    .seasonal-wrap {
-        background-color: #fff;
-    }
-
-    .seasonal-wrap > .seasonal > .txt-box-wrap {
-        padding: 4.6875vw;
-    }
-
-    .seasonal-wrap > .seasonal > .txt-box-wrap > .txt-box > p:first-child {
-        font-size: 30px;
-    }
-
-    .seasonal-wrap > .seasonal > .txt-box-wrap > .txt-box > p:last-child {
-        font-size: 11px;
-        margin-top: 10px;
-    }
-
-    .seasonal-wrap > .seasonal > .txt-box-wrap > .btn-box {
+    .sec-seasonal > .full-area > .txt-box-wrap > .btn-box {
         display: none;
     }
 
-    .seasonal-wrap > .m-btm {
-        display: block;
-        width: 100%;
-        padding: 0 18px 10px;
-        box-sizing: border-box;
-        display: flex;
-    }
+    /*======================sec-community========================*/
 
-    .seasonal-wrap > .m-btm > .btm {
-        width: 100%;
-        height: 56px;
-        background-color: #000;
-        transition: 1s;
-    }
-
-    .seasonal-wrap > .m-btm > .btm:hover {
-        opacity: 0.5;
-    }
-
-    .seasonal-wrap > .m-btm > .btm > p {
-        color: #fff;
-        text-align: center;
-        line-height: 56px;
-    }
-
-    /*community-wrap*/
-
-
-    .community-wrap > .community {
+    .sec-community > .community {
         margin: 30px 0;
     }
 
-    .community-wrap > .community > p {
+    .sec-community > .community > p {
         text-align: center;
         font-size: 24px;
         font-weight: 700;
         text-transform: uppercase;
     }
 
-    .community-wrap > .community > .content {
+    .sec-community > .community > .content {
         width: 100%;
         margin: 30px 0 0 0;
     }
 
-    .community-wrap > .community > .content > .photo-wrap {
+    .sec-community > .community > .content > .photo-wrap {
         width: 100%;
         height: auto;
     }
 
-    .community-wrap > .community > .content > .photo-wrap > .photo {
+    .sec-community > .community > .content > .photo-wrap > .photo {
         width: calc(100% / 2 - 10px);
         margin: 5px 5px;
         background-color: #ddd;
     }
 
-    .community-wrap > .community > .content > .photo-wrap > .mobile-x {
+    .sec-community > .community > .content > .photo-wrap > .mobile-x {
         display: none;
     }
 
 
-    /*floting-bar*/
+    /*======================floting-bar========================*/
 
     .floting-bar {
         z-index: 1;
@@ -4613,7 +2173,7 @@ footer > .section02-wrap > .section02 > .box4 > ul > li:last-child {
         line-height: 16px;
     }
 
-
+    /*======================footer========================*/
     /*section01-wrap*/
 
     footer > .section01-wrap {
@@ -4628,18 +2188,17 @@ footer > .section02-wrap > .section02 > .box4 > ul > li:last-child {
     }
 
     footer > .section01-wrap > .section01 > div {
-        padding: 36px 0 46px;
-        box-sizing: border-box;
         width: 50%;
         height: 100%;
         min-height: 273px;
+        padding: 36px 0 46px;
         text-align: center;
     }
 
     footer > .section01-wrap > .section01 > div > .txt {
-        font-size: 12px;
         margin: 7px auto 0 auto;
         padding: 0 12px;
+        font-size: 12px;
     }
 
     footer > .section01-wrap > .section01 > div:nth-child(1) {
@@ -4676,8 +2235,6 @@ footer > .section02-wrap > .section02 > .box4 > ul > li:last-child {
         margin-top: auto;
     }
 
-
-
     /*section02-wrap*/
 
     footer > .section02-wrap {
@@ -4698,21 +2255,21 @@ footer > .section02-wrap > .section02 > .box4 > ul > li:last-child {
     }
 
     .section02-wrap > .section02 > .box5 > p {
+        position: relative;
+        padding: 21px;
         font-size: 12px;
         font-weight: 100;
-        padding: 21px;
         color: #757575;
-        position: relative;
         cursor: pointer;
     }
 
     .section02-wrap > .section02 > .box5 > p > span {
         content: '';
-        width: 12px;
-        height: 12px;
         position: absolute;
         right: 20px;
         top: 50%;
+        width: 12px;
+        height: 12px;
         transform: translateY(-50%);
         background-size: cover;
     }
@@ -4733,35 +2290,31 @@ footer > .section02-wrap > .section02 > .box4 > ul > li:last-child {
     }
 
     .section02-wrap > .section02 > .box5.active > .hide {
-        opacity: 1;
         display: block;
+        opacity: 1;
     }
 
     .section02-wrap > .section02 > .box5 > ul > li {
-        color: #000;
         font-size: 11px;
+        color: #000;
     }
 
     .section02-wrap > .section02 > .box5 > ul > li:last-child {
         margin-top: 10px;
     }
 
-
-
     /*section03-wrap*/
 
     .section03-wrap {
+        height: 379px;
         border-top: 1px solid #e5e5e5;
         background-color: inherit;
-        height: 379px;
     }
 
     .section03-wrap > .section03 {
-        height: 100%;
+        position: relative;
         height: auto;
         padding: 38px 0;
-        box-sizing: border-box;
-        position: relative;
     }
 
     .section03-wrap > .section03 > .address {
@@ -4770,11 +2323,11 @@ footer > .section02-wrap > .section02 > .box4 > ul > li:last-child {
     }
 
     .section03-wrap > .section03 > .address > .txt {
-        width: 100%;
         flex-direction: column;
-        text-align: center;
+        width: 100%;
         font-size: 11px;
         color: #757575;
+        text-align: center;
     }
 
     .section03-wrap > .section03 > .address > .txt > span {
@@ -4786,8 +2339,8 @@ footer > .section02-wrap > .section02 > .box4 > ul > li:last-child {
     }
 
     .section03-wrap > .section03 > .address > .txt > .first::before {
-        margin: 0 0;
         display: none;
+        margin: 0 0;
     }
 
     .section03-wrap > .section03 > .address > .txt > span:nth-child(6) {
@@ -4799,32 +2352,24 @@ footer > .section02-wrap > .section02 > .box4 > ul > li:last-child {
     }
 
     .section03-wrap > .section03 > .address > .txt > span:first-child {
+        margin: 0 0 28px;
         font-size: 15px;
         font-weight: bold;
         color: #000;
-        margin: 0 0 28px;
     }
 
     .section03-wrap > .section03 > .address > p {
-        color: #9b9b9b;
-        font-size: 11px;
         padding-top: 5px;
+        font-size: 11px;
+        color: #9b9b9b;
         text-align: center;
-    }
-
-    .m {
-        display: none;
-    }
-
-    .mm {
-        display: block;
     }
 
     .section03-wrap > .section03 > .address > .mobile {
         display: block;
-        text-align: center;
-        font-size: 11px;
         margin: 5px 0 0 0;
+        font-size: 11px;
+        text-align: center;
     }
 
     .section03-wrap > .section03 > .company {
@@ -4832,21 +2377,19 @@ footer > .section02-wrap > .section02 > .box4 > ul > li:last-child {
     }
 
     .section03-wrap > .section03 > .icon {
-        display: block;
-        width: 100%;
-        padding: 20px;
-        box-sizing: border-box;
         display: flex;
         justify-content: center;
+        width: 100%;
+        padding: 20px;
     }
 
     .section03-wrap > .section03 > .icon > div {
-        width: 25px;
-        height: 25px;
-        margin: 0 12px;
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 25px;
+        height: 25px;
+        margin: 0 12px;
     }
 
     .section03-wrap > .section03 > .icon > div > .l-inner {
@@ -4866,26 +2409,25 @@ footer > .section02-wrap > .section02 > .box4 > ul > li:last-child {
     }
 
     .section03-wrap > .section03 > .kr-box {
-        display: block;
+        display: flex;
         width: 100%;
         height: 55px;
         background-color: #000;
-        display: flex;
     }
 
     .section03-wrap > .section03 > .kr-box > .kr {
-        flex-basis: 50%;
         display: flex;
+        flex-basis: 50%;
         align-items: center;
-        color: white;
         padding: 0 16px;
+        color: white;
         cursor: pointer;
     }
 
     .section03-wrap > .section03 > .kr-box > .kr > .flag-icon {
-        margin-right: 10px;
         width: 18px;
         height: 12px;
+        margin-right: 10px;
         background-image: url(../Converse_files/locale-kr.svg);
         background-size: cover;
     }
@@ -4895,8 +2437,8 @@ footer > .section02-wrap > .section02 > .box4 > ul > li:last-child {
     }
 
     .section03-wrap > .section03 > .kr-box > p {
-        flex-basis: 50%;
         display: flex;
+        flex-basis: 50%;
         align-items: center;
         justify-content: flex-end;
         padding: 0 16px;
@@ -4905,11 +2447,7 @@ footer > .section02-wrap > .section02 > .box4 > ul > li:last-child {
         cursor: pointer;
     }
 
-
 }
-
-
-
 
 @media screen and (max-width: 320px) {
     footer > .section01-wrap > .section01 > div > .txt {
@@ -4920,13 +2458,5 @@ footer > .section02-wrap > .section02 > .box4 > ul > li:last-child {
     footer > .section01-wrap > .section01 > div > a {
         margin-top: 10px;
     }
-
-
-
-
-
-
-
-
 
 }
